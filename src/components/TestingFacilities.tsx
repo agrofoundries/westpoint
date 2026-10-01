@@ -19,7 +19,7 @@ export const TestingFacilities: React.FC = () => {
       icon: ShieldAlert
     },
     {
-      title: 'METALLURGICAL SOLIDIFICATION',
+      title: 'metal SOLIDIFICATION',
       desc: 'Microstructural grain boundary evaluation, inclusion rating, and 3D solidification porosity analysis.',
       icon: Microscope
     },

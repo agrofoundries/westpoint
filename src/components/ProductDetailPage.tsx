@@ -339,7 +339,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                           MAGMASOFT® 3D THERMAL FLOW SIMULATION
                         </span>
                         <h4 style={{ fontSize: '14px', fontWeight: 900, color: '#FFFFFF', margin: 0 }}>
-                          Zero-Porosity Metallurgical Solidification
+                          Zero-Porosity metal Solidification
                         </h4>
                       </div>
                     </div>
@@ -398,7 +398,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
               {/* Technical Specifications Table */}
               <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '6px', overflow: 'hidden', marginBottom: '1.5rem' }}>
                 <div style={{ background: '#1B5E20', color: '#FFFFFF', padding: '10px 16px', fontSize: '11.5px', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  METALLURGICAL &amp; ENGINEERING SPECIFICATIONS
+                  metal &amp; ENGINEERING SPECIFICATIONS
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', fontSize: '13px' }}>
@@ -437,7 +437,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
               {/* Key Features Checkmarks */}
               <div style={{ marginBottom: '1.75rem' }}>
                 <strong style={{ fontSize: '12px', fontWeight: 900, color: '#1B5E20', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-                  CERTIFIED ENGINEERING HIGHLIGHTS
+                  KEY FEATURES
                 </strong>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '8px' }}>
                   {product.keyFeatures.map((feat, fIdx) => (
@@ -448,11 +448,11 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   ))}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12.5px', color: '#1F2937', fontWeight: 600 }}>
                     <CheckCircle2 size={15} color="#16A34A" style={{ flexShrink: 0 }} />
-                    <span>100% Volumetric Ultrasonic Soundness</span>
+                    <span>100% Tested for Quality</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12.5px', color: '#1F2937', fontWeight: 600 }}>
                     <CheckCircle2 size={15} color="#16A34A" style={{ flexShrink: 0 }} />
-                    <span>Robotic 5-Axis CNC Finished ±0.05mm</span>
+                    <span>High Precision Robotic Machining</span>
                   </div>
                 </div>
               </div>
@@ -488,7 +488,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   <ArrowRight size={16} color="#FFFFFF" />
                 </button>
 
-                {/* <a
+                <a
                   href={product.img}
                   download={`Westpoint-${product.id}-Spec-Sheet.jpg`}
                   className="btn-animated"
@@ -513,78 +513,78 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   <Download size={16} color="#1B5E20" />
                   <span>DOWNLOAD CAD SPEC (.PDF)</span>
                 </a>
-              </div> */}
-
               </div>
 
             </div>
 
-            {/* ================= RELATED PRODUCTS IN THIS CATEGORY ================= */}
-            {relatedProducts.length > 0 && (
-              <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #E2E8F0' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '8px' }}>
-                  <div>
-                    <span style={{ fontSize: '10.5px', fontWeight: 900, color: '#4CAF50', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                      DIVISION CATALOG
-                    </span>
-                    <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#111827', margin: 0, textTransform: 'uppercase' }}>
-                      Related {product.categoryLabel} Components
-                    </h3>
-                  </div>
-                </div>
+          </div>
 
-                <div className="grid-responsive-4">
-                  {relatedProducts.map(rel => (
-                    <div
-                      key={rel.id}
-                      onClick={() => {
-                        if (onSelectProduct) onSelectProduct(rel);
-                      }}
-                      className="card-hover-industrial"
-                      style={{
-                        background: '#FFFFFF',
-                        border: '1px solid #E2E8F0',
-                        borderRadius: '4px',
-                        padding: '12px',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'space-between',
-                        transition: 'all 0.2s'
-                      }}
-                    >
-                      <div>
-                        <div style={{ height: '120px', overflow: 'hidden', background: '#F8FAFC', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
-                          <img
-                            src={rel.img}
-                            alt={rel.title}
-                            style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
-                          />
-                        </div>
-                        <span style={{ fontSize: '9px', fontWeight: 800, color: '#1B5E20', letterSpacing: '0.06em', textTransform: 'uppercase', display: 'block' }}>
-                          {rel.series}
-                        </span>
-                        <h4 style={{ fontSize: '12px', fontWeight: 800, color: '#111827', margin: '4px 0 6px 0', lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                          {rel.title}
-                        </h4>
-                      </div>
-
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #F1F5F9', paddingTop: '8px', marginTop: '6px' }}>
-                        <span style={{ fontSize: '10px', color: '#4CAF50', fontWeight: 700 }}>
-                          {rel.specs}
-                        </span>
-                        <ChevronRight size={13} color="#1B5E20" />
-                      </div>
-                    </div>
-                  ))}
+          {/* ================= RELATED PRODUCTS IN THIS CATEGORY ================= */}
+          {relatedProducts.length > 0 && (
+            <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid #E2E8F0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '8px' }}>
+                <div>
+                  <span style={{ fontSize: '10.5px', fontWeight: 900, color: '#4CAF50', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                    DIVISION CATALOG
+                  </span>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#111827', margin: 0, textTransform: 'uppercase' }}>
+                    Related {product.categoryLabel} Components
+                  </h3>
                 </div>
               </div>
-            )}
 
-          </div>
+              <div className="grid-responsive-4">
+                {relatedProducts.map(rel => (
+                  <div
+                    key={rel.id}
+                    onClick={() => {
+                      if (onSelectProduct) onSelectProduct(rel);
+                    }}
+                    className="card-hover-industrial"
+                    style={{
+                      background: '#FFFFFF',
+                      border: '1px solid #E2E8F0',
+                      borderRadius: '4px',
+                      padding: '12px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    <div>
+                      <div style={{ height: '120px', overflow: 'hidden', background: '#F8FAFC', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '10px' }}>
+                        <img
+                          src={rel.img}
+                          alt={rel.title}
+                          style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                        />
+                      </div>
+                      <span style={{ fontSize: '9px', fontWeight: 800, color: '#1B5E20', letterSpacing: '0.06em', textTransform: 'uppercase', display: 'block' }}>
+                        {rel.series}
+                      </span>
+                      <h4 style={{ fontSize: '12px', fontWeight: 800, color: '#111827', margin: '4px 0 6px 0', lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        {rel.title}
+                      </h4>
+                    </div>
+
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #F1F5F9', paddingTop: '8px', marginTop: '6px' }}>
+                      <span style={{ fontSize: '10px', color: '#4CAF50', fontWeight: 700 }}>
+                        {rel.specs}
+                      </span>
+                      <ChevronRight size={13} color="#1B5E20" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
         </div>
       </div>
-      );
+    </div>
+  );
 };
 
-      export default ProductDetailPage;
+export default ProductDetailPage;

@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
 
   const companyLinks = [
     'About Westpoint Group',
-    'Metallurgical Engineering Team',
+    'metal Engineering Team',
     'Foundry & Forging Facilities',
     'Rail Network Vendor Status',
     'Contact Enterprise Sales'

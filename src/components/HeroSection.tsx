@@ -11,51 +11,21 @@ interface HeroSectionProps {
 const slidesData = [
   {
     id: 1,
-    tag: '01 ROLLING STOCK',
-    eyebrow: 'WESTPOINT GROUP RAIL & TRANSIT MANUFACTURING',
-    headline: 'BUILT TO MOVE THE WORLD',
-    desc: 'Westpoint Group manufactures heavy-duty steel parts for trains, subways, and railways. From wheel axles and undercarriage bogies to track switch frogs, we build the strong metal components that keep North American rail lines moving safely.',
-    mediaType: 'image',
-    mediaSrc: '/images/istockphoto-1196704251-2048x2048.jpg',
-    badgeTitle: 'WESTPOINT FOUNDRY & FORGING OPERATIONS',
-    badgeSub: 'High-strength steel casting & precision CNC machining',
-    cadSpec: 'AAR M-201 CERTIFIED STEEL'
+    tag: '01 TRAIN PARTS',
+    eyebrow: 'Building the future of transit',
+    headline: 'Our Foundries keeping the rails going ...',
+    desc: 'We make heavy-duty steel parts for trains and subways. From axles to track switches, we build the strong metal pieces that keep North American rail lines moving safely.',
+    mediaType: 'video',
+    mediaSrc: '/videos/20191217_Snippet_01_16by9.mp4',
   },
   {
     id: 2,
-    tag: '02 TURNOUT FROGS',
-    eyebrow: 'AMERICAN RAILWAY (AREMA) COMPLIANT TRACKWORK',
-    headline: 'PRECISION TURNOUT & SWITCH FROGS',
-    desc: 'Track switches and turnout frogs that let trains transfer between tracks smoothly. Made from hardened manganese steel to endure heavy freight cars without cracking.',
-    mediaType: 'image',
-    mediaSrc: '/images/turnout_frog_manganese_stock.jpg',
-    badgeTitle: 'HEAVY-HAUL TRACK SWITCH MANUFACTURING',
-    badgeSub: '100% volumetric ultrasonic testing & impact hardening',
-    cadSpec: 'MANGANESE ALLOY STEEL'
-  },
-  {
-    id: 3,
-    tag: '03 LOCOMOTIVE BOGIES',
-    eyebrow: 'AAR M-1003 QUALITY ASSURANCE',
-    headline: 'LOCOMOTIVE BOGIES & AXLE HOUSINGS',
-    desc: 'Heavy-duty steel wheel housings, suspension wedges, and brake heads that support train cars, ensuring smooth and reliable rides under heavy cargo loads.',
-    mediaType: 'image',
-    mediaSrc: '/images/locomotive_wheelset_stock.jpg',
-    badgeTitle: 'WHEELSET & BOGIE UNDERCARRIAGE PARTS',
-    badgeSub: 'Certified metallurgical testing for maximum strength',
-    cadSpec: 'HEAVY AXLE LOAD TESTED'
-  },
-  {
-    id: 4,
-    tag: '04 5-AXIS CNC',
-    eyebrow: 'ROBOTIC 5-AXIS CNC MACHINING',
-    headline: 'PRECISION MACHINED RAIL COMPONENTS',
-    desc: 'Advanced computer-controlled machining ensuring every railway part fits accurately, installs seamlessly, and meets strict U.S. railroad safety standards.',
-    mediaType: 'image',
-    mediaSrc: '/images/real_cnc_machining_stock.jpg',
-    badgeTitle: '5-AXIS CNC MACHINING COMPLEX',
-    badgeSub: 'Laser inspection & coordinate measuring quality audits',
-    cadSpec: 'EXACT FIT TOLERANCES'
+    tag: '02 INNOVATION',
+    eyebrow: 'Better transit technology',
+    headline: 'Railing into the future ...',
+    desc: 'We use advanced materials and modern manufacturing to build rail parts that last longer and keep everyone safe.',
+    mediaType: 'video',
+    mediaSrc: '/videos/20191217_Snippet_01_16by9.mp4',
   }
 ];
 
@@ -63,7 +33,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const textRef = useRef<HTMLDivElement>(null);
-  const mediaRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slidesData.length);
@@ -75,16 +45,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
 
   // GSAP Animation Trigger on Slide Change
   useEffect(() => {
-    if (textRef.current && mediaRef.current) {
+    if (textRef.current) {
       gsap.fromTo(
         textRef.current,
         { opacity: 0, x: 50 },
-        { opacity: 1, x: 0, duration: 0.5, ease: 'power3.out' }
+        { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out' }
       );
+    }
+    if (bgRef.current) {
       gsap.fromTo(
-        mediaRef.current,
-        { opacity: 0, scale: 0.96 },
-        { opacity: 1, scale: 1, duration: 0.5, ease: 'power3.out' }
+        bgRef.current,
+        { opacity: 0.8, scale: 1.05 },
+        { opacity: 1, scale: 1, duration: 1.2, ease: 'power2.out' }
       );
     }
   }, [currentSlide]);
@@ -94,404 +66,299 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
     if (!isPlaying) return;
     const timer = setInterval(() => {
       goToNextSlide();
-    }, 5500);
+    }, 6000);
     return () => clearInterval(timer);
   }, [isPlaying]);
 
   const slide = slidesData[currentSlide];
 
   return (
-    <section 
-      className="hero-gradient-bg"
-      style={{ 
-        color: '#FFFFFF', 
-        padding: '3.5rem 0 0 0',
-        borderBottom: '2px solid #4CAF50',
+    <section
+      style={{
         position: 'relative',
-        overflow: 'hidden'
+        minHeight: '90vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        overflow: 'hidden',
+        color: '#FFFFFF'
       }}
     >
-      <div className="container-custom" style={{ position: 'relative', zIndex: 10 }}>
-        <div className="hero-grid-responsive">
-          
-          {/* Left Column: Animated Content Slide */}
-          <div className="hero-col-left">
-            <div ref={textRef}>
-              
-              {/* Eyebrow Label */}
-              <div className="eyebrow eyebrow-dark" style={{ marginBottom: '1rem', letterSpacing: '0.2em' }}>
-                <span style={{ display: 'inline-block', width: '28px', height: '2.5px', background: '#4CAF50' }} />
-                <span style={{ color: '#A5D6A7', fontWeight: 900 }}>{slide.eyebrow}</span>
-              </div>
+      {/* Background Media */}
+      <div ref={bgRef} style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+        {slide.mediaType === 'video' ? (
+          <video
+            key={slide.mediaSrc}
+            src={slide.mediaSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          <img
+            key={slide.mediaSrc}
+            src={slide.mediaSrc}
+            alt={slide.headline}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        )}
+        {/* Dark Overlay for Text Readability */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(0,0,0,0.4)'
+          }}
+        />
+      </div>
 
-              {/* Headline in Geist Font */}
-              <h1 
-                style={{ 
-                  fontSize: 'clamp(2.3rem, 4.2vw, 3.8rem)', 
-                  fontWeight: 900, 
-                  lineHeight: 1.05, 
-                  color: '#FFFFFF', 
-                  letterSpacing: '-0.025em', 
-                  margin: '0 0 1.25rem 0',
-                  textTransform: 'uppercase',
-                  fontFamily: "'Manrope', sans-serif !important"
-                }}
-              >
-                {slide.headline}
-              </h1>
+      <div className="container-custom" style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', paddingTop: '4rem', paddingBottom: '2rem' }}>
+        <div ref={textRef} style={{ maxWidth: '650px', textAlign: 'left', marginLeft: '5%' }}>
 
-              {/* Subheadline in Manrope Font */}
-              <p 
-                style={{ 
-                  fontSize: '1.05rem', 
-                  color: '#FFFFFF', 
-                  lineHeight: 1.6, 
-                  margin: '0 0 2rem 0',
-                  fontWeight: 600,
-                  maxWidth: '560px',
-                  fontFamily: "'Manrope', sans-serif !important"
-                }}
-              >
-                {slide.desc}
-              </p>
-
-              {/* Action Buttons */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-                <button
-                  onClick={onExploreClick}
-                  className="btn-animated"
-                  style={{
-                    padding: '14px 28px',
-                    fontSize: '12.5px',
-                    fontWeight: 900,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    cursor: 'pointer',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    borderRadius: '4px',
-                    fontFamily: "'Manrope', sans-serif !important"
-                  }}
-                >
-                  <Layers size={16} />
-                  <span>EXPLORE PRODUCT SPECIFICATIONS</span>
-                  <ArrowRight size={15} color="currentColor" />
-                </button>
-
-                <button
-                  onClick={onRequestQuoteClick}
-                  style={{
-                    padding: '14px 24px',
-                    fontSize: '12.5px',
-                    fontWeight: 900,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    cursor: 'pointer',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    borderRadius: '4px',
-                    background: 'rgba(255, 255, 255, 0.12)',
-                    color: '#FFFFFF',
-                    border: '1.5px solid rgba(255, 255, 255, 0.3)',
-                    backdropFilter: 'blur(4px)',
-                    transition: 'all 0.2s',
-                    fontFamily: "'Manrope', sans-serif !important"
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.color = '#1B5E20'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.12)'; e.currentTarget.style.color = '#FFFFFF'; }}
-                >
-                  <span>REQUEST QUOTE</span>
-                </button>
-              </div>
-
-              {/* Quality Compliance Badges */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '20px', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.25)', flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <CheckCircle size={15} color="#81C784" />
-                  <span style={{ fontSize: '11px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>AREMA CHAPTER 4</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <CheckCircle size={15} color="#81C784" />
-                  <span style={{ fontSize: '11px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>AAR M-1003 QA</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <CheckCircle size={15} color="#81C784" />
-                  <span style={{ fontSize: '11px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>FRA RULE 213</span>
-                </div>
-              </div>
-
-            </div>
+          {/* Eyebrow Label */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', marginBottom: '1.5rem', letterSpacing: '0.2em' }}>
+            <span style={{ display: 'inline-block', width: '40px', height: '2px', background: '#4CAF50' }} />
+            <span style={{ color: '#A5D6A7', fontWeight: 800, fontSize: '0.9rem', textTransform: 'uppercase' }}>{slide.eyebrow}</span>
           </div>
 
-          {/* Right Column: Main Media Viewport & Interactive Thumbnail Selector */}
-          <div className="hero-col-right">
-            
-            {/* Main Image Frame with Floating Tech Chip */}
-            <div 
-              ref={mediaRef}
-              style={{ 
-                position: 'relative', 
-                borderRadius: '2px', 
-                overflow: 'hidden', 
-                border: '2px solid #4CAF50',
-                background: '#144818',
-                height: '340px',
-                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.35)'
+          {/* Headline */}
+          <h1
+            style={{
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontWeight: 900,
+              lineHeight: 1.1,
+              color: '#FFFFFF',
+              letterSpacing: '-0.02em',
+              margin: '0 0 1.5rem 0',
+              textTransform: 'uppercase',
+              fontFamily: "'Manrope', sans-serif !important",
+              textShadow: '0 4px 12px rgba(0,0,0,0.3)'
+            }}
+          >
+            {slide.headline}
+          </h1>
+
+          {/* Description */}
+          <p
+            style={{
+              fontSize: '1.15rem',
+              color: 'rgba(255, 255, 255, 0.95)',
+              lineHeight: 1.6,
+              margin: '0 0 2.5rem 0',
+              fontWeight: 500,
+              fontFamily: "'Manrope', sans-serif !important",
+              textShadow: '0 2px 4px rgba(0,0,0,0.2)'
+            }}
+          >
+            {slide.desc}
+          </p>
+
+          {/* Action Buttons */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
+            <button
+              onClick={onExploreClick}
+              style={{
+                padding: '16px 32px',
+                fontSize: '13px',
+                fontWeight: 800,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                borderRadius: '4px',
+                fontFamily: "'Manrope', sans-serif !important",
+                background: '#4CAF50',
+                color: '#ffffff',
+                border: 'none',
+                boxShadow: '0 4px 15px rgba(76, 175, 80, 0.3)',
+                transition: 'all 0.3s ease'
               }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(76, 175, 80, 0.4)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(76, 175, 80, 0.3)'; }}
             >
-              {slide.mediaType === 'video' ? (
-                <video 
-                  key={slide.mediaSrc}
-                  src={slide.mediaSrc} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              ) : (
-                <img 
-                  key={slide.mediaSrc}
-                  src={slide.mediaSrc} 
-                  alt={slide.headline} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              )}
+              <Layers size={18} />
+              <span>EXPLORE PRODUCTS</span>
+              <ArrowRight size={16} />
+            </button>
 
-              {/* Floating Top CAD Spec Chip */}
-              <div 
-                style={{ 
-                  position: 'absolute', 
-                  top: '12px', 
-                  right: '12px', 
-                  background: 'rgba(15, 41, 30, 0.88)', 
-                  backdropFilter: 'blur(8px)',
-                  border: '1px solid #4CAF50',
-                  borderRadius: '2px',
-                  padding: '6px 12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  zIndex: 2
-                }}
-              >
-                <Layers size={13} color="#81C784" />
-                <span style={{ fontSize: '10px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '0.08em', fontFamily: "'Manrope', sans-serif !important" }}>
-                  {slide.cadSpec}
-                </span>
-              </div>
-
-              {/* Clean Media Tag Overlay */}
-              <div style={{ position: 'absolute', bottom: '0.85rem', left: '0.85rem', right: '0.85rem', background: 'rgba(27, 94, 32, 0.92)', backdropFilter: 'blur(6px)', padding: '10px 14px', borderLeft: '4px solid #4CAF50' }}>
-                <strong style={{ fontSize: '11.5px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', fontFamily: "'Manrope', sans-serif !important" }}>
-                  {slide.badgeTitle}
-                </strong>
-                <span style={{ fontSize: '10.5px', color: '#FAF6EE', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>
-                  {slide.badgeSub}
-                </span>
-              </div>
-            </div>
-
-            {/* CREATIVE INTERACTIVE THUMBNAIL SELECTOR STRIP */}
-            <div style={{ marginTop: '1rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#A5D6A7', letterSpacing: '0.1em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
-                  SELECT SHOWCASE SLIDE THUMBNAIL ({currentSlide + 1}/4)
-                </span>
-
-                {/* Play / Pause & Manual Arrow Controls */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <button
-                    onClick={() => setIsPlaying(!isPlaying)}
-                    title={isPlaying ? 'Pause Auto Play' : 'Play Auto Play'}
-                    style={{
-                      width: '28px',
-                      height: '28px',
-                      borderRadius: '2px',
-                      background: isPlaying ? '#144818' : '#FAF6EE',
-                      border: '1px solid #4CAF50',
-                      color: isPlaying ? '#FFFFFF' : '#1B5E20',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    {isPlaying ? <Pause size={13} /> : <Play size={13} />}
-                  </button>
-
-                  <button
-                    onClick={goToPrevSlide}
-                    aria-label="Previous slide"
-                    style={{
-                      width: '28px',
-                      height: '28px',
-                      borderRadius: '2px',
-                      background: '#144818',
-                      border: '1px solid #4CAF50',
-                      color: '#FFFFFF',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.background = '#FAF6EE'; e.currentTarget.style.color = '#1B5E20'; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = '#144818'; e.currentTarget.style.color = '#FFFFFF'; }}
-                  >
-                    <ChevronLeft size={15} />
-                  </button>
-
-                  <button
-                    onClick={goToNextSlide}
-                    aria-label="Next slide"
-                    style={{
-                      width: '28px',
-                      height: '28px',
-                      borderRadius: '2px',
-                      background: '#144818',
-                      border: '1px solid #4CAF50',
-                      color: '#FFFFFF',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.background = '#FAF6EE'; e.currentTarget.style.color = '#1B5E20'; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = '#144818'; e.currentTarget.style.color = '#FFFFFF'; }}
-                  >
-                    <ChevronRight size={15} />
-                  </button>
-                </div>
-              </div>
-
-              {/* 4 Interactive Thumbnail Cards Grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
-                {slidesData.map((item, idx) => {
-                  const isActive = currentSlide === idx;
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => setCurrentSlide(idx)}
-                      style={{
-                        background: isActive ? '#144818' : 'rgba(20, 72, 24, 0.45)',
-                        border: isActive ? '2px solid #81C784' : '1px solid rgba(76, 175, 80, 0.3)',
-                        borderRadius: '2px',
-                        padding: '5px',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        transition: 'all 0.25s ease',
-                        boxShadow: isActive ? '0 0 14px rgba(129, 199, 132, 0.4)' : 'none',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '4px'
-                      }}
-                      onMouseEnter={e => {
-                        if (!isActive) e.currentTarget.style.border = '1px solid #81C784';
-                      }}
-                      onMouseLeave={e => {
-                        if (!isActive) e.currentTarget.style.border = '1px solid rgba(76, 175, 80, 0.3)';
-                      }}
-                    >
-                      {/* Mini Thumbnail Image Frame */}
-                      <div style={{ height: '48px', width: '100%', overflow: 'hidden', position: 'relative', borderRadius: '1px', background: '#1B5E20' }}>
-                        <img 
-                          src={item.mediaSrc} 
-                          alt={item.tag}
-                          style={{ 
-                            width: '100%', 
-                            height: '100%', 
-                            objectFit: 'cover', 
-                            opacity: isActive ? 1 : 0.65,
-                            transition: 'all 0.25s ease',
-                            transform: isActive ? 'scale(1.05)' : 'scale(1)'
-                          }} 
-                        />
-                        {isActive && (
-                          <div style={{ position: 'absolute', top: '4px', right: '4px', background: '#81C784', color: '#1B5E20', fontSize: '7.5px', fontWeight: 900, padding: '1px 4px', borderRadius: '1px', fontFamily: "'Manrope', sans-serif !important" }}>
-                            ACTIVE
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Thumbnail Title */}
-                      <span 
-                        style={{ 
-                          fontSize: '9px', 
-                          fontWeight: 900, 
-                          color: isActive ? '#FFFFFF' : '#A5D6A7', 
-                          letterSpacing: '0.04em', 
-                          textTransform: 'uppercase',
-                          whiteSpace: 'nowrap',
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                          display: 'block',
-                          fontFamily: "'Manrope', sans-serif !important"
-                        }}
-                      >
-                        {item.tag}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-
-            </div>
-
+            <button
+              onClick={onRequestQuoteClick}
+              style={{
+                padding: '16px 32px',
+                fontSize: '13px',
+                fontWeight: 800,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                borderRadius: '4px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                color: '#FFFFFF',
+                border: '1.5px solid rgba(255, 255, 255, 0.5)',
+                backdropFilter: 'blur(4px)',
+                transition: 'all 0.3s ease',
+                fontFamily: "'Manrope', sans-serif !important"
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            >
+              <span>REQUEST QUOTE</span>
+            </button>
           </div>
 
+          {/* Simple Slider Controls */}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '1.5rem' }}>
+            <button
+              onClick={goToPrevSlide}
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                background: 'rgba(255, 255, 255, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                color: '#FFFFFF',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.3s',
+                backdropFilter: 'blur(4px)'
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#4CAF50'; e.currentTarget.style.borderColor = '#4CAF50'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'; }}
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+              {slidesData.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  style={{
+                    width: currentSlide === idx ? '32px' : '12px',
+                    height: '12px',
+                    borderRadius: '6px',
+                    background: currentSlide === idx ? '#4CAF50' : 'rgba(255, 255, 255, 0.4)',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: currentSlide === idx ? '0 0 10px rgba(76, 175, 80, 0.5)' : 'none'
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={goToNextSlide}
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                background: 'rgba(255, 255, 255, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                color: '#FFFFFF',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.3s',
+                backdropFilter: 'blur(4px)'
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#4CAF50'; e.currentTarget.style.borderColor = '#4CAF50'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)'; }}
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              style={{
+                marginLeft: '1rem',
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                background: 'transparent',
+                border: 'none',
+                color: 'rgba(255,255,255,0.6)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.3s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.color = '#FFFFFF'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; }}
+            >
+              {isPlaying ? <Pause size={20} /> : <Play size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Embedded 4-Metric Technical Bar */}
-      <div 
-        style={{ 
-          position: 'relative', 
-          zIndex: 10, 
-          background: '#144818', 
-          borderTop: '1.5px solid #4CAF50', 
-          padding: '1.25rem 0',
-          marginTop: '2.5rem'
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 10,
+          background: 'rgba(15, 51, 20, 0.7)',
+          backdropFilter: 'blur(12px)',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          padding: '1.5rem 0',
         }}
       >
         <div className="container-custom">
-          <div className="hero-metric-grid">
-            
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <TrainTrack size={20} color="#81C784" />
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '1.5rem',
+            alignItems: 'center'
+          }}>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{ background: 'rgba(76, 175, 80, 0.2)', padding: '10px', borderRadius: '50%' }}>
+                <TrainTrack size={22} color="#81C784" />
+              </div>
               <div>
-                <strong style={{ fontSize: '13px', fontWeight: 900, color: '#FFFFFF', display: 'block', fontFamily: "'Manrope', sans-serif !important" }}>NORTH AMERICAN FOUNDRY</strong>
-                <span style={{ fontSize: '11px', color: '#FAF6EE', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Heavy rail manufacturing leader</span>
+                <strong style={{ fontSize: '12px', fontWeight: 900, color: '#FFFFFF', display: 'block', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>NORTH AMERICAN FOUNDRY</strong>
+                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Leader in heavy rail manufacturing</span>
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <ShieldCheck size={20} color="#81C784" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{ background: 'rgba(76, 175, 80, 0.2)', padding: '10px', borderRadius: '50%' }}>
+                <ShieldCheck size={22} color="#81C784" />
+              </div>
               <div>
-                <strong style={{ fontSize: '13px', fontWeight: 900, color: '#FFFFFF', display: 'block', fontFamily: "'Manrope', sans-serif !important" }}>36-TON HAL RATING</strong>
-                <span style={{ fontSize: '11px', color: '#FAF6EE', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Heavy freight axle load endurance</span>
+                <strong style={{ fontSize: '12px', fontWeight: 900, color: '#FFFFFF', display: 'block', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>36-TON CAPACITY</strong>
+                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Built for heavy freight loads</span>
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <Zap size={20} color="#81C784" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{ background: 'rgba(76, 175, 80, 0.2)', padding: '10px', borderRadius: '50%' }}>
+                <Zap size={22} color="#81C784" />
+              </div>
               <div>
-                <strong style={{ fontSize: '13px', fontWeight: 900, color: '#FFFFFF', display: 'block', fontFamily: "'Manrope', sans-serif !important" }}>±0.05MM CNC TOLERANCE</strong>
-                <span style={{ fontSize: '11px', color: '#FAF6EE', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Robotic 5-axis heavy machining</span>
+                <strong style={{ fontSize: '12px', fontWeight: 900, color: '#FFFFFF', display: 'block', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>HIGH PRECISION</strong>
+                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Made with robotic machining</span>
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <ShieldCheck size={20} color="#81C784" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{ background: 'rgba(76, 175, 80, 0.2)', padding: '10px', borderRadius: '50%' }}>
+                <CheckCircle size={22} color="#81C784" />
+              </div>
               <div>
-                <strong style={{ fontSize: '13px', fontWeight: 900, color: '#FFFFFF', display: 'block', fontFamily: "'Manrope', sans-serif !important" }}>100% VOLUMETRIC NDT</strong>
-                <span style={{ fontSize: '11px', color: '#FAF6EE', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Ultrasonic &amp; magnetic flaw scan</span>
+                <strong style={{ fontSize: '12px', fontWeight: 900, color: '#FFFFFF', display: 'block', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>100% QUALITY TESTED</strong>
+                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Scanned for any flaws</span>
               </div>
             </div>
 
@@ -503,4 +370,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
 };
 
 export default HeroSection;
+
 

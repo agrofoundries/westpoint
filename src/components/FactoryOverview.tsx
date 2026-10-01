@@ -12,7 +12,7 @@ export const FactoryOverview: React.FC = () => {
     {
       value: 'AAR M-1003',
       label: 'QUALITY CERTIFICATION',
-      sub: 'Certified metallurgical engineering excellence',
+      sub: 'Certified metal engineering excellence',
       icon: ShieldCheck
     },
     {

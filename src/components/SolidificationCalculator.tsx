@@ -46,7 +46,7 @@ export const SolidificationCalculator: React.FC = () => {
           <div>
             <div className="eyebrow eyebrow-dark">
               <span style={{ display: 'inline-block', width: '28px', height: '2.5px', background: '#81C784' }} />
-              <span style={{ color: '#A5D6A7', fontWeight: 900 }}>INTERACTIVE METALLURGICAL ENGINE</span>
+              <span style={{ color: '#A5D6A7', fontWeight: 900 }}>INTERACTIVE metal ENGINE</span>
             </div>
             <h2 style={{ fontSize: '2.25rem', fontWeight: 900, color: '#FFFFFF', margin: 0, textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
               THERMAL SOLIDIFICATION &amp; TOLERANCE CALCULATOR

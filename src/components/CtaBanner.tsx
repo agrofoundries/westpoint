@@ -32,7 +32,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onRequestQuoteClick }) => 
             </h2>
 
             <p style={{ fontSize: '1.05rem', color: '#FFFFFF', lineHeight: 1.6, margin: 0, fontWeight: 600, fontFamily: "'Manrope', sans-serif !important" }}>
-              Our metallurgical engineering team provides technical consultations, custom CAD reviews, AAR M-1003 compliance verification, and project quotation estimates within 24 hours.
+              Our metal engineering team provides technical consultations, custom CAD reviews, AAR M-1003 compliance verification, and project quotation estimates within 24 hours.
             </p>
           </div>
 

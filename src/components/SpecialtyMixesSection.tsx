@@ -17,7 +17,7 @@ export const SpecialtyMixesSection: React.FC = () => {
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <span style={{ color: '#195B34', fontSize: '12px', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-            METALLURGICAL EXCELLENCE
+            metal EXCELLENCE
           </span>
           <h2 style={{ fontSize: '38px', fontWeight: 900, color: '#195B34', letterSpacing: '-0.02em', margin: 0, textTransform: 'uppercase' }}>
             Specialized Rail Alloys & Castings

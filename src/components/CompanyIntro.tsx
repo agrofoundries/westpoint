@@ -31,7 +31,7 @@ export const CompanyIntro: React.FC = () => {
                 fontFamily: "'Manrope', sans-serif !important" 
               }}
             >
-              HEAVY RAIL &amp; METALLURGICAL<br />
+              HEAVY RAIL &amp; metal<br />
               <span style={{ color: '#1B5E20', position: 'relative', display: 'inline-block' }}>
                 ENGINEERING EXCELLENCE
                 <span style={{ position: 'absolute', bottom: '-4px', left: 0, width: '100%', height: '4px', background: '#4CAF50' }} />

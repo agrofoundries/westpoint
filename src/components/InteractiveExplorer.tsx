@@ -873,40 +873,40 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     img: 'images/gettyimages-1316758701-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
-  {
-    id: 'other-50',
-    category: 'other',
-    categoryLabel: 'Other Industries',
-    title: 'Castings for Stone Crushers',
-    series: 'SERIES OTHER',
-    specs: 'Standard Specification',
-    compliance: ['ISO 9001:2015'],
-    axleLoad: 'Variable',
-    materialGrade: 'Standard Grade',
-    tensileStrength: 'N/A',
-    yieldStrength: 'N/A',
-    hardness: 'N/A',
-    desc: 'High-quality Castings for Stone Crushers manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/track-drive-gear-bulldozer-sprocket-mechanism-260nw-623455658.jpg',
-    keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
-  },
-  {
-    id: 'other-51',
-    category: 'other',
-    categoryLabel: 'Other Industries',
-    title: 'Ornamental Castings',
-    series: 'SERIES OTHER',
-    specs: 'Standard Specification',
-    compliance: ['ISO 9001:2015'],
-    axleLoad: 'Variable',
-    materialGrade: 'Standard Grade',
-    tensileStrength: 'N/A',
-    yieldStrength: 'N/A',
-    hardness: 'N/A',
-    desc: 'High-quality Ornamental Castings manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/highprecision-cast-metal-engine-block-260nw-2786927443.jpg',
-    keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
-  },
+  // {
+  //   id: 'other-50',
+  //   category: 'other',
+  //   categoryLabel: 'Other Industries',
+  //   title: 'Castings for Stone Crushers',
+  //   series: 'SERIES OTHER',
+  //   specs: 'Standard Specification',
+  //   compliance: ['ISO 9001:2015'],
+  //   axleLoad: 'Variable',
+  //   materialGrade: 'Standard Grade',
+  //   tensileStrength: 'N/A',
+  //   yieldStrength: 'N/A',
+  //   hardness: 'N/A',
+  //   desc: 'High-quality Castings for Stone Crushers manufactured by Westpoint Industries.',
+  //   img: 'https://www.shutterstock.com/image-photo/track-drive-gear-bulldozer-sprocket-mechanism-260nw-623455658.jpg',
+  //   keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
+  // },
+  // {
+  //   id: 'other-51',
+  //   category: 'other',
+  //   categoryLabel: 'Other Industries',
+  //   title: 'Ornamental Castings',
+  //   series: 'SERIES OTHER',
+  //   specs: 'Standard Specification',
+  //   compliance: ['ISO 9001:2015'],
+  //   axleLoad: 'Variable',
+  //   materialGrade: 'Standard Grade',
+  //   tensileStrength: 'N/A',
+  //   yieldStrength: 'N/A',
+  //   hardness: 'N/A',
+  //   desc: 'High-quality Ornamental Castings manufactured by Westpoint Industries.',
+  //   img: 'https://www.shutterstock.com/image-photo/highprecision-cast-metal-engine-block-260nw-2786927443.jpg',
+  //   keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
+  // },
   // {
   //   id: 'other-52',
   //   category: 'other',
@@ -1450,7 +1450,7 @@ export const InteractiveExplorer: React.FC<InteractiveExplorerProps> = ({
                   }}
                 >
                   {/* Card Media Preview Header */}
-                  <div 
+                  <div
                     onClick={() => onOpenProductDetail && onOpenProductDetail(product)}
                     style={{ position: 'relative', height: '200px', background: '#0F2E14', overflow: 'hidden', borderBottom: '1px solid #E2E8F0', cursor: onOpenProductDetail ? 'pointer' : 'default' }}
                   >
@@ -1500,7 +1500,7 @@ export const InteractiveExplorer: React.FC<InteractiveExplorerProps> = ({
                     </div>
 
                     {/* Product Title */}
-                    <h3 
+                    <h3
                       onClick={() => onOpenProductDetail && onOpenProductDetail(product)}
                       style={{
                         fontSize: '1.1rem',
@@ -1643,8 +1643,8 @@ export const InteractiveExplorer: React.FC<InteractiveExplorerProps> = ({
                 </thead>
                 <tbody>
                   {filteredProducts.map((p, idx) => (
-                    <tr 
-                      key={p.id} 
+                    <tr
+                      key={p.id}
                       style={{ borderBottom: '1px solid #E2E8F0', background: idx % 2 === 0 ? '#FFFFFF' : '#F8FAFC', cursor: onOpenProductDetail ? 'pointer' : 'default' }}
                       onClick={() => onOpenProductDetail && onOpenProductDetail(p)}
                     >

@@ -57,7 +57,7 @@ export const AuthoritiesApprovals: React.FC = () => {
       ]
     },
     {
-      category: 'METALLURGICAL QA ACCREDITATION',
+      category: 'metal QA ACCREDITATION',
       icon: ShieldCheck,
       desc: 'Full quality management system & metallurgy audits.',
       items: [

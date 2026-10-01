@@ -432,7 +432,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ activeMegaMenu, setActiveMeg
                 </li>
                 <li style={{ marginBottom: '10px' }}>
                   <a href="#knowledge" onClick={() => setActiveMegaMenu(null)} className="mega-link" style={{ textDecoration: 'none', color: '#1B5E20', fontWeight: 500, fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.15s ease' }}>
-                    <span style={{ color: '#1B5E20', fontWeight: 700 }}>›</span> ASTM A27 / A536 Metallurgical Specs
+                    <span style={{ color: '#1B5E20', fontWeight: 700 }}>›</span> ASTM A27 / A536 metal Specs
                   </a>
                 </li>
               </ul>

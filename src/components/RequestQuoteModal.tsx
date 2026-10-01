@@ -55,7 +55,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
               QUOTATION REQUEST SUBMITTED
             </h3>
             <p style={{ fontSize: '14px', color: '#2E7D32', lineHeight: 1.6, marginBottom: '2rem' }}>
-              Thank you for reaching out. A Westpoint Group Companies metallurgical sales engineer will review your specifications and contact you within 24 business hours.
+              Thank you for reaching out. A Westpoint Group Companies metal sales engineer will review your specifications and contact you within 24 business hours.
             </p>
             <button
               onClick={() => { setSubmitted(false); onClose(); }}

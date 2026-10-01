@@ -15,7 +15,7 @@ export const SustainabilitySection: React.FC = () => {
             </div>
 
             <h2 style={{ fontSize: '2.25rem', color: '#111827', fontWeight: 800, margin: '0 0 1.25rem 0', lineHeight: 1.2, textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
-              SUSTAINABLE METALLURGICAL PRODUCTION
+              SUSTAINABLE metal PRODUCTION
             </h2>
 
             <p style={{ fontSize: '1rem', color: '#2E7D32', lineHeight: 1.7, marginBottom: '2rem', fontWeight: 500, maxWidth: '640px', fontFamily: "'Manrope', sans-serif !important" }}>
@@ -70,7 +70,7 @@ export const SustainabilitySection: React.FC = () => {
             <div className="img-hover-zoom" style={{ border: '1px solid #E5E7EB', background: '#FAF6EE' }}>
               <img 
                 src="/images/rail_trackwork_mfg.png" 
-                alt="Westpoint Environmental Heavy Rail Metallurgical Foundry" 
+                alt="Westpoint Environmental Heavy Rail metal Foundry" 
                 style={{ width: '100%', height: '360px', objectFit: 'cover', display: 'block' }}
               />
             </div>

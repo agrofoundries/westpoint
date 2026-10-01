@@ -39,7 +39,7 @@ export const ManufacturingExcellence: React.FC<ManufacturingExcellenceProps> = (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '60px', alignItems: 'center' }}>
           <div>
             <span style={{ color: '#34D399', fontSize: '12px', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-              INDUSTRY 4.0 METALLURGICAL FOUNDRY
+              INDUSTRY 4.0 metal FOUNDRY
             </span>
             <h2 style={{ fontSize: '36px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '-0.02em', margin: '0 0 16px 0', lineHeight: 1.15 }}>
               {t.mfgTitle}
