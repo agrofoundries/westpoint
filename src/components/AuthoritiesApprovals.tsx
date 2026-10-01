@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Landmark, TrainTrack, Building2, Globe2, ShieldCheck, CheckCircle2, Award, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Landmark, TrainTrack, Building2, Globe2, ShieldCheck, Award, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const AuthoritiesApprovals: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);

@@ -147,7 +147,7 @@ const authorityApprovals = [
 ];
 
 export const TrustCertificationSection: React.FC = () => {
-  const [selectedCert, setSelectedCert] = useState<CertificationItem | null>(null);
+  const [, setSelectedCert] = useState<CertificationItem | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
   const approvalsSliderRef = useRef<HTMLDivElement>(null);
 
