@@ -62,12 +62,12 @@ export const TestingFacilities: React.FC = () => {
           {tests.map((test, idx) => {
             const IconComp = test.icon;
             return (
-              <div 
+              <div
                 key={idx}
                 className="card-hover-industrial"
-                style={{ 
-                  padding: '2rem 1.75rem', 
-                  background: '#FFFFFF', 
+                style={{
+                  padding: '2rem 1.75rem',
+                  background: '#FFFFFF',
                   border: '1px solid #D1D5DB',
                   borderRadius: '2px',
                   display: 'flex',
@@ -76,8 +76,8 @@ export const TestingFacilities: React.FC = () => {
                   boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
                 }}
               >
-                <div style={{ width: '44px', height: '44px', background: '#1B5E20', color: '#4CAF50', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid #4CAF50' }}>
-                  <IconComp size={22} color="#4CAF50" />
+                <div style={{ width: '44px', height: '44px', background: '#1B5E20', color: '#fff', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid #4CAF50' }}>
+                  <IconComp size={22} color="#fff" />
                 </div>
                 <div>
                   <h3 style={{ fontSize: '13.5px', fontWeight: 900, color: '#111827', letterSpacing: '0.04em', margin: '0 0 0.65rem 0', textTransform: 'uppercase', lineHeight: 1.35, fontFamily: "'Manrope', sans-serif !important" }}>

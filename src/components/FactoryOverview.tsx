@@ -4,8 +4,8 @@ import { ShieldCheck, TrainTrack, Box, Shield } from 'lucide-react';
 export const FactoryOverview: React.FC = () => {
   const stats = [
     {
-      value: '1.2M+',
-      label: 'SQ. FT. MANUFACTURING COMPLEX',
+      value: 'EXPANSIVE',
+      label: 'MANUFACTURING COMPLEX',
       sub: 'Integrated foundry, forge & CNC machining complexes',
       icon: TrainTrack
     },
@@ -16,13 +16,13 @@ export const FactoryOverview: React.FC = () => {
       icon: ShieldCheck
     },
     {
-      value: '25,000+',
+      value: 'THOUSANDS OF',
       label: 'PRODUCTS DELIVERED',
       sub: 'AREMA & AAR M-1003 certified rail components',
       icon: Box
     },
     {
-      value: '600+',
+      value: 'WORLDWIDE',
       label: 'GLOBAL CUSTOMERS',
       sub: 'Class I railroads, transit agencies & OEMs worldwide',
       icon: Shield

@@ -7,12 +7,12 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import CompanyIntro from './components/CompanyIntro';
 import FeaturedComponents from './components/FeaturedComponents';
-import InteractiveExplorer, { EXPLORER_PRODUCTS } from './components/InteractiveExplorer';
+import { EXPLORER_PRODUCTS } from './components/InteractiveExplorer';
 import type { ProductItem } from './components/InteractiveExplorer';
 import ProductShowcaseStrip from './components/ProductShowcaseStrip';
 import RailwayTelemetryWidget from './components/RailwayTelemetryWidget';
 import ManufacturingCapabilities from './components/ManufacturingCapabilities';
-// import SolidificationCalculator from './components/SolidificationCalculator';
+import SolidificationCalculator from './components/SolidificationCalculator';
 import ManufacturingProcess from './components/ManufacturingProcess';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import FactoryOverview from './components/FactoryOverview';
@@ -72,8 +72,8 @@ function App() {
   const handleOpenProductDetail = (itemOrTitle: ProductItem | string) => {
     if (typeof itemOrTitle === 'string') {
       const q = itemOrTitle.toLowerCase().trim();
-      const match = EXPLORER_PRODUCTS.find(p => 
-        p.title.toLowerCase().includes(q) || 
+      const match = EXPLORER_PRODUCTS.find(p =>
+        p.title.toLowerCase().includes(q) ||
         q.includes(p.title.toLowerCase()) ||
         p.series.toLowerCase().includes(q) ||
         p.desc.toLowerCase().includes(q)
@@ -86,9 +86,9 @@ function App() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#F8F9FA', color: '#1B5E20' }}>
-      
+
       {/* Top Scroll Reading Progress Bar */}
-      <div 
+      <div
         className="scroll-progress-bar"
         style={{ width: `${scrollProgress}%` }}
         role="progressbar"
@@ -102,32 +102,32 @@ function App() {
 
 
       {/* 02 Main Navigation & 03 Mega Menu */}
-      <Header 
-        onRequestQuoteClick={handleOpenQuote} 
+      <Header
+        onRequestQuoteClick={handleOpenQuote}
         onOpenExplorer={handleOpenExplorer}
       />
 
       <main id="main-content">
         {/* 04 Full Screen Hero Section */}
-        <HeroSection 
+        <HeroSection
           onExploreClick={handleOpenExplorer}
           onRequestQuoteClick={handleOpenQuote}
           onWatchVideoClick={handleOpenVideo}
         />
 
-        {/* 05 Company Introduction */}
+        {/* 05 Company Introduction (Text Heavy - Disabled) */}
         <CompanyIntro />
 
         {/* 06 Featured Rail Components (All Products) */}
         <FeaturedComponents onOpenProductDetail={handleOpenProductDetail} />
 
         {/* 06B Interactive Engineering & Product Spec Explorer */}
-        <InteractiveExplorer 
-          onRequestQuoteForProduct={() => setIsQuoteModalOpen(true)} 
+        {/* <InteractiveExplorer
+          onRequestQuoteForProduct={() => setIsQuoteModalOpen(true)}
           onOpenProductDetail={handleOpenProductDetail}
-        />
+        /> */}
 
-        {/* 07 Isolated Metal Castings Showcase Strip */}
+        {/* 07 Isolated Metal Castings Showcase Strip (Highly Graphical) */}
         <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} />
 
         {/* 08 Live Interactive Railway Telemetry & Speed Monitor */}
@@ -137,7 +137,7 @@ function App() {
         <ManufacturingCapabilities />
 
         {/* 10 Solidification & Metallurgy Calculator - Hidden per user request */}
-        {/* <SolidificationCalculator /> */}
+        <SolidificationCalculator />
 
         {/* 11 Manufacturing Process Timeline */}
         <ManufacturingProcess />
@@ -145,10 +145,10 @@ function App() {
         {/* 12 Railway Sectors We Serve */}
         <IndustriesWeServe />
 
-        {/* 13 Factory Section with Stats Overlay */}
+        {/* 13 Factory Section with Stats Overlay (Highly Graphical) */}
         <FactoryOverview />
 
-        {/* 14 Engineering Excellence */}
+        {/* 14 Engineering Excellence (Text Heavy - Disabled) */}
         <EngineeringExcellence />
 
         {/* 15 International Standards & Wheelsets Showcase */}
@@ -174,7 +174,7 @@ function App() {
       <Footer />
 
       {/* Interactive Modals & Product Detail Page */}
-      <ProductDetailPage 
+      <ProductDetailPage
         isOpen={!!selectedProductForDetail}
         product={selectedProductForDetail}
         onClose={() => setSelectedProductForDetail(null)}
@@ -187,8 +187,8 @@ function App() {
 
       <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={handleCloseQuote} />
       <WatchVideoModal isOpen={isVideoModalOpen} onClose={handleCloseVideo} />
-      <ProductExplorerModal 
-        isOpen={isExplorerModalOpen} 
+      <ProductExplorerModal
+        isOpen={isExplorerModalOpen}
         onClose={handleCloseExplorer}
         onRequestQuoteForProduct={() => {
           setIsExplorerModalOpen(false);

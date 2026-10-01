@@ -10,7 +10,7 @@ export const CompanyIntro: React.FC = () => {
 
       <div className="container-custom" style={{ position: 'relative', zIndex: 10 }}>
         <div className="company-intro-grid">
-          
+
           {/* Left Side: Storytelling & Why Choose Us */}
           <div className="company-intro-col-left">
             <div className="eyebrow" style={{ letterSpacing: '0.2em', marginBottom: '1rem', fontFamily: "'Manrope', sans-serif !important" }}>
@@ -19,16 +19,16 @@ export const CompanyIntro: React.FC = () => {
             </div>
 
             {/* High-Impact Uppercase Swiss Industrial Heading */}
-            <h2 
-              style={{ 
-                fontSize: 'clamp(2.5rem, 4.2vw, 3.8rem)', 
-                color: '#111827', 
-                fontWeight: 900, 
-                lineHeight: 1.06, 
-                marginBottom: '1.5rem', 
-                letterSpacing: '-0.025em', 
+            <h2
+              style={{
+                fontSize: 'clamp(2.5rem, 4.2vw, 3.8rem)',
+                color: '#4CAF50',
+                fontWeight: 900,
+                lineHeight: 1.06,
+                marginBottom: '1.5rem',
+                letterSpacing: '-0.025em',
                 textTransform: 'uppercase',
-                fontFamily: "'Manrope', sans-serif !important" 
+                fontFamily: "'Manrope', sans-serif !important"
               }}
             >
               HEAVY RAIL &amp; metal<br />
@@ -39,36 +39,36 @@ export const CompanyIntro: React.FC = () => {
             </h2>
 
             <p style={{ fontSize: '1.1rem', color: '#2E7D32', lineHeight: 1.7, marginBottom: '2rem', maxWidth: '640px', fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
-              Westpoint Group manufactures the heavy-duty steel components that keep freight trains, subways, and passenger rail systems operating safely. We specialize in forged wheel axles, undercarriage bogies, and durable track switch frogs engineered to endure millions of tons of cargo without failing.
+              At Westpoint Group, we build the heavy-duty steel parts that keep freight trains, subways, and passenger railways running safely every day. From strong wheel axles and undercarriages to tough track switches, we make reliable components designed to handle millions of tons of cargo without ever letting you down.
             </p>
 
             {/* Why Choose Westpoint Group Companies - 4 Story Pillars */}
             <div style={{ marginBottom: '2.25rem', padding: '1.25rem', background: '#FFFFFF', border: '1px solid #E5E7EB', borderLeft: '4px solid #4CAF50', borderRadius: '2px', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}>
               <strong style={{ fontSize: '12.5px', fontWeight: 900, color: '#1B5E20', letterSpacing: '0.1em', textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem', fontFamily: "'Manrope', sans-serif !important" }}>
-                WHY RAILROADS &amp; INDUSTRIAL BUYERS PARTNER WITH WESTPOINT
+                WHY CUSTOMERS CHOOSE WESTPOINT
               </strong>
               <div className="grid-responsive-2" style={{ gap: '0.85rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <CheckCircle2 size={15} color="#4CAF50" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>Certified Steel Foundry</span>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>Certified Quality Manufacturing</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <CheckCircle2 size={15} color="#4CAF50" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>100% Ultrasonic Soundness Testing</span>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>Every Part is Fully Tested</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <CheckCircle2 size={15} color="#4CAF50" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>Heavy 36-Ton Axle Load Rating</span>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>Built for Heavy Loads</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <CheckCircle2 size={15} color="#4CAF50" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>U.S. &amp; International Standards Compliant</span>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>Meets Global Safety Standards</span>
                 </div>
               </div>
             </div>
 
-            <a 
-              href="#capabilities" 
+            <a
+              href="#capabilities"
               className="link-hover-arrow"
             >
               <span>DISCOVER OUR MANUFACTURING FOOTPRINT</span>
@@ -79,7 +79,7 @@ export const CompanyIntro: React.FC = () => {
           {/* Right Side: Heavy Machined Axlebox Housing Photo */}
           <div className="company-intro-col-right">
             <div className="img-hover-zoom" style={{ border: '1px solid #E5E7EB', background: '#FFFFFF', boxShadow: '0 20px 45px rgba(27, 94, 32, 0.12)', borderRadius: '2px', position: 'relative' }}>
-              
+
               {/* Badge overlay */}
               <div style={{ position: 'absolute', top: '14px', right: '14px', zIndex: 20, background: '#1B5E20', color: '#FFFFFF', fontSize: '9.5px', fontWeight: 900, padding: '4px 10px', border: '1px solid #4CAF50', letterSpacing: '0.1em', fontFamily: "'Manrope', sans-serif !important" }}>
                 AAR M-1003 QA
@@ -87,9 +87,9 @@ export const CompanyIntro: React.FC = () => {
 
               {/* Dynamic Image */}
               <div style={{ height: '440px', overflow: 'hidden', position: 'relative', background: '#F8F9FA' }}>
-                <img 
-                  src="/images/istockphoto-1196704251-2048x2048.jpg" 
-                  alt="FINISH MACHINED AXLEBOX HOUSING" 
+                <img
+                  src="/images/istockphoto-1196704251-2048x2048.jpg"
+                  alt="FINISH MACHINED AXLEBOX HOUSING"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
               </div>
@@ -104,7 +104,7 @@ export const CompanyIntro: React.FC = () => {
                     Forged Carbon Steel ASTM A668 • 5-Axis CNC Finished
                   </span>
                 </div>
-                
+
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <ShieldCheck size={16} color="#4CAF50" />
                   <span style={{ fontSize: '10.5px', fontWeight: 900, color: '#4CAF50', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>PASSED NDT</span>

@@ -1,7 +1,18 @@
-import React from 'react';
-import { Landmark, TrainTrack, Building2, Globe2, ShieldCheck, CheckCircle2, Award, ArrowRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Landmark, TrainTrack, Building2, Globe2, ShieldCheck, CheckCircle2, Award, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const AuthoritiesApprovals: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.clientWidth;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
   const approvals = [
     {
       category: 'RDSO APPROVED CLASS A FOUNDRY',
@@ -78,42 +89,119 @@ export const AuthoritiesApprovals: React.FC = () => {
           <div>
             <div className="eyebrow">
               <span style={{ display: 'inline-block', width: '32px', height: '3px', background: '#4CAF50' }} />
-              <span style={{ color: '#4CAF50' }}>RDSO CLASS A FOUNDRY &amp; INSTITUTIONAL ACCREDITATION</span>
+              <span style={{ color: '#1B5E20' }}>RDSO CLASS A FOUNDRY &amp; INSTITUTIONAL ACCREDITATION</span>
             </div>
             <h2 style={{ fontSize: '2.25rem', color: '#111827', fontWeight: 900, margin: 0, textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
               AUTHORITIES &amp; ACCREDITATIONS
             </h2>
           </div>
 
-          <a href="#contact" className="link-hover-arrow">
-            <span>REQUEST AUDIT DOCUMENTATION</span>
-            <ArrowRight size={14} color="#4CAF50" />
-          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <button
+                onClick={() => scroll('left')}
+                style={{
+                  background: '#1B5E20',
+                  border: '1.5px solid #4CAF50',
+                  borderRadius: '2px',
+                  width: '38px',
+                  height: '38px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = '#FAF6EE';
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) svg.style.stroke = '#1B5E20';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = '#1B5E20';
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) svg.style.stroke = '#FFFFFF';
+                }}
+              >
+                <ChevronLeft size={22} color="#FFFFFF" />
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                style={{
+                  background: '#1B5E20',
+                  border: '1.5px solid #4CAF50',
+                  borderRadius: '2px',
+                  width: '38px',
+                  height: '38px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s'
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = '#FAF6EE';
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) svg.style.stroke = '#1B5E20';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = '#1B5E20';
+                  const svg = e.currentTarget.querySelector('svg');
+                  if (svg) svg.style.stroke = '#FFFFFF';
+                }}
+              >
+                <ChevronRight size={22} color="#FFFFFF" />
+              </button>
+            </div>
+            <a href="#contact" className="link-hover-arrow">
+              <span>REQUEST AUDIT DOCUMENTATION</span>
+              <ArrowRight size={14} color="#1B5E20" />
+            </a>
+          </div>
         </div>
 
-        {/* 6 Full Detailed Regulatory Cards Grid */}
-        <div className="grid-responsive-3" style={{ marginBottom: '2.5rem' }}>
+        {/* 6 Full Detailed Regulatory Cards Horizontal Slider */}
+        <div
+          ref={scrollRef}
+          className="cert-slider"
+          style={{
+            display: 'flex',
+            gap: '1.5rem',
+            overflowX: 'auto',
+            marginBottom: '2.5rem',
+            scrollSnapType: 'x mandatory',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
+        >
+          <style dangerouslySetInnerHTML={{
+            __html: `
+            .cert-slider::-webkit-scrollbar { display: none; }
+          `}} />
           {approvals.map((app, idx) => {
             const IconComp = app.icon;
             return (
-              <div 
+              <div
                 key={idx}
                 className="card-hover-industrial"
-                style={{ 
-                  background: '#FFFFFF', 
-                  border: '1px solid #D1D5DB', 
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D1D5DB',
                   padding: '1.75rem',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   borderRadius: '4px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                  minWidth: 'calc(33.333% - 1rem)',
+                  flexShrink: 0,
+                  scrollSnapAlign: 'start'
                 }}
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '1rem', borderBottom: '1px solid #E5E7EB', paddingBottom: '0.85rem' }}>
                     <div style={{ width: '46px', height: '46px', background: '#1B5E20', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, border: '1px solid #4CAF50' }}>
-                      <IconComp size={22} color="#4CAF50" />
+                      <IconComp size={22} color="#fff" />
                     </div>
                     <h3 style={{ fontSize: '16.5px', fontWeight: 900, color: '#111827', letterSpacing: '0.02em', textTransform: 'uppercase', margin: 0, lineHeight: 1.35, fontFamily: "'Manrope', sans-serif !important" }}>
                       {app.category}
@@ -127,14 +215,7 @@ export const AuthoritiesApprovals: React.FC = () => {
                     </p>
                   </div>
 
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                    {app.items.map((item, iIdx) => (
-                      <li key={iIdx} style={{ fontSize: '14px', color: '#1F2937', fontWeight: 600, display: 'flex', alignItems: 'flex-start', gap: '10px', lineHeight: 1.5, fontFamily: "'Manrope', sans-serif !important" }}>
-                        <CheckCircle2 size={17} color="#16A34A" style={{ flexShrink: 0, marginTop: '2px' }} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+
                 </div>
               </div>
             );

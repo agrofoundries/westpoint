@@ -275,7 +275,7 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
                 <span style={{ display: 'inline-block', width: '32px', height: '3px', background: '#4CAF50' }} />
                 <span>RDSO, AREMA &amp; AAR M-1003 CERTIFIED CATALOG</span>
               </div>
-              <h2 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3rem)', color: '#111827', fontWeight: 900, margin: 0, textTransform: 'uppercase', letterSpacing: '-0.02em', fontFamily: "'Manrope', sans-serif !important" }}>
+              <h2 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3rem)', color: '#4caf50', fontWeight: 900, margin: 0, textTransform: 'uppercase', letterSpacing: '-0.02em', fontFamily: "'Manrope', sans-serif !important" }}>
                 FEATURED WAGONS, BOGIES &amp; STEEL CASTINGS
               </h2>
             </div>
@@ -306,10 +306,10 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
                   onMouseLeave={e => {
                     e.currentTarget.style.background = '#1B5E20';
                     const svg = e.currentTarget.querySelector('svg');
-                    if (svg) svg.style.stroke = '#4CAF50';
+                    if (svg) svg.style.stroke = '#FFFFFF';
                   }}
                 >
-                  <ChevronLeft size={22} color="#4CAF50" />
+                  <ChevronLeft size={22} color="#FFFFFF" />
                 </button>
                 <button
                   onClick={() => scroll('right')}
@@ -334,10 +334,10 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
                   onMouseLeave={e => {
                     e.currentTarget.style.background = '#1B5E20';
                     const svg = e.currentTarget.querySelector('svg');
-                    if (svg) svg.style.stroke = '#4CAF50';
+                    if (svg) svg.style.stroke = '#FFFFFF';
                   }}
                 >
-                  <ChevronRight size={22} color="#4CAF50" />
+                  <ChevronRight size={22} color="#FFFFFF" />
                 </button>
               </div>
 
@@ -414,7 +414,7 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
                 }}
               >
                 {/* Product Photo */}
-                <div style={{ height: '210px', overflow: 'hidden', background: '#FFFFFF', position: 'relative', flexShrink: 0, borderBottom: '1px solid #E5E7EB', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ height: '210px', overflow: 'hidden', background: '#000000', position: 'relative', flexShrink: 0, borderBottom: '1px solid #E5E7EB', padding: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <img
                     src={item.img}
                     alt={item.title}

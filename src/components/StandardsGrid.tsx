@@ -83,8 +83,8 @@ export const StandardsGrid: React.FC = () => {
                   <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#111827', letterSpacing: '0.02em', fontFamily: "'Manrope', sans-serif !important" }}>
                     {std.code}
                   </span>
-                  <div style={{ width: '28px', height: '28px', borderRadius: '2px', background: '#1B5E20', color: '#4CAF50', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <ShieldCheck size={16} color="#4CAF50" />
+                  <div style={{ width: '28px', height: '28px', borderRadius: '2px', background: '#1B5E20', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <ShieldCheck size={16} color="#FFFFFF" />
                   </div>
                 </div>
 
