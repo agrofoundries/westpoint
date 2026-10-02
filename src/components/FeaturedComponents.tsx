@@ -275,7 +275,7 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
                 <span style={{ display: 'inline-block', width: '32px', height: '3px', background: '#4CAF50' }} />
                 <span>RDSO, AREMA &amp; AAR M-1003 CERTIFIED CATALOG</span>
               </div>
-              <h2 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3rem)', color: '#4caf50', fontWeight: 900, margin: 0, textTransform: 'uppercase', letterSpacing: '-0.02em', fontFamily: "'Manrope', sans-serif !important" }}>
+              <h2 style={{ fontSize: 'clamp(2.2rem, 3.8vw, 3rem)', color: '#111827', fontWeight: 900, margin: 0, textTransform: 'uppercase', letterSpacing: '-0.02em', fontFamily: "'Manrope', sans-serif !important" }}>
                 FEATURED WAGONS, BOGIES &amp; STEEL CASTINGS
               </h2>
             </div>

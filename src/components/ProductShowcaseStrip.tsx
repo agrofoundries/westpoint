@@ -64,7 +64,7 @@ export const ProductShowcaseStrip: React.FC<ProductShowcaseStripProps> = ({ onOp
           </h2>
         </div>
 
-        {/* 6 Isolated Product Cards Grid (100% Component Stock Photos Fitted) */}
+        {/* 6 Isolated Product Cards Grid (Sleek Dark Black Cards with Emerald Accents) */}
         <div className="grid-responsive-6">
           {parts.map((item, idx) => (
             <div 
@@ -72,38 +72,54 @@ export const ProductShowcaseStrip: React.FC<ProductShowcaseStripProps> = ({ onOp
               onClick={() => onOpenProductDetail && onOpenProductDetail(item.fullTitle || item.title)}
               className="card-hover-industrial img-hover-zoom"
               style={{
-                background: '#FFFFFF',
-                border: '1px solid #D1D5DB',
-                padding: '1.25rem 1rem',
-                borderRadius: '2px',
+                background: 'linear-gradient(165deg, #18201C 0%, #0D120F 100%)',
+                border: '1.5px solid rgba(76, 175, 80, 0.4)',
+                padding: '1.15rem 1rem',
+                borderRadius: '8px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                height: '260px',
+                height: '275px',
                 cursor: 'pointer',
-                boxShadow: '0 8px 20px rgba(0,0,0,0.04)'
+                boxShadow: '0 10px 28px rgba(0,0,0,0.18)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = '#69F0AE';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 16px 36px rgba(76, 175, 80, 0.28)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'rgba(76, 175, 80, 0.4)';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 10px 28px rgba(0,0,0,0.18)';
               }}
             >
-              {/* Product Photo - Perfect Cover/Contain Fit */}
-              <div style={{ height: '130px', overflow: 'hidden', background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem', border: '1px solid #F1F3F5', padding: '4px' }}>
+              {/* Product Photo - Dark Precision Frame */}
+              <div style={{ height: '135px', overflow: 'hidden', background: '#050806', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '6px', padding: '6px' }}>
                 <img 
                   src={item.img} 
                   alt={item.fullTitle} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '4px' }}
                 />
               </div>
 
-              {/* Product Label & Arrow */}
+              {/* Product Label & Specs */}
               <div>
-                <h3 style={{ fontSize: '11px', fontWeight: 900, color: '#111827', margin: '0 0 4px 0', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: "'Manrope', sans-serif !important" }}>
+                <h3 style={{ fontSize: '12px', fontWeight: 900, color: '#FFFFFF', margin: '0 0 5px 0', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: "'Manrope', sans-serif !important" }}>
                   {item.title}
                 </h3>
-                <span style={{ fontSize: '9.5px', color: '#4CAF50', fontWeight: 800, display: 'block', marginBottom: '8px', fontFamily: "'Manrope', sans-serif !important" }}>
+                <span style={{ fontSize: '10px', color: '#69F0AE', fontWeight: 800, display: 'block', marginBottom: '10px', letterSpacing: '0.04em', fontFamily: "'Manrope', sans-serif !important" }}>
                   {item.specs}
                 </span>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <ArrowRight size={14} color="#1B5E20" />
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '8px' }}>
+                  <span style={{ fontSize: '9.5px', color: '#A5D6A7', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
+                    VIEW SPECS
+                  </span>
+                  <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'rgba(76, 175, 80, 0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <ArrowRight size={13} color="#69F0AE" />
+                  </div>
                 </div>
               </div>
 

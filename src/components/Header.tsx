@@ -164,89 +164,40 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
         <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '12px 0' }}>
           <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '14px' }}>
 
-            {/* Corporate Division Emblem */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <Logo variant="light" />
+            {/* Corporate Group Emblem (First / Left) */}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Logo division="group" height="78px" />
             </div>
 
             {/* Technical Search Bar (Desktop) */}
-            <div className="desktop-nav-only" style={{ flex: 1, maxWidth: '440px', position: 'relative' }}>
+            <div className="desktop-nav-only" style={{ flex: 1, maxWidth: '460px', position: 'relative', margin: '0 20px' }}>
               <input
                 type="text"
                 placeholder="Search AREMA specs, CAD models, products..."
                 onClick={() => { if (onOpenExplorer) onOpenExplorer(); }}
                 style={{
                   width: '100%',
-                  padding: '10px 40px 10px 16px',
-                  fontSize: '13px',
+                  padding: '12px 42px 12px 18px',
+                  fontSize: '13.5px',
                   fontWeight: 500,
                   background: '#F8F9FA',
-                  border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  border: '1.5px solid #E5E7EB',
+                  borderRadius: '6px',
                   outline: 'none',
                   color: '#1B5E20',
                   fontFamily: "'Manrope', sans-serif",
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  transition: 'border-color 0.2s, box-shadow 0.2s'
                 }}
+                onFocus={e => { e.currentTarget.style.borderColor = '#4CAF50'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(76, 175, 80, 0.15)'; }}
+                onBlur={e => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
               />
-              <Search size={16} color="#4CAF50" style={{ position: 'absolute', right: '14px', top: '50%', transform: 'translateY(-50%)' }} />
+              <Search size={18} color="#4CAF50" style={{ position: 'absolute', right: '14px', top: '50%', transform: 'translateY(-50%)' }} />
             </div>
 
-            {/* Action Buttons: Product Explorer + Request Quote CTA (Desktop) */}
-            <div className="desktop-nav-only" style={{ alignItems: 'center', gap: '12px' }}>
-              {/* Product Explorer Nav CTA */}
-              <button
-                onClick={() => {
-                  if (onOpenExplorer) {
-                    onOpenExplorer();
-                  } else {
-                    const el = document.getElementById('explorer');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                style={{
-                  padding: '10px 18px',
-                  fontSize: '12.5px',
-                  fontWeight: 800,
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  borderRadius: '6px',
-                  background: '#E8F5E9',
-                  color: '#1B5E20',
-                  border: '1.5px solid #4CAF50',
-                  transition: 'all 0.2s'
-                }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#1B5E20'; e.currentTarget.style.color = '#FFF'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#E8F5E9'; e.currentTarget.style.color = '#1B5E20'; }}
-              >
-                <Compass size={16} />
-                <span>PRODUCT EXPLORER</span>
-              </button>
-
-              <button
-                onClick={onRequestQuoteClick}
-                className="btn-animated"
-                style={{
-                  padding: '12px 26px',
-                  fontSize: '13px',
-                  fontWeight: 900,
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  borderRadius: '2px',
-                  fontFamily: "'Manrope', sans-serif"
-                }}
-              >
-                <span>REQUEST QUOTE</span>
-                <ArrowRight size={15} color="#FFFFFF" />
-              </button>
+            {/* Right Division Emblem: Infrastructure (Desktop) */}
+            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center' }}>
+              <Logo division="infrastructure" height="78px" />
             </div>
 
             {/* Mobile Header Right Controls: Fast Explorer Trigger + Hamburger Menu Toggle */}

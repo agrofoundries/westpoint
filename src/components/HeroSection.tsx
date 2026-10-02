@@ -11,19 +11,33 @@ interface HeroSectionProps {
 const slidesData = [
   {
     id: 1,
-    tag: '01 TRAIN PARTS',
-    eyebrow: 'Building the future of transit',
-    headline: 'Our Foundries keeping the rails going ...',
-    desc: 'We make heavy-duty steel parts for trains and subways. From axles to track switches, we build the strong metal pieces that keep North American rail lines moving safely.',
+    tag: '01 FOUNDRIES & TRANSIT',
+    eyebrow: 'Heavy-Duty Rail Manufacturing',
+    headline: 'Our Foundries keeping the rails going......',
     mediaType: 'video',
     mediaSrc: '/videos/20191217_Snippet_01_16by9.mp4',
   },
   {
     id: 2,
-    tag: '02 INNOVATION',
-    eyebrow: 'Better transit technology',
-    headline: 'Railing into the future ...',
-    desc: 'We use advanced materials and modern manufacturing to build rail parts that last longer and keep everyone safe.',
+    tag: '02 TRANSIT INNOVATION',
+    eyebrow: 'Next-Generation Rail Technology',
+    headline: 'Railing into the future....',
+    mediaType: 'video',
+    mediaSrc: '/videos/20191217_Snippet_01_16by9.mp4',
+  },
+  {
+    id: 3,
+    tag: '03 METALLURGICAL ALLIANCES',
+    eyebrow: 'Westpoint Global Network',
+    headline: 'Foundry associations n engineering on Westpoint',
+    mediaType: 'video',
+    mediaSrc: '/videos/20191217_Snippet_01_16by9.mp4',
+  },
+  {
+    id: 4,
+    tag: '04 CONTINUOUS MOBILITY',
+    eyebrow: 'Non-Stop Infrastructure',
+    headline: 'Making you on the move non stop......courtesy Westpoint',
     mediaType: 'video',
     mediaSrc: '/videos/20191217_Snippet_01_16by9.mp4',
   }
@@ -52,13 +66,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
         { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out' }
       );
     }
-    if (bgRef.current) {
-      gsap.fromTo(
-        bgRef.current,
-        { opacity: 0.8, scale: 1.05 },
-        { opacity: 1, scale: 1, duration: 1.2, ease: 'power2.out' }
-      );
-    }
   }, [currentSlide]);
 
   // Auto-play timer
@@ -84,76 +91,139 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
         color: '#FFFFFF'
       }}
     >
-      {/* Background Media */}
+      {/* Background Media - Consistent continuous video across all slides */}
       <div ref={bgRef} style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        {slide.mediaType === 'video' ? (
-          <video
-            key={slide.mediaSrc}
-            src={slide.mediaSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        ) : (
-          <img
-            key={slide.mediaSrc}
-            src={slide.mediaSrc}
-            alt={slide.headline}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        )}
+        <video
+          src="/videos/20191217_Snippet_01_16by9.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
         {/* Dark Overlay for Text Readability */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'rgba(0,0,0,0.4)'
+            background: 'linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.35) 100%)'
           }}
         />
       </div>
 
-      <div className="container-custom" style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', paddingTop: '4rem', paddingBottom: '2rem' }}>
-        <div ref={textRef} style={{ maxWidth: '650px', textAlign: 'left', marginLeft: '5%' }}>
+      <div className="container-custom" style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', paddingTop: '4.5rem', paddingBottom: '2.5rem' }}>
+        <div ref={textRef} style={{ maxWidth: '850px', textAlign: 'left', marginLeft: '3%' }}>
+
+          {/* Westpoint Foundry & Engineering Pill Badge */}
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '10px',
+            padding: '7px 18px',
+            borderRadius: '9999px',
+            background: 'rgba(27, 94, 32, 0.75)',
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(129, 199, 132, 0.5)',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+            marginBottom: '1.25rem'
+          }}>
+            <span style={{
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              background: '#69F0AE',
+              boxShadow: '0 0 10px #69F0AE'
+            }} />
+            <span style={{
+              fontSize: '11.5px',
+              fontWeight: 800,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#E8F5E9',
+              fontFamily: "'Manrope', sans-serif !important"
+            }}>
+              Foundry Associations &amp; Engineering on Westpoint
+            </span>
+          </div>
 
           {/* Eyebrow Label */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', marginBottom: '1.5rem', letterSpacing: '0.2em' }}>
-            <span style={{ display: 'inline-block', width: '40px', height: '2px', background: '#4CAF50' }} />
-            <span style={{ color: '#A5D6A7', fontWeight: 800, fontSize: '0.9rem', textTransform: 'uppercase' }}>{slide.eyebrow}</span>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', marginBottom: '1rem', letterSpacing: '0.15em' }}>
+            <span style={{ display: 'inline-block', width: '36px', height: '2px', background: '#4CAF50' }} />
+            <span style={{ color: '#A5D6A7', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase' }}>
+              {slide.tag} &bull; {slide.eyebrow}
+            </span>
           </div>
 
           {/* Headline */}
           <h1
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontSize: 'clamp(2.3rem, 4.6vw, 3.8rem)',
               fontWeight: 900,
-              lineHeight: 1.1,
+              lineHeight: 1.12,
               color: '#FFFFFF',
               letterSpacing: '-0.02em',
               margin: '0 0 1.5rem 0',
               textTransform: 'uppercase',
               fontFamily: "'Manrope', sans-serif !important",
-              textShadow: '0 4px 12px rgba(0,0,0,0.3)'
+              textShadow: '0 4px 14px rgba(0,0,0,0.45)'
             }}
           >
             {slide.headline}
           </h1>
 
-          {/* Description */}
-          <p
+          {/* Signature Official Corporate Tagline Callout */}
+          <div
             style={{
-              fontSize: '1.15rem',
-              color: 'rgba(255, 255, 255, 0.95)',
-              lineHeight: 1.6,
-              margin: '0 0 2.5rem 0',
-              fontWeight: 500,
-              fontFamily: "'Manrope', sans-serif !important",
-              textShadow: '0 2px 4px rgba(0,0,0,0.2)'
+              margin: '0 0 2rem 0',
+              padding: '12px 22px',
+              background: 'linear-gradient(135deg, rgba(27, 94, 32, 0.8) 0%, rgba(15, 51, 20, 0.9) 100%)',
+              borderLeft: '4px solid #FFD54F',
+              borderTop: '1px solid rgba(255, 255, 255, 0.15)',
+              borderRight: '1px solid rgba(255, 255, 255, 0.1)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+              borderRadius: '0 8px 8px 0',
+              backdropFilter: 'blur(10px)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px',
+              maxWidth: '100%'
             }}
           >
-            {slide.desc}
-          </p>
+            <span style={{
+              color: '#FFD54F',
+              fontSize: '1.3rem',
+              lineHeight: 1,
+              fontFamily: 'serif',
+              fontWeight: 900,
+              userSelect: 'none'
+            }}>
+              &#10077;
+            </span>
+            <span
+              style={{
+                fontFamily: "'Manrope', sans-serif !important",
+                fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)',
+                fontWeight: 800,
+                fontStyle: 'italic',
+                color: '#FFF9C4',
+                letterSpacing: '0.02em',
+                textShadow: '0 2px 8px rgba(0,0,0,0.5)'
+              }}
+            >
+              Making you on the move non stop......courtesy Westpoint
+            </span>
+            <span style={{
+              color: '#FFD54F',
+              fontSize: '1.3rem',
+              lineHeight: 1,
+              fontFamily: 'serif',
+              fontWeight: 900,
+              userSelect: 'none'
+            }}>
+              &#10078;
+            </span>
+          </div>
 
           {/* Action Buttons */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '1rem', flexWrap: 'wrap', marginBottom: '3.5rem' }}>
@@ -327,8 +397,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
                 <TrainTrack size={22} color="#81C784" />
               </div>
               <div>
-                <strong style={{ fontSize: '12px', fontWeight: 900, color: '#FFFFFF', display: 'block', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>NORTH AMERICAN FOUNDRY</strong>
-                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Leader in heavy rail manufacturing</span>
+                <strong style={{ fontSize: '12px', fontWeight: 900, color: '#FFFFFF', display: 'block', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>WESTPOINT FOUNDRY ASSOCIATIONS</strong>
+                <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.7)', fontFamily: "'Manrope', sans-serif !important", fontWeight: 600 }}>Associations &amp; Heavy Rail Engineering</span>
               </div>
             </div>
 

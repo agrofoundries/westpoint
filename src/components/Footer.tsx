@@ -77,8 +77,8 @@ export const Footer: React.FC = () => {
           {/* ==================== LEFT COLUMN: BRAND & CONTACT ==================== */}
           <div>
             {/* Logo Badge */}
-            <div style={{ marginBottom: '1.25rem', display: 'inline-block' }}>
-              <Logo variant="dark" />
+            <div style={{ marginBottom: '1.25rem', display: 'inline-block', background: '#FFFFFF', padding: '6px 14px', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}>
+              <Logo division="group" height="42px" />
             </div>
 
             {/* Mission Statement */}
@@ -405,6 +405,117 @@ export const Footer: React.FC = () => {
 
           </div>
 
+        </div>
+      </div>
+
+      {/* ==================== GROUP ENTERPRISES & ASSOCIATIONS STRIP ==================== */}
+      <div style={{
+        background: 'rgba(0, 0, 0, 0.25)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.12)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
+        padding: '2.5rem 0'
+      }}>
+        <div className="container-custom" style={{ paddingLeft: '2rem', paddingRight: '2.5rem' }}>
+          <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+            <div>
+              <span style={{ fontSize: '11px', fontWeight: 900, color: '#81C784', letterSpacing: '0.14em', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>
+                Westpoint Corporate Network
+              </span>
+              <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFFFFF', margin: 0, letterSpacing: '-0.01em', fontFamily: "'Manrope', sans-serif !important" }}>
+                Westpoint Group of Enterprises &amp; Associated Divisions
+              </h4>
+            </div>
+            <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.75)', fontWeight: 600, fontFamily: "'Manrope', sans-serif !important" }}>
+              Integrated Rail, Water, Infrastructure &amp; Metallurgy
+            </span>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
+            gap: '1.5rem'
+          }}>
+            {/* 01 Westpoint Infrastructure */}
+            <div style={{
+              background: '#FFFFFF',
+              borderRadius: '10px',
+              padding: '1.4rem 1.6rem',
+              boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              border: '1.5px solid rgba(76, 175, 80, 0.3)',
+              transition: 'transform 0.2s, box-shadow 0.2s'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                <img
+                  src="/logos/westpoint-infrastructure.png"
+                  alt="Westpoint Infrastructure Logo"
+                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
+                />
+                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  Infrastructure Division
+                </span>
+              </div>
+              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
+                Heavy rail trackwork, transit castings, rolling stock forgings, base plates, and metallurgical infrastructure engineering.
+              </p>
+            </div>
+
+            {/* 02 Westpoint Water */}
+            <div style={{
+              background: '#FFFFFF',
+              borderRadius: '10px',
+              padding: '1.4rem 1.6rem',
+              boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              border: '1.5px solid rgba(76, 175, 80, 0.3)',
+              transition: 'transform 0.2s, box-shadow 0.2s'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                <img
+                  src="/logos/westpoint-water.png"
+                  alt="Westpoint Water Logo"
+                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
+                />
+                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  Water Division
+                </span>
+              </div>
+              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
+                Advanced industrial water management, municipal hydraulics, heavy ductile pumping systems, and environmental fluid infrastructure.
+              </p>
+            </div>
+
+            {/* 03 Westpoint Group Companies */}
+            <div style={{
+              background: '#FFFFFF',
+              borderRadius: '10px',
+              padding: '1.4rem 1.6rem',
+              boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              border: '1.5px solid rgba(76, 175, 80, 0.3)',
+              transition: 'transform 0.2s, box-shadow 0.2s'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                <img
+                  src="/logos/logo-white.png"
+                  alt="Westpoint Group Companies Logo"
+                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
+                />
+                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  Parent Enterprise
+                </span>
+              </div>
+              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
+                Global parent holding conglomerate coordinating specialized foundries, precision CNC machining complexes, and supply logistics worldwide.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

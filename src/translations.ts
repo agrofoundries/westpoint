@@ -53,6 +53,8 @@ export const translations = {
     proudText: 'Global Leader in Rail & Transit Castings, Forgings & Metallurgical Engineering | Westpoint Group Companies',
 
     // Section 1: Hero Banner (OVERVIEW & OBJECTIVES)
+    heroBadge: 'Foundry Associations & Engineering on Westpoint',
+    heroTagline: 'Making you on the move non stop......courtesy Westpoint',
     heroTitlePart1: 'ENGINEERING HIGH-RELIABILITY',
     heroTitlePart2: 'RAIL & TRANSIT',
     heroTitlePart3: 'CASTINGS & FORGINGS',
