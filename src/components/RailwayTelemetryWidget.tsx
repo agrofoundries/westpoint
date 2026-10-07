@@ -206,7 +206,7 @@ export const RailwayTelemetryWidget: React.FC = () => {
                   FRA RULE 213 CLASS 9 HIGH-SPEED TRACK COMPLIANT
                 </span>
               </div>
-              <a href="#contact" className="link-hover-arrow" style={{ color: '#1B5E20' }}>
+              <a href="#contact" className="link-hover-arrow" style={{ color: '#FFFFFF' }}>
                 <span>REQUEST SPECS</span>
               </a>
             </div>

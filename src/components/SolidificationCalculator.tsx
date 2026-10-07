@@ -229,7 +229,7 @@ export const SolidificationCalculator: React.FC = () => {
                   CALCULATED HAL SAFETY FACTOR: 3.4x OPERATIONAL LOAD
                 </span>
               </div>
-              <a href="#contact" className="link-hover-arrow" style={{ color: '#1B5E20' }}>
+              <a href="#contact" className="link-hover-arrow" style={{ color: '#FFFFFF' }}>
                 <span>REQUEST SPECS</span>
               </a>
             </div>
