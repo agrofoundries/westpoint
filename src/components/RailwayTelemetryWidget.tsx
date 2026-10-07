@@ -32,9 +32,9 @@ export const RailwayTelemetryWidget: React.FC = () => {
             </h2>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.1)', border: '1px solid #81C784', padding: '8px 16px', borderRadius: '2px' }}>
-            <Radio size={16} color={getSignalColor()} />
-            <span style={{ fontSize: '11px', fontWeight: 900, color: getSignalColor(), letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.1)', border: '1px solid #FFFFFF', padding: '8px 16px', borderRadius: '2px' }}>
+            <Radio size={16} color="#FFFFFF" />
+            <span style={{ fontSize: '11px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
               CORRIDOR SIGNAL: {signalStatus}
             </span>
           </div>

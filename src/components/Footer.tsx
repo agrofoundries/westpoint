@@ -273,52 +273,6 @@ export const Footer: React.FC = () => {
 
             </div>
 
-            {/* Industries Section with Pill Badges */}
-            <div style={{ paddingTop: '1.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1rem' }}>
-                <span style={{ fontSize: '11.5px', fontWeight: 900, letterSpacing: '0.14em', color: '#A5D6A7', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
-                  INDUSTRIES
-                </span>
-                <span style={{ height: '2px', width: '24px', background: '#4CAF50' }} />
-              </div>
-
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {industryPills.map((pill, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      const el = document.getElementById('markets');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(76, 175, 80, 0.4)',
-                      borderRadius: '20px',
-                      padding: '5px 12px',
-                      fontSize: '11.5px',
-                      fontWeight: 600,
-                      color: '#FFFFFF',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      fontFamily: "'Manrope', sans-serif !important"
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.background = '#FAF6EE';
-                      e.currentTarget.style.color = '#1B5E20';
-                      e.currentTarget.style.borderColor = '#FAF6EE';
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                      e.currentTarget.style.color = '#FFFFFF';
-                      e.currentTarget.style.borderColor = 'rgba(76, 175, 80, 0.4)';
-                    }}
-                  >
-                    {pill}
-                  </button>
-                ))}
-              </div>
-            </div>
-
           </div>
 
           {/* ==================== RIGHT COLUMN: STAY INFORMED & LATEST INSIGHTS ==================== */}
@@ -391,6 +345,52 @@ export const Footer: React.FC = () => {
                   </button>
                 </form>
               )}
+            </div>
+
+            {/* Industries Section with Pill Badges */}
+            <div style={{ marginBottom: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1rem' }}>
+                <span style={{ fontSize: '11.5px', fontWeight: 900, letterSpacing: '0.14em', color: '#A5D6A7', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
+                  INDUSTRIES
+                </span>
+                <span style={{ height: '2px', width: '24px', background: '#4CAF50' }} />
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {industryPills.map((pill, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      const el = document.getElementById('markets');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(76, 175, 80, 0.4)',
+                      borderRadius: '20px',
+                      padding: '5px 12px',
+                      fontSize: '11.5px',
+                      fontWeight: 600,
+                      color: '#FFFFFF',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      fontFamily: "'Manrope', sans-serif !important"
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = '#FAF6EE';
+                      e.currentTarget.style.color = '#1B5E20';
+                      e.currentTarget.style.borderColor = '#FAF6EE';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                      e.currentTarget.style.color = '#FFFFFF';
+                      e.currentTarget.style.borderColor = 'rgba(76, 175, 80, 0.4)';
+                    }}
+                  >
+                    {pill}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* AAR & AREMA Quality Certification Badge Card */}
