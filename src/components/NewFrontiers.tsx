@@ -22,93 +22,87 @@ const NewFrontiers: React.FC = () => {
           </h2>
         </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '1.5rem',
-        }}>
-          {cards.map((card, idx) => (
-            <div key={idx} style={{
-              background: '#144818',
-              border: '1px solid rgba(76, 175, 80, 0.3)',
-              borderRadius: '8px',
-              display: 'flex',
-              flexDirection: 'column',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-              transition: 'all 0.3s ease',
-              overflow: 'hidden'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-5px)';
-              e.currentTarget.style.borderColor = '#4CAF50';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.borderColor = 'rgba(76, 175, 80, 0.3)';
-            }}
-            >
-              {/* Full-bleed Image Container */}
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', background: '#0F291E', padding: '1.5rem', position: 'relative', borderBottom: '1px solid rgba(76, 175, 80, 0.2)' }}>
-                <div style={{ position: 'absolute', inset: '10%', background: '#4CAF50', filter: 'blur(30px)', opacity: 0.15, borderRadius: '50%' }} />
-                <img 
-                  src="/Westpoint Industries catalog mockup.png" 
-                  alt="Catalog Mockup" 
-                  style={{
-                    width: '100%',
-                    maxWidth: '300px',
-                    height: 'auto',
-                    filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.4))',
-                    position: 'relative',
-                    zIndex: 2,
-                    transition: 'transform 0.4s ease',
-                    transform: 'scale(1.05)'
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
-                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1.05)'}
-                />
-              </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {cards.map((card, idx) => {
+            const isEven = idx % 2 === 0;
+            return (
+              <div key={idx} style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                flexDirection: isEven ? 'row' : 'row-reverse',
+                alignItems: 'stretch',
+                background: '#144818',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                border: '1px solid rgba(76, 175, 80, 0.3)',
+                boxShadow: '0 15px 40px rgba(0,0,0,0.2)'
+              }}>
+                {/* Image Container (4 columns) */}
+                <div style={{ flex: '4 1 250px', display: 'flex', position: 'relative', borderRight: isEven ? '1px solid rgba(76, 175, 80, 0.2)' : 'none', borderLeft: !isEven ? '1px solid rgba(76, 175, 80, 0.2)' : 'none', overflow: 'hidden' }}>
+                  <img 
+                    src="/Westpoint Industries catalog mockup.png" 
+                    alt={`${card.title} Catalog`} 
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      position: 'absolute',
+                      inset: 0,
+                      transition: 'transform 0.6s ease'
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.08)'}
+                    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                </div>
 
-              {/* Text & Button Container */}
-              <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, padding: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 900, margin: '0 0 0.5rem 0', lineHeight: 1.2, color: '#FFFFFF', fontFamily: "'Manrope', sans-serif !important", textTransform: 'uppercase' }}>
-                  {card.title}
-                </h3>
-                <p style={{ fontSize: '0.85rem', color: '#E8F5E9', margin: '0 0 1.25rem 0', fontWeight: 500, fontFamily: "'Manrope', sans-serif !important", flexGrow: 1 }}>
-                  High-performance engineered metal components.
-                </p>
-                
-                <button 
-                  onClick={() => window.open('#catalog', '_self')}
-                  style={{
-                    background: '#FFFFFF',
-                    color: '#1B5E20',
-                    border: 'none',
-                    padding: '12px 20px',
-                    borderRadius: '4px',
-                    fontSize: '0.9rem',
-                    fontWeight: 800,
-                    cursor: 'pointer',
-                    letterSpacing: '0.05em',
-                    fontFamily: "'Manrope', sans-serif !important",
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    width: '100%',
-                    transition: 'background 0.2s'
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = '#E8F5E9';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = '#FFFFFF';
-                  }}
-                >
-                  EXPLORE <ArrowRight size={16} />
-                </button>
+                {/* Text & Button Container (8 columns) */}
+                <div style={{ flex: '8 1 500px', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <h3 style={{ fontSize: '2rem', fontWeight: 900, margin: '0 0 1rem 0', lineHeight: 1.2, color: '#FFFFFF', fontFamily: "'Manrope', sans-serif !important", textTransform: 'uppercase' }}>
+                    {card.title}
+                  </h3>
+                  <p style={{ fontSize: '1.05rem', color: '#E8F5E9', margin: '0 0 2rem 0', lineHeight: 1.6, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important", maxWidth: '800px' }}>
+                    We are expanding our capabilities to deliver high-performance engineered metal components for {card.title.toLowerCase()}. Built with our legacy of quality, durability, and strict manufacturing standards.
+                  </p>
+                  
+                  <div style={{ alignSelf: 'flex-start', marginTop: 'auto' }}>
+                    <button 
+                      onClick={() => window.open('#catalog', '_self')}
+                      style={{
+                        background: '#4CAF50',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        padding: '14px 28px',
+                        borderRadius: '6px',
+                        fontSize: '0.95rem',
+                        fontWeight: 800,
+                        cursor: 'pointer',
+                        letterSpacing: '0.05em',
+                        fontFamily: "'Manrope', sans-serif !important",
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '10px',
+                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                        boxShadow: '0 8px 16px rgba(76, 175, 80, 0.2)'
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.background = '#388E3C';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 12px 20px rgba(76, 175, 80, 0.3)';
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.background = '#4CAF50';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 8px 16px rgba(76, 175, 80, 0.2)';
+                      }}
+                    >
+                      EXPLORE SOLUTIONS <ArrowRight size={18} />
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
