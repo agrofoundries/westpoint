@@ -25,7 +25,7 @@ import NewsInsights from './components/NewsInsights';
 import CtaBanner from './components/CtaBanner';
 import OfficeLocations from './components/OfficeLocations';
 import Footer from './components/Footer';
-
+import NewFrontiers from './components/NewFrontiers';
 import RequestQuoteModal from './components/RequestQuoteModal';
 import WatchVideoModal from './components/WatchVideoModal';
 import ProductExplorerModal from './components/ProductExplorerModal';
@@ -145,6 +145,9 @@ function App() {
 
         {/* 13 Factory Section with Stats Overlay (Highly Graphical) */}
         <FactoryOverview />
+
+        {/* Our New Frontiers & Catalog Mockup */}
+        <NewFrontiers />
 
         {/* 14 Engineering Excellence (Text Heavy - Disabled) */}
         <EngineeringExcellence />
