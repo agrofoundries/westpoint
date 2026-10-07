@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import {
   MapPin,
-  Phone,
   Mail,
   Clock,
   ArrowRight,
