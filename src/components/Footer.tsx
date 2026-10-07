@@ -99,17 +99,7 @@ export const Footer: React.FC = () => {
                 </div>
               </div>
 
-              {/* Phone Numbers */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '13px' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(76, 175, 80, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Phone size={15} color="#81C784" />
-                </div>
-                <div style={{ display: 'flex', gap: '10px', alignItems: 'center', fontWeight: 700, fontFamily: "'Manrope', sans-serif !important" }}>
-                  <a href="tel:6038383333" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>603 838 3333</a>
-                  <span style={{ color: '#4CAF50' }}>/</span>
-                  <a href="tel:6038383222" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>603 838 3222</a>
-                </div>
-              </div>
+
 
               {/* Email Address */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '13px' }}>
@@ -225,6 +215,40 @@ export const Footer: React.FC = () => {
 
               {/* Services */}
               <div>
+                {/* Phone Numbers Moved Here (Now ABOVE Services) */}
+                <div style={{ marginBottom: '2.5rem' }}>
+                  <h4 style={{ fontSize: '11.5px', fontWeight: 900, color: '#A5D6A7', letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 1.25rem 0', fontFamily: "'Manrope', sans-serif !important" }}>
+                    CONTACT DEPARTMENTS
+                  </h4>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '13px' }}>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(76, 175, 80, 0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                      <Phone size={15} color="#81C784" />
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontWeight: 600, fontFamily: "'Manrope', sans-serif !important" }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.7)' }}>Office</span>
+                        <a href="tel:+15163453330" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>+1 516-345-3330</a>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.7)' }}>Forging</span>
+                        <a href="tel:+15163453331" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>+1 516-345-3331</a>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.7)' }}>Foundry</span>
+                        <a href="tel:+15163453332" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>+1 516-345-3332</a>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.7)' }}>Engineering</span>
+                        <a href="tel:+15163453334" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>+1 516-345-3334</a>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '200px' }}>
+                        <span style={{ color: 'rgba(255,255,255,0.7)' }}>Admin</span>
+                        <a href="tel:+15163453338" style={{ color: '#FFFFFF', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>+1 516-345-3338</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <h4 style={{ fontSize: '11.5px', fontWeight: 900, color: '#A5D6A7', letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 1.25rem 0', fontFamily: "'Manrope', sans-serif !important" }}>
                   SERVICES
                 </h4>
@@ -237,6 +261,7 @@ export const Footer: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+
               </div>
 
               {/* Solutions */}
