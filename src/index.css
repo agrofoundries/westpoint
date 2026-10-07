@@ -1,0 +1,873 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  --bg-sand: #F8F9FA;
+  --bg-card: #FFFFFF;
+  --bg-dark: #1B5E20;
+  --bg-dark-secondary: #144818;
+  
+  --primary: #4CAF50;
+  --primary-hover: #388E3C;
+  --primary-light: #81C784;
+  --accent: #4CAF50;
+  --accent-light: #A5D6A7;
+  
+  --cream: #FAF6EE;
+  --cream-hover: #FFFDF7;
+  --cream-dark: #EFE9D9;
+
+  /* AUTHENTIC RAILWAY SIGNAL COLOR PALETTE */
+  --rail-red: #DC2626;
+  --rail-green: #4CAF50;
+  --rail-yellow: #F59E0B;
+  
+  --steel: #4CAF50;
+  --text-heading: #111827;
+  --text-primary: #111827;
+  --text-secondary: #2E7D32;
+  --text-muted: #4CAF50;
+  --text-light: #FAF6EE;
+  
+  --border-light: #E5E7EB;
+  --border-dark: #1B5E20;
+  
+  --font-heading: 'Manrope', sans-serif !important;
+  --font-body: 'Manrope', sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* UNIVERSAL FONT ENFORCEMENT ACROSS ALL ELEMENTS STRICTLY */
+body, p, span, li, input, textarea, select, small, td, th, label {
+  font-family: 'Manrope', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .heading-geist, nav, nav *, button, button *, .eyebrow, .eyebrow *, strong, b, a, .btn-animated {
+  font-family: 'Manrope', sans-serif !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-sand);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* TIGHT CORPORATE SECTION SPACING */
+.section-full-vh {
+  padding: 3.5rem 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
+h1 {
+  font-weight: 900 !important;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+
+h4, h5, h6 {
+  font-weight: 600 !important;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-size: 1.15rem;
+}
+
+/* Eyebrow Label */
+.eyebrow {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 0.75rem;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eyebrow-dark {
+  color: #FAF6EE;
+}
+
+/* RAILWAY SIGNAL PULSE ANIMATIONS */
+@keyframes signalPulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+@keyframes signalPulseRed {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.signal-dot-green {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--rail-green);
+  animation: signalPulseGreen 2s infinite;
+  display: inline-block;
+}
+
+.signal-dot-red {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--rail-red);
+  animation: signalPulseRed 2s infinite;
+  display: inline-block;
+}
+
+/* GREEN TO CREAM ON HOVER STYLING FOR SOLID CTA BUTTONS */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  background-color: #4CAF50 !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #1B5E20 !important;
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.15) !important;
+  transition: all 0.25s ease !important;
+  font-family: 'Manrope', sans-serif !important;
+}
+
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-animated:hover::before {
+  left: 100%;
+}
+
+/* Green turns to Cream (#FAF6EE) on Hover with Dark Green (#1B5E20) Text */
+.btn-animated:hover {
+  background-color: #FAF6EE !important;
+  color: #1B5E20 !important;
+  border-color: #1B5E20 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.2) !important;
+}
+
+.btn-animated:hover,
+.btn-animated:hover *,
+.btn-animated:hover span,
+.btn-animated:hover svg,
+.btn-animated:hover svg path {
+  color: #1B5E20 !important;
+  stroke: #1B5E20 !important;
+}
+
+/* CREATIVE ARROW ANIMATION: IDLE TILTED (-45deg ↗) -> HOVER STRAIGHT (0deg ➔) */
+.btn-animated svg,
+.link-hover-arrow svg,
+.card-hover-industrial svg {
+  transform: rotate(-45deg);
+  transition: transform 0.25s ease !important;
+}
+
+.btn-animated:hover svg,
+.link-hover-arrow:hover svg,
+.card-hover-industrial:hover svg {
+  transform: rotate(0deg) translateX(4px) !important;
+}
+
+/* Clean Text Link Arrow Hover Animation: Green default, Cream (#FAF6EE) bg on hover */
+.link-hover-arrow {
+  color: #4CAF50 !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border-bottom: 2.5px solid #4CAF50 !important;
+  padding: 4px 8px !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+  font-family: 'Manrope', sans-serif !important;
+}
+
+.link-hover-arrow:hover {
+  color: #1B5E20 !important;
+  background-color: #FAF6EE !important;
+  border-bottom-color: #1B5E20 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.link-hover-arrow:hover,
+.link-hover-arrow:hover *,
+.link-hover-arrow:hover span,
+.link-hover-arrow:hover svg,
+.link-hover-arrow:hover svg path {
+  color: #1B5E20 !important;
+  stroke: #1B5E20 !important;
+}
+
+/* Mega Menu Overlay Panel */
+@keyframes megaMenuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.megamenu-panel {
+  animation: megaMenuSlide 0.2s ease-out;
+}
+
+.megamenu-backdrop {
+  position: fixed;
+  top: 110px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27, 94, 32, 0.4);
+  z-index: 998;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* SOLID CLEAN SECTION BACKGROUNDS - NO BLURS, NO GRADIENT SHADOWS */
+.hero-gradient-bg {
+  background-color: #1B5E20 !important;
+  position: relative;
+}
+
+.section-dark-gradient {
+  background-color: #1B5E20 !important;
+}
+
+/* Remove fuzzy radial blurs */
+.section-shape-accent,
+.section-shape-gold,
+.section-shape-green {
+  display: none !important;
+}
+
+.blueprint-grid,
+.blueprint-grid-dark {
+  display: none !important;
+}
+
+.section-shape-green {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 94, 32, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.railway-stripes {
+  background-image: repeating-linear-gradient(-45deg, rgba(76, 175, 80, 0.05), rgba(76, 175, 80, 0.05) 10px, transparent 10px, transparent 20px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F3F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B5E20;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4CAF50;
+}
+
+/* Container - 100% Full Width Edge-to-Edge Layout */
+.container-custom {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* Image Zoom Effect */
+.img-hover-zoom {
+  overflow: hidden;
+}
+.img-hover-zoom img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Card Hover Elevation & Glow */
+.card-hover-industrial {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-industrial:hover {
+  border-color: #4CAF50;
+  box-shadow: 0 14px 35px rgba(27, 94, 32, 0.18);
+  transform: translateY(-4px);
+}
+
+/* BRAND GREEN UTILITIES (#1B5E20 Dark & #4CAF50 Vibrant) */
+.text-green-dark {
+  color: #1B5E20 !important;
+}
+
+.text-green-vibrant {
+  color: #4CAF50 !important;
+}
+
+.bg-green-dark {
+  background-color: #1B5E20 !important;
+}
+
+.bg-green-vibrant {
+  background-color: #4CAF50 !important;
+}
+
+.border-green-vibrant {
+  border-color: #4CAF50 !important;
+}
+
+.border-green-dark {
+  border-color: #1B5E20 !important;
+}
+
+.title-green-highlight {
+  position: relative;
+  display: inline-block;
+  color: #1B5E20 !important;
+}
+
+.title-green-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #4CAF50;
+}
+
+.green-accent-bar {
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, #1B5E20 0%, #4CAF50 100%);
+  width: 100%;
+  margin-top: 6px;
+  border-radius: 1px;
+}
+
+/* Responsive Executive Footer Grid */
+.footer-corporate-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.1fr) minmax(400px, 1.6fr) minmax(280px, 1.1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1180px) {
+  .footer-corporate-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-corporate-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   FLUID & HIGH-IMPACT RESPONSIVE LAYOUT SYSTEM
+   ========================================================================== */
+
+/* 6-Column Responsive Grid */
+.grid-responsive-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .grid-responsive-6 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-responsive-6 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-responsive-6 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* 5-Column Responsive Grid (Capabilities) */
+.grid-responsive-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .grid-responsive-5 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-responsive-5 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-responsive-5 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* 4-Column Responsive Grid */
+.grid-responsive-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .grid-responsive-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-responsive-4 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* 3-Column Responsive Grid (Standards, Approvals, News, Labs) */
+.grid-responsive-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .grid-responsive-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-responsive-3 {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* 2-Column Responsive Grid */
+.grid-responsive-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .grid-responsive-2 {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Hero 2-Column Responsive Collapse */
+.hero-grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-col-left {
+  grid-column: span 6;
+}
+
+.hero-col-right {
+  grid-column: span 6;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .hero-grid-responsive {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero-col-left,
+  .hero-col-right {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
+
+/* Hero Technical Metric Bar Grid */
+.hero-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .hero-metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-metric-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Featured Components Responsive Card Slider Items */
+.card-slider-item {
+  width: calc(25% - 0.95rem);
+  min-width: calc(25% - 0.95rem);
+  max-width: calc(25% - 0.95rem);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 1100px) {
+  .card-slider-item {
+    width: calc(33.333% - 0.9rem);
+    min-width: calc(33.333% - 0.9rem);
+    max-width: calc(33.333% - 0.9rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-slider-item {
+    width: 290px;
+    min-width: 290px;
+    max-width: 290px;
+  }
+}
+
+/* Telemetry Dashboard Responsive Grid */
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.telemetry-col-left {
+  grid-column: span 5;
+}
+
+.telemetry-col-right {
+  grid-column: span 7;
+}
+
+@media (max-width: 992px) {
+  .telemetry-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .telemetry-col-left,
+  .telemetry-col-right {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
+
+/* Factory Overview Responsive Grid */
+.factory-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.factory-col-img {
+  grid-column: span 7;
+  position: relative;
+  min-height: 440px;
+}
+
+.factory-col-stats {
+  grid-column: span 5;
+  background: #1B5E20;
+  color: #FAF6EE;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .factory-overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .factory-col-img {
+    grid-column: span 1;
+    min-height: 280px;
+  }
+  .factory-col-stats {
+    grid-column: span 1;
+    padding: 2.25rem 1.5rem;
+  }
+}
+
+/* Engineering Excellence Grid */
+.engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.engineering-col-left {
+  grid-column: span 6;
+}
+
+.engineering-col-right {
+  grid-column: span 6;
+}
+
+@media (max-width: 992px) {
+  .engineering-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .engineering-col-left,
+  .engineering-col-right {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
+
+/* Company Intro Grid */
+.company-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.company-intro-col-left {
+  grid-column: span 7;
+}
+
+.company-intro-col-right {
+  grid-column: span 5;
+}
+
+@media (max-width: 992px) {
+  .company-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .company-intro-col-left,
+  .company-intro-col-right {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   NAVIGATION VISIBILITY BREAKPOINTS
+   ========================================================================== */
+.desktop-nav-only {
+  display: flex !important;
+}
+
+.mobile-nav-toggle {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .desktop-nav-only {
+    display: none !important;
+  }
+  .mobile-nav-toggle {
+    display: flex !important;
+  }
+}
+
+/* Mobile Navigation Drawer */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 41, 30, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 10050;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.mobile-drawer-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 420px;
+  background: #FFFFFF;
+  z-index: 10051;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: slideDrawer 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Manrope', sans-serif !important;
+}
+
+@keyframes slideDrawer {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Scroll Reading Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #81C784 0%, #4CAF50 50%, #FFEB3B 100%);
+  z-index: 10010;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+}
+
+/* Floating Quick Actions */
+.floating-action-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9990;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+@media (max-width: 600px) {
+  .floating-action-btn {
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+/* Micro-interaction hover lift & glow */
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(27, 94, 32, 0.15);
+}
+
+/* Smooth Table Responsive Horizontal Wrapper */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar-thumb {
+  background: #4CAF50;
+  border-radius: 3px;
+}
