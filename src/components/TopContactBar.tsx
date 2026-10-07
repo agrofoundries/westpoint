@@ -15,17 +15,19 @@ export const TopContactBar: React.FC = () => {
           <span style={{ color: 'rgba(255,255,255,0.35)' }}>|</span>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <MapPin size={13} color="#81C784" />
+
             <span style={{ color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.04em' }}>
-              105 Maxess Road, Melville, NY 11747, United States
+              <a
+                href="mailto:foundry@westpointndustries.com"
+                style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px', fontWeight: 800, transition: 'all 0.2s', padding: '3px 8px', borderRadius: '2px' }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.background = '#FAF6EE'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = 'transparent'; }}
+              >
+                <Mail size={13} color="#81C784" />
+                <span>foundry@westpointndustries.com</span>
+              </a>
             </span>
           </div>
-
-          <span style={{ color: 'rgba(255,255,255,0.35)' }}>|</span>
-
-          <span style={{ color: '#FFEB3B', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-            AAR M-1003 &amp; AREMA CERTIFIED
-          </span>
         </div>
 
         {/* Right Side: Quick Contact Links */}
@@ -53,15 +55,25 @@ export const TopContactBar: React.FC = () => {
 
           <span style={{ color: 'rgba(255,255,255,0.35)' }}>|</span>
 
-          <a
-            href="mailto:foundry@westpointndustries.com"
-            style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px', fontWeight: 800, transition: 'all 0.2s', padding: '3px 8px', borderRadius: '2px' }}
-            onMouseEnter={e => { e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.background = '#FAF6EE'; }}
-            onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = 'transparent'; }}
-          >
-            <Mail size={13} color="#81C784" />
-            <span>foundry@westpointndustries.com</span>
-          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <MapPin size={13} color="#81C784" />
+            <select
+              style={{
+                background: 'transparent',
+                color: '#FFFFFF',
+                border: 'none',
+                fontWeight: 800,
+                fontSize: 'inherit',
+                outline: 'none',
+                cursor: 'pointer',
+                fontFamily: 'inherit'
+              }}
+            >
+              <option value="usa" style={{ color: '#1B5E20' }}>USA</option>
+              <option value="canada" style={{ color: '#1B5E20' }}>Canada</option>
+              <option value="mexico" style={{ color: '#1B5E20' }}>Mexico</option>
+            </select>
+          </div>
         </div>
 
       </div>

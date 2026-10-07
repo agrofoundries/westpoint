@@ -23,6 +23,7 @@ import AuthoritiesApprovals from './components/AuthoritiesApprovals';
 import TrustCertificationSection from './components/TrustCertificationSection';
 import NewsInsights from './components/NewsInsights';
 import CtaBanner from './components/CtaBanner';
+import OfficeLocations from './components/OfficeLocations';
 import Footer from './components/Footer';
 
 import RequestQuoteModal from './components/RequestQuoteModal';
@@ -127,9 +128,6 @@ function App() {
           onOpenProductDetail={handleOpenProductDetail}
         /> */}
 
-        {/* 07 Isolated Metal Castings Showcase Strip (Highly Graphical) */}
-        <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} />
-
         {/* 08 Live Interactive Railway Telemetry & Speed Monitor */}
         <RailwayTelemetryWidget />
 
@@ -168,7 +166,13 @@ function App() {
 
         {/* 20 CTA Banner */}
         <CtaBanner onRequestQuoteClick={handleOpenQuote} />
+
+        {/* 21 Critical Rail & Industrial Components (Moved to last section) */}
+        <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} />
       </main>
+
+      {/* 22 Strategic Office Locations */}
+      <OfficeLocations />
 
       {/* 20 Corporate Mega Footer & Bottom Footer */}
       <Footer />

@@ -406,19 +406,16 @@ export const Footer: React.FC = () => {
           </div>
 
         </div>
-      </div>
 
-      {/* ==================== GROUP ENTERPRISES & ASSOCIATIONS STRIP ==================== */}
-      <div style={{
-        background: 'rgba(0, 0, 0, 0.25)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.12)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
-        padding: '2.5rem 0'
-      }}>
-        <div className="container-custom" style={{ paddingLeft: '2rem', paddingRight: '2.5rem' }}>
+        {/* ==================== GROUP ENTERPRISES & ASSOCIATIONS STRIP (DIRECTLY IN MAIN FOOTER) ==================== */}
+        <div style={{
+          marginTop: '2.5rem',
+          paddingTop: '2rem',
+          borderTop: '1px solid rgba(255, 255, 255, 0.15)'
+        }}>
           <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
             <div>
-              <span style={{ fontSize: '11px', fontWeight: 900, color: '#81C784', letterSpacing: '0.14em', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>
+              <span style={{ fontSize: '11px', fontWeight: 900, color: '#A5D6A7', letterSpacing: '0.14em', textTransform: 'uppercase', display: 'block', marginBottom: '4px', fontFamily: "'Manrope', sans-serif !important" }}>
                 Westpoint Corporate Network
               </span>
               <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFFFFF', margin: 0, letterSpacing: '-0.01em', fontFamily: "'Manrope', sans-serif !important" }}>
@@ -517,6 +514,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
         </div>
+
       </div>
 
       {/* ==================== BOTTOM FOOTER BAR ==================== */}
