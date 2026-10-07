@@ -19,7 +19,7 @@ import FactoryOverview from './components/FactoryOverview';
 import EngineeringExcellence from './components/EngineeringExcellence';
 import StandardsGrid from './components/StandardsGrid';
 import TestingFacilities from './components/TestingFacilities';
-import AuthoritiesApprovals from './components/AuthoritiesApprovals';
+import AssociationsStandards from './components/AssociationsStandards';
 import TrustCertificationSection from './components/TrustCertificationSection';
 import NewsInsights from './components/NewsInsights';
 import CtaBanner from './components/CtaBanner';
@@ -218,16 +218,15 @@ function App() {
         <EngineeringExcellence />
 
         {/* 15 International Standards & Wheelsets Showcase */}
-        <StandardsGrid />
+        {/* <StandardsGrid /> */}
 
         {/* 16 In-House Testing Facilities */}
-        <TestingFacilities />
+        {/* <TestingFacilities /> */}
 
-        {/* 17 Authorities & Approvals */}
-        <AuthoritiesApprovals />
+
 
         {/* 18 Company Trust & Official Certifications */}
-        <TrustCertificationSection />
+        {/* <TrustCertificationSection /> */}
 
         {/* 19 News & Insights */}
         <NewsInsights />
@@ -239,6 +238,9 @@ function App() {
         <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} />
       </main>
       )}
+
+      {/* Unified Associations & Standards Section */}
+      <AssociationsStandards />
 
       {/* 22 Strategic Office Locations */}
       <OfficeLocations />
