@@ -36,7 +36,7 @@ export const ManufacturingProcess: React.FC = () => {
   ];
 
   return (
-    <section id="process" style={{ background: '#FAF6EE', padding: '5.5rem 0', borderBottom: '1px solid #E5E7EB' }}>
+    <section id="process" style={{ background: '#FAF6EE', padding: '1.5rem 0', borderBottom: '1px solid #E5E7EB' }}>
       <div className="container-custom">
 
         {/* Section Header */}

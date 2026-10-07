@@ -90,7 +90,7 @@ export const ContactSection: React.FC = () => {
                   <CheckCircle2 size={48} color="#1B5E20" style={{ margin: '0 auto 1rem auto' }} />
                   <h3 style={{ fontSize: '1.5rem', color: '#111827', margin: '0 0 0.5rem 0', fontFamily: "'Manrope', sans-serif !important" }}>SPECIFICATION SUBMITTED</h3>
                   <p style={{ color: '#2E7D32', fontSize: '14px', margin: 0, fontFamily: "'Manrope', sans-serif !important" }}>
-                    Thank you. Our heavy rail metal engineering team will review your parameters and respond within 24 hours.
+                    Thank you. Our heavy rail Metal Engineering Team will review your parameters and respond within 24 hours.
                   </p>
                 </div>
               ) : (

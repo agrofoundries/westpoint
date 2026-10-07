@@ -157,10 +157,10 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
     {
       id: 'oem-02',
       category: 'oem',
-      title: 'Eliptcal Pin',
+      title: 'Elliptical Pin',
       series: 'OEM PIN',
       specs: 'Hardened Steel',
-      desc: 'Precision engineered eliptcal pins for industrial machinery.',
+      desc: 'Precision engineered elliptical pins for industrial machinery.',
       img: '/images/prod_pin_bracket.jpg',
     },
     {
@@ -195,7 +195,7 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
     {
       id: 'mine-02',
       category: 'mining',
-      title: 'Aeriel Ropeway Pulleys',
+      title: 'Aerial Ropeway Pulleys',
       series: 'MINE PULLEY',
       specs: 'Wear Resistant',
       desc: 'Heavy flanged pulleys for aerial ropeway material transport.',

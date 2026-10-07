@@ -10,7 +10,7 @@ const NewFrontiers: React.FC = () => {
   ];
 
   return (
-    <section style={{ background: '#0F291E', padding: '5rem 0', position: 'relative', overflow: 'hidden', borderTop: '2px solid #4CAF50', borderBottom: '2px solid #4CAF50' }}>
+    <section style={{ background: '#0F291E', padding: '1.5rem 0', position: 'relative', overflow: 'hidden', borderTop: '2px solid #4CAF50', borderBottom: '2px solid #4CAF50' }}>
       <div className="container-custom" style={{ position: 'relative' }}>
         
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>

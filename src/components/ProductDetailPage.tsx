@@ -3,7 +3,7 @@ import { EXPLORER_PRODUCTS } from './InteractiveExplorer';
 import type { ProductItem } from './InteractiveExplorer';
 import {
   X, ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2, Download,
-  Layers, TrainTrack, Compass, Share2, Printer, Check, Eye, ChevronRight
+  TrainTrack, ChevronRight
 } from 'lucide-react';
 
 interface ProductDetailPageProps {
@@ -21,8 +21,27 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   onRequestQuoteForProduct,
   onSelectProduct
 }) => {
-  const [activeMediaTab, setActiveMediaTab] = useState<'photo' | 'cad' | 'solidification'>('photo');
-  const [copiedLink, setCopiedLink] = useState(false);
+  const [zoomStyle, setZoomStyle] = useState<React.CSSProperties>({ transform: 'scale(1)', transformOrigin: 'center center' });
+  const [isZooming, setIsZooming] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    setZoomStyle({
+      transformOrigin: `${x}% ${y}%`,
+      transform: 'scale(2.5)'
+    });
+    setIsZooming(true);
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyle({
+      transformOrigin: 'center center',
+      transform: 'scale(1)'
+    });
+    setIsZooming(false);
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -37,9 +56,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   // Prevent background scroll when product detail is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
   }, [isOpen]);
 
@@ -50,56 +67,33 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
     p => p.category === product.category && p.id !== product.id
   ).slice(0, 4);
 
-  const handleShare = () => {
-    navigator.clipboard?.writeText(window.location.href);
-    setCopiedLink(true);
-    setTimeout(() => setCopiedLink(false), 3000);
-  };
-
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div
       style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 2500,
-        background: 'rgba(15, 41, 30, 0.85)',
-        backdropFilter: 'blur(10px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '1rem',
-        overflowY: 'auto',
-        fontFamily: "'Manrope', sans-serif !important"
+        background: '#F8F9FA',
+        padding: '2rem 0',
+        fontFamily: "'Manrope', sans-serif !important",
+        minHeight: '100vh'
       }}
-      onClick={onClose}
     >
       <div
+        className="container-custom"
         style={{
           background: '#FFFFFF',
           color: '#111827',
           width: '100%',
-          maxWidth: '1240px',
-          maxHeight: '94vh',
-          overflowY: 'auto',
           borderRadius: '4px',
-          boxShadow: '0 30px 70px rgba(0, 0, 0, 0.4)',
+          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)',
           borderTop: '5px solid #4CAF50',
           position: 'relative',
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          overflow: 'hidden'
         }}
-        onClick={e => e.stopPropagation()}
       >
-        {/* Top Sticky Header & Breadcrumbs Bar */}
+        {/* Top Header & Breadcrumbs Bar */}
         <div
           style={{
-            position: 'sticky',
-            top: 0,
-            zIndex: 30,
             background: '#144818',
             color: '#FFFFFF',
             padding: '14px 24px',
@@ -144,50 +138,6 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
           {/* Quick Header Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <button
-              onClick={handleShare}
-              title="Copy link to clipboard"
-              style={{
-                background: 'rgba(255,255,255,0.1)',
-                border: '1px solid rgba(255,255,255,0.2)',
-                color: '#FFFFFF',
-                padding: '6px 12px',
-                fontSize: '11.5px',
-                fontWeight: 700,
-                borderRadius: '3px',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                transition: 'all 0.2s'
-              }}
-            >
-              {copiedLink ? <Check size={13} color="#81C784" /> : <Share2 size={13} />}
-              <span>{copiedLink ? 'COPIED!' : 'SHARE'}</span>
-            </button>
-
-            <button
-              onClick={handlePrint}
-              title="Print / Save as PDF"
-              style={{
-                background: 'rgba(255,255,255,0.1)',
-                border: '1px solid rgba(255,255,255,0.2)',
-                color: '#FFFFFF',
-                padding: '6px 12px',
-                fontSize: '11.5px',
-                fontWeight: 700,
-                borderRadius: '3px',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                transition: 'all 0.2s'
-              }}
-            >
-              <Printer size={13} />
-              <span>PRINT</span>
-            </button>
-
-            <button
               onClick={onClose}
               aria-label="Close Product Page"
               style={{
@@ -218,83 +168,11 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
             {/* ================= LEFT COLUMN: MEDIA VIEWER & TABS ================= */}
             <div>
-              {/* Media Switcher Tabs */}
-              <div style={{ display: 'flex', gap: '6px', marginBottom: '10px', flexWrap: 'wrap' }}>
-                <button
-                  onClick={() => setActiveMediaTab('photo')}
-                  style={{
-                    padding: '7px 14px',
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    borderRadius: '3px',
-                    cursor: 'pointer',
-                    background: activeMediaTab === 'photo' ? '#1B5E20' : '#F1F5F9',
-                    color: activeMediaTab === 'photo' ? '#FFFFFF' : '#1B5E20',
-                    border: activeMediaTab === 'photo' ? '1px solid #1B5E20' : '1px solid #E2E8F0',
-                    transition: 'all 0.2s',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '5px'
-                  }}
-                >
-                  <Eye size={13} />
-                  <span>COMPONENT PHOTO</span>
-                </button>
-
-                <button
-                  onClick={() => setActiveMediaTab('cad')}
-                  style={{
-                    padding: '7px 14px',
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    borderRadius: '3px',
-                    cursor: 'pointer',
-                    background: activeMediaTab === 'cad' ? '#1B5E20' : '#F1F5F9',
-                    color: activeMediaTab === 'cad' ? '#FFFFFF' : '#1B5E20',
-                    border: activeMediaTab === 'cad' ? '1px solid #1B5E20' : '1px solid #E2E8F0',
-                    transition: 'all 0.2s',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '5px'
-                  }}
-                >
-                  <Compass size={13} />
-                  <span>CAD BLUEPRINT</span>
-                </button>
-
-                <button
-                  onClick={() => setActiveMediaTab('solidification')}
-                  style={{
-                    padding: '7px 14px',
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    borderRadius: '3px',
-                    cursor: 'pointer',
-                    background: activeMediaTab === 'solidification' ? '#1B5E20' : '#F1F5F9',
-                    color: activeMediaTab === 'solidification' ? '#FFFFFF' : '#1B5E20',
-                    border: activeMediaTab === 'solidification' ? '1px solid #1B5E20' : '1px solid #E2E8F0',
-                    transition: 'all 0.2s',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '5px'
-                  }}
-                >
-                  <Layers size={13} />
-                  <span>SOLIDIFICATION MODEL</span>
-                </button>
-              </div>
-
               {/* Main Media Frame */}
               <div
                 style={{
                   height: '380px',
-                  background: activeMediaTab === 'photo' ? '#FFFFFF' : '#0F291E',
+                  background: '#FFFFFF',
                   border: '1.5px solid #E5E7EB',
                   borderRadius: '4px',
                   overflow: 'hidden',
@@ -302,49 +180,25 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.06)'
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
+                  cursor: 'crosshair'
                 }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
               >
-                {activeMediaTab === 'photo' && (
-                  <img
-                    src={product.img}
-                    alt={product.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '1.5rem', display: 'block' }}
-                  />
-                )}
-
-                {activeMediaTab === 'cad' && (
-                  <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img
-                      src="/images/bogie_callouts_diagram.png"
-                      alt="CAD Blueprint Technical Callout"
-                      style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '1rem' }}
-                    />
-                    <div style={{ position: 'absolute', top: '12px', right: '12px', background: 'rgba(27,94,32,0.9)', color: '#FAF6EE', fontSize: '10px', fontWeight: 900, padding: '4px 8px', borderRadius: '2px', border: '1px solid #4CAF50' }}>
-                      AREMA CAD TRUE-TO-CAST
-                    </div>
-                  </div>
-                )}
-
-                {activeMediaTab === 'solidification' && (
-                  <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img
-                      src="/images/real_metal_casting_stock.jpg"
-                      alt="MagmaSoft Thermal Solidification"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,72,24,0.9), transparent)', display: 'flex', alignItems: 'flex-end', padding: '1.5rem' }}>
-                      <div>
-                        <span style={{ fontSize: '10px', fontWeight: 900, color: '#A5D6A7', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                          MAGMASOFT® 3D THERMAL FLOW SIMULATION
-                        </span>
-                        <h4 style={{ fontSize: '14px', fontWeight: 900, color: '#FFFFFF', margin: 0 }}>
-                          Zero-Porosity metal Solidification
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <img
+                  src={product.img}
+                  alt={product.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    padding: isZooming ? '0' : '1.5rem',
+                    display: 'block',
+                    transition: 'transform 0.1s ease-out',
+                    ...zoomStyle
+                  }}
+                />
 
                 {/* Floating Top Left Category Pill */}
                 <div style={{ position: 'absolute', top: '12px', left: '12px', background: '#1B5E20', color: '#FFFFFF', fontSize: '10px', fontWeight: 900, padding: '4px 10px', borderRadius: '2px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -414,7 +268,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0' }}>
                     <span style={{ color: '#64748B', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>AXLE LOAD / ENDURANCE</span>
-                    <strong style={{ color: '#0284C7' }}>{product.axleLoad}</strong>
+                    <strong style={{ color: '#111827' }}>{product.axleLoad}</strong>
                   </div>
 
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #E2E8F0' }}>

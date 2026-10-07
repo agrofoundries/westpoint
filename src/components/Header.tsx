@@ -226,7 +226,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                 }}
               >
                 <Compass size={14} />
-                <span>SPECS</span>
+                <span>PRODUCTS</span>
               </button>
 
               <button
@@ -338,7 +338,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = 'transparent'; }}
                 >
                   <Compass size={14} />
-                  <span>SPEC EXPLORER</span>
+                  <span>PRODUCT CATALOG</span>
                 </button>
 
                 <a
@@ -575,7 +575,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                 }}
               >
                 <Compass size={15} />
-                <span>SPEC EXPLORER</span>
+                <span>PRODUCT CATALOG</span>
               </button>
 
               <button
@@ -744,9 +744,9 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   <Phone size={14} color="#81C784" />
                   <span>603 838 3333 / 603 838 3222</span>
                 </a>
-                <a href="mailto:foundry@westpointndustries.com" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
+                <a href="mailto:foundry@westpointindustries.com" style={{ color: '#FFFFFF', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                   <Mail size={14} color="#81C784" />
-                  <span>foundry@westpointndustries.com</span>
+                  <span>foundry@westpointindustries.com</span>
                 </a>
               </div>
             </div>

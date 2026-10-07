@@ -46,7 +46,7 @@ export const ProductShowcaseStrip: React.FC<ProductShowcaseStripProps> = ({ onOp
   ];
 
   return (
-    <section className="section-full-vh" style={{ background: '#FAF6EE', borderBottom: '1px solid #E5E7EB', padding: '3.5rem 0', position: 'relative', overflow: 'hidden' }}>
+    <section className="section-full-vh" style={{ background: '#FAF6EE', borderBottom: '1px solid #E5E7EB', padding: '1.5rem 0', position: 'relative', overflow: 'hidden' }}>
       {/* Background Blueprint Grid & Radial Glow Accents */}
       <div className="blueprint-grid" style={{ position: 'absolute', inset: 0, opacity: 0.35, pointerEvents: 'none' }} />
       <div className="section-shape-gold" style={{ top: '-10%', right: '-5%' }} />

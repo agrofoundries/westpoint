@@ -338,7 +338,7 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ activeMegaMenu, setActiveMeg
                 </li>
                 <li style={{ marginBottom: '10px' }}>
                   <a href="#sustainability" onClick={() => setActiveMegaMenu(null)} className="mega-link" style={{ textDecoration: 'none', color: '#1B5E20', fontWeight: 500, fontSize: '13px', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.15s ease' }}>
-                    <span style={{ color: '#1B5E20', fontWeight: 700 }}>›</span> ISO 14001 Zero Air Emissions
+                    <span style={{ color: '#1B5E20', fontWeight: 700 }}>›</span> ISO 14001 Emissions Compliance
                   </a>
                 </li>
               </ul>

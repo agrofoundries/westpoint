@@ -32,7 +32,7 @@ export const EngineeringExcellence: React.FC = () => {
             </h2>
 
             <p style={{ fontSize: '1rem', color: '#2E7D32', lineHeight: 1.7, marginBottom: '2rem', fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
-              Using MagmaSoft® 3D thermal simulation and robotic 5-axis CNC machining, Westpoint Group Companies eliminates internal porosity and guarantees zero-defect grain boundaries for high-stress turnout trackwork and forged axles.
+              Using MagmaSoft® 3D thermal simulation and robotic 5-axis CNC machining, Westpoint Group Companies minimizes internal porosity and optimizes grain boundaries for high-stress turnout trackwork and forged axles.
             </p>
 
             {/* 4 Feature Bullet Blocks */}

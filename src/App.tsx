@@ -28,13 +28,13 @@ import Footer from './components/Footer';
 import NewFrontiers from './components/NewFrontiers';
 import RequestQuoteModal from './components/RequestQuoteModal';
 import WatchVideoModal from './components/WatchVideoModal';
-import ProductExplorerModal from './components/ProductExplorerModal';
 import ProductDetailPage from './components/ProductDetailPage';
+import ProductCatalogPage from './components/ProductCatalogPage';
 
 function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isExplorerModalOpen, setIsExplorerModalOpen] = useState(false);
+  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [selectedProductForDetail, setSelectedProductForDetail] = useState<ProductItem | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -54,7 +54,35 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // SEO Friendly URL Routing
+    const handleLocationChange = () => {
+      const path = window.location.pathname;
+      if (path.startsWith('/product/')) {
+        setIsCatalogOpen(false);
+        const slug = path.replace('/product/', '');
+        const product = EXPLORER_PRODUCTS.find(p => p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug);
+        if (product) {
+          setSelectedProductForDetail(product);
+        } else {
+          setSelectedProductForDetail(null);
+        }
+      } else if (path === '/products') {
+        setSelectedProductForDetail(null);
+        setIsCatalogOpen(true);
+      } else {
+        setSelectedProductForDetail(null);
+        setIsCatalogOpen(false);
+      }
+    };
+
+    handleLocationChange(); // Check on initial load
+    window.addEventListener('popstate', handleLocationChange);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('popstate', handleLocationChange);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -67,21 +95,42 @@ function App() {
   const handleOpenVideo = () => setIsVideoModalOpen(true);
   const handleCloseVideo = () => setIsVideoModalOpen(false);
 
-  const handleOpenExplorer = () => setIsExplorerModalOpen(true);
-  const handleCloseExplorer = () => setIsExplorerModalOpen(false);
+  const handleOpenCatalog = () => {
+    setIsCatalogOpen(true);
+    setSelectedProductForDetail(null);
+    window.history.pushState({}, '', '/products');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  };
 
   const handleOpenProductDetail = (itemOrTitle: ProductItem | string) => {
+    let match: ProductItem | null = null;
     if (typeof itemOrTitle === 'string') {
       const q = itemOrTitle.toLowerCase().trim();
-      const match = EXPLORER_PRODUCTS.find(p =>
+      match = EXPLORER_PRODUCTS.find(p =>
         p.title.toLowerCase().includes(q) ||
         q.includes(p.title.toLowerCase()) ||
         p.series.toLowerCase().includes(q) ||
         p.desc.toLowerCase().includes(q)
       ) || EXPLORER_PRODUCTS[0];
-      setSelectedProductForDetail(match);
     } else {
-      setSelectedProductForDetail(itemOrTitle);
+      match = itemOrTitle;
+    }
+    
+    if (match) {
+      setSelectedProductForDetail(match);
+      setIsCatalogOpen(false);
+      const slug = match.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      window.history.pushState({}, '', `/product/${slug}`);
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  };
+
+  const handleCloseProductDetail = () => {
+    setSelectedProductForDetail(null);
+    if (isCatalogOpen) {
+      window.history.pushState({}, '', '/products');
+    } else {
+      window.history.pushState({}, '', '/');
     }
   };
 
@@ -105,13 +154,29 @@ function App() {
       {/* 02 Main Navigation & 03 Mega Menu */}
       <Header
         onRequestQuoteClick={handleOpenQuote}
-        onOpenExplorer={handleOpenExplorer}
+        onOpenExplorer={handleOpenCatalog}
       />
 
-      <main id="main-content">
+      {selectedProductForDetail ? (
+        <ProductDetailPage
+          isOpen={true}
+          product={selectedProductForDetail}
+          onClose={handleCloseProductDetail}
+          onRequestQuoteForProduct={(_title) => {
+            handleCloseProductDetail();
+            setIsQuoteModalOpen(true);
+          }}
+          onSelectProduct={handleOpenProductDetail}
+        />
+      ) : isCatalogOpen ? (
+        <ProductCatalogPage 
+          onSelectProduct={handleOpenProductDetail}
+        />
+      ) : (
+        <main id="main-content">
         {/* 04 Full Screen Hero Section */}
         <HeroSection
-          onExploreClick={handleOpenExplorer}
+          onExploreClick={handleOpenCatalog}
           onRequestQuoteClick={handleOpenQuote}
           onWatchVideoClick={handleOpenVideo}
         />
@@ -173,6 +238,7 @@ function App() {
         {/* 21 Critical Rail & Industrial Components (Moved to last section) */}
         <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} />
       </main>
+      )}
 
       {/* 22 Strategic Office Locations */}
       <OfficeLocations />
@@ -180,29 +246,10 @@ function App() {
       {/* 20 Corporate Mega Footer & Bottom Footer */}
       <Footer />
 
-      {/* Interactive Modals & Product Detail Page */}
-      <ProductDetailPage
-        isOpen={!!selectedProductForDetail}
-        product={selectedProductForDetail}
-        onClose={() => setSelectedProductForDetail(null)}
-        onRequestQuoteForProduct={(_title) => {
-          setSelectedProductForDetail(null);
-          setIsQuoteModalOpen(true);
-        }}
-        onSelectProduct={setSelectedProductForDetail}
-      />
+      {/* Interactive Modals */}
 
       <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={handleCloseQuote} />
       <WatchVideoModal isOpen={isVideoModalOpen} onClose={handleCloseVideo} />
-      <ProductExplorerModal
-        isOpen={isExplorerModalOpen}
-        onClose={handleCloseExplorer}
-        onRequestQuoteForProduct={() => {
-          setIsExplorerModalOpen(false);
-          setIsQuoteModalOpen(true);
-        }}
-        onOpenProductDetail={handleOpenProductDetail}
-      />
 
       {/* Floating Action Buttons */}
       <div className="floating-action-btn">

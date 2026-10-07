@@ -88,7 +88,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Brake support - GS-20Mn5V manufactured by Westpoint Industries.',
-    img: 'images/gettyimages-520686084-1024x1024.jpg',
+    img: '/images/gettyimages-520686084-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -105,7 +105,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Set Of Console manufactured by Westpoint Industries.',
-    img: 'images/gettyimages-169263915-1024x1024 (1).jpg',
+    img: '/images/gettyimages-169263915-1024x1024 (1).jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -122,7 +122,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Pin Bracket manufactured by Westpoint Industries.',
-    img: 'images/gettyimages-976893614-1024x1024.jpg',
+    img: '/images/gettyimages-976893614-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -139,7 +139,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Bump Stop Bracket manufactured by Westpoint Industries.',
-    img: 'images/gettyimages-1020709664-1024x1024.jpg',
+    img: '/images/gettyimages-1020709664-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -156,7 +156,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Articulation Piece - IS 1030 manufactured by Westpoint Industries.',
-    img: 'images/two-crossing-train-tracks.jpg',
+    img: '/images/two-crossing-train-tracks.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -292,7 +292,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Bearing Adaptor Plate Assembly manufactured by Westpoint Industries.',
-    img: 'images/camber-plates-drift-aluminium-race-600w-576380224.webp',
+    img: '/images/camber-plates-drift-aluminium-race-600w-576380224.webp',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -377,7 +377,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality 8 Ton Knuckle manufactured by Westpoint Industries.',
-    img: 'images/gettyimages-2234684923-1024x1024.jpg',
+    img: '/images/gettyimages-2234684923-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -394,14 +394,14 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Rotor manufactured by Westpoint Industries.',
-    img: 'images/disused-electric-drive-rack-railway-600w-2624945193.webp',
+    img: '/images/disused-electric-drive-rack-railway-600w-2624945193.webp',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
     id: 'oem-32',
     category: 'oem',
     categoryLabel: 'Components for OEMs',
-    title: 'Eliptcal Pin',
+    title: 'Elliptical Pin',
     series: 'SERIES OEM',
     specs: 'Standard Specification',
     compliance: ['ISO 9001:2015'],
@@ -410,7 +410,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     tensileStrength: 'N/A',
     yieldStrength: 'N/A',
     hardness: 'N/A',
-    desc: 'High-quality Eliptcal Pin manufactured by Westpoint Industries.',
+    desc: 'High-quality Elliptical Pin manufactured by Westpoint Industries.',
     img: 'https://www.shutterstock.com/image-photo/tow-hitch-modern-tractor-safety-260nw-2206903103.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
@@ -445,7 +445,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Trailer Components manufactured by Westpoint Industries.',
-    img: 'images/gettyimages-1756783058-1024x1024.jpg',
+    img: '/images/gettyimages-1756783058-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   ];

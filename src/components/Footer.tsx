@@ -31,29 +31,29 @@ export const Footer: React.FC = () => {
   };
 
   const services = [
-    'Manganese Turnout Frogs',
-    'Forged Wheelsets & Axles',
-    'Locomotive Bogie Castings',
-    'Draft Gear & Coupler Knuckles',
-    'Track Tie Plates & Fasteners',
-    'Custom Rail Patterns & Tooling'
+    { label: 'Manganese Turnout Frogs', href: '#products' },
+    { label: 'Forged Wheelsets & Axles', href: '#products' },
+    { label: 'Locomotive Bogie Castings', href: '#products' },
+    { label: 'Draft Gear & Coupler Knuckles', href: '#products' },
+    { label: 'Track Tie Plates & Fasteners', href: '#products' },
+    { label: 'Custom Rail Patterns & Tooling', href: '#capabilities' }
   ];
 
   const solutions = [
-    'AREMA Trackwork Engineering',
-    'AAR M-1003 QA Certification',
-    'Electric Induction Steel Melting',
-    'Ultrasonic NDT & Testing Lab',
-    'Heavy-Axle-Load Track Systems',
-    'Class I Railroad Supply Chain'
+    { label: 'AREMA Trackwork Engineering', href: '#standards' },
+    { label: 'AAR M-1003 QA Certification', href: '#approvals' },
+    { label: 'Electric Induction Steel Melting', href: '#process' },
+    { label: 'Ultrasonic NDT & Testing Lab', href: '#testing' },
+    { label: 'Heavy-Axle-Load Track Systems', href: '#performance' },
+    { label: 'Class I Railroad Supply Chain', href: '#coverage' }
   ];
 
   const companyLinks = [
-    'About Westpoint Group',
-    'metal Engineering Team',
-    'Foundry & Forging Facilities',
-    'Rail Network Vendor Status',
-    'Contact Enterprise Sales'
+    { label: 'About Westpoint Group', href: '#company-overview' },
+    { label: 'Metal Engineering Team', href: '#company-overview' },
+    { label: 'Foundry & Forging Facilities', href: '#capabilities' },
+    { label: 'Rail Network Vendor Status', href: '#trust-certifications' },
+    { label: 'Contact Enterprise Sales', href: '#contact' }
   ];
 
   const industryPills = [
@@ -117,8 +117,8 @@ export const Footer: React.FC = () => {
                   <Mail size={15} color="#81C784" />
                 </div>
                 <div>
-                  <a href="mailto:foundry@westpointndustries.com" style={{ color: '#FFFFFF', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
-                    foundry@westpointndustries.com
+                  <a href="mailto:foundry@westpointindustries.com" style={{ color: '#FFFFFF', textDecoration: 'none', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
+                    foundry@westpointindustries.com
                   </a>
                 </div>
               </div>
@@ -231,8 +231,8 @@ export const Footer: React.FC = () => {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                   {services.map((item, idx) => (
                     <li key={idx}>
-                      <a href="#products" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '13px', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
-                        {item}
+                      <a href={item.href} style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '13px', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
+                        {item.label}
                       </a>
                     </li>
                   ))}
@@ -247,8 +247,8 @@ export const Footer: React.FC = () => {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                   {solutions.map((item, idx) => (
                     <li key={idx}>
-                      <a href="#standards" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '13px', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
-                        {item}
+                      <a href={item.href} style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '13px', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
+                        {item.label}
                       </a>
                     </li>
                   ))}
@@ -263,8 +263,8 @@ export const Footer: React.FC = () => {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                   {companyLinks.map((item, idx) => (
                     <li key={idx}>
-                      <a href="#about" style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '13px', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
-                        {item}
+                      <a href={item.href} style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '13px', fontWeight: 600, transition: 'color 0.2s', fontFamily: "'Manrope', sans-serif !important" }} onMouseEnter={e => e.currentTarget.style.color = '#A5D6A7'} onMouseLeave={e => e.currentTarget.style.color = '#FFFFFF'}>
+                        {item.label}
                       </a>
                     </li>
                   ))}
