@@ -33,12 +33,12 @@ export const FactoryOverview: React.FC = () => {
     <section className="section-full-vh" style={{ background: '#F8F9FA', borderBottom: '1px solid #E5E7EB' }}>
       <div className="container-custom">
         <div className="factory-overview-grid">
-          
+
           {/* Left Column: Large Machined Axlebox Housing Photo */}
           <div className="factory-col-img">
-            <img 
-              src="/images/istockphoto-1196704251-2048x2048.jpg" 
-              alt="Westpoint 5-Axis CNC Machined Axlebox Housing" 
+            <img
+              src="/images/prod_railway_track_plates copy.jpg"
+              alt="Westpoint 5-Axis CNC Machined Axlebox Housing"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, transparent 60%, rgba(27, 94, 32, 0.95) 100%)' }} />
