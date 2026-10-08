@@ -226,7 +226,7 @@ function App() {
         <CompanyIntro />
 
         {/* 06 Featured Rail Components (All Products) */}
-        <FeaturedComponents onOpenProductDetail={handleOpenProductDetail} />
+        <FeaturedComponents onOpenProductDetail={handleOpenProductDetail} onOpenCatalog={handleOpenCatalog} />
 
         {/* 06B Interactive Engineering & Product Spec Explorer */}
         {/* <InteractiveExplorer
@@ -276,7 +276,7 @@ function App() {
         <CtaBanner onRequestQuoteClick={handleOpenQuote} />
 
         {/* 21 Critical Rail & Industrial Components (Moved to last section) */}
-        <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} />
+        <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} onOpenCatalog={handleOpenCatalog} />
       </main>
       )}
 

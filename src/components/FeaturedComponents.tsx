@@ -3,9 +3,10 @@ import { ArrowRight, ChevronLeft, ChevronRight, Check, Filter } from 'lucide-rea
 
 interface FeaturedComponentsProps {
   onOpenProductDetail?: (productTitle: string) => void;
+  onOpenCatalog?: () => void;
 }
 
-export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenProductDetail }) => {
+export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenProductDetail, onOpenCatalog }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
@@ -462,6 +463,50 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
 
               </div>
             ))}
+          </div>
+
+          {/* Load More Products Button */}
+          <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+            <button
+              onClick={() => {
+                if (onOpenCatalog) {
+                  onOpenCatalog();
+                } else {
+                  window.history.pushState({}, '', '/products');
+                  window.dispatchEvent(new PopStateEvent('popstate'));
+                  window.scrollTo({ top: 0, behavior: 'auto' });
+                }
+              }}
+              style={{
+                background: '#1B5E20',
+                color: '#FFFFFF',
+                border: '2px solid #4CAF50',
+                padding: '14px 36px',
+                fontSize: '13px',
+                fontWeight: 900,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                borderRadius: '4px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                boxShadow: '0 8px 24px rgba(27, 94, 32, 0.25)',
+                fontFamily: "'Manrope', sans-serif",
+                transition: 'all 0.25s ease'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = '#4CAF50';
+                e.currentTarget.style.borderColor = '#1B5E20';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = '#1B5E20';
+                e.currentTarget.style.borderColor = '#4CAF50';
+              }}
+            >
+              <span>LOAD MORE PRODUCTS &amp; VIEW FULL CATALOG</span>
+              <ArrowRight size={18} color="#FFFFFF" />
+            </button>
           </div>
 
         </div>
