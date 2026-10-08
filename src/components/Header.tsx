@@ -305,10 +305,10 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
 
 
         {/* Tier 2: Fortune 500 Corporate Industrial Navigation Bar */}
-        <div style={{ background: '#4CAF50', borderBottom: '3px solid #388E3C', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)', padding: '0 2.5vw', width: '100%' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+        <div style={{ background: '#4CAF50', borderBottom: '3px solid #388E3C', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)', padding: '0 2.5vw', width: '100%', position: 'relative' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', position: 'relative' }}>
 
-            <nav style={{ display: 'flex', alignItems: 'center', flexWrap: 'nowrap', overflowX: 'auto', scrollbarWidth: 'none', width: '100%' }}>
+            <nav style={{ display: 'flex', alignItems: 'center', flexWrap: 'nowrap', overflowX: 'auto', scrollbarWidth: 'none', flex: 1 }}>
               {navCategories.map((cat) => {
                 const isActive = activeMegaMenu === cat.id;
                 return (
@@ -356,192 +356,168 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   </div>
                 );
               })}
+            </nav>
 
-              <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0, position: 'relative' }}>
+              <button
+                onClick={() => {
+                  if (onOpenExplorer) {
+                    onOpenExplorer();
+                  } else {
+                    const el = document.getElementById('explorer');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                style={{
+                  color: '#FFFFFF',
+                  background: 'transparent',
+                  border: 'none',
+                  fontSize: '13px',
+                  fontWeight: 900,
+                  letterSpacing: '0.06em',
+                  padding: '16px 20px',
+                  textTransform: 'uppercase',
+                  whiteSpace: 'nowrap',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  flexShrink: 0,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontFamily: "'Manrope', sans-serif",
+                  borderRadius: '2px'
+                }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.background = '#FAF6EE'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = 'transparent'; }}
+              >
+                <Compass size={14} />
+                <span>PRODUCT CATALOG</span>
+              </button>
+
+              {/* Enterprise Portals Dropdown */}
+              <div 
+                style={{ position: 'relative', flexShrink: 0, zIndex: 99999 }}
+                onMouseEnter={() => { setActiveMegaMenu(null); setIsPortalsDropdownOpen(true); }}
+                onMouseLeave={() => setIsPortalsDropdownOpen(false)}
+              >
                 <button
-                  onClick={() => {
-                    if (onOpenExplorer) {
-                      onOpenExplorer();
-                    } else {
-                      const el = document.getElementById('explorer');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onClick={() => setIsPortalsDropdownOpen(!isPortalsDropdownOpen)}
                   style={{
-                    color: '#FFFFFF',
-                    background: 'transparent',
-                    border: 'none',
-                    fontSize: '13px',
-                    fontWeight: 900,
+                    background: isPortalsDropdownOpen ? '#FAF6EE' : '#1B5E20',
+                    color: isPortalsDropdownOpen ? '#1B5E20' : '#FFFFFF',
+                    border: '1px solid #FAF6EE',
+                    fontSize: '11px',
+                    fontWeight: 800,
                     letterSpacing: '0.06em',
-                    padding: '16px 20px',
+                    padding: '6px 12px',
                     textTransform: 'uppercase',
                     whiteSpace: 'nowrap',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
-                    flexShrink: 0,
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '5px',
                     fontFamily: "'Manrope', sans-serif",
-                    borderRadius: '2px'
+                    borderRadius: '3px'
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.background = '#FAF6EE'; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = 'transparent'; }}
                 >
-                  <Compass size={14} />
-                  <span>PRODUCT CATALOG</span>
+                  <Building2 size={13} />
+                  <span>PORTALS</span>
+                  <ChevronDown size={12} style={{ transform: isPortalsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
                 </button>
 
-                {/* Enterprise Portals Dropdown */}
-                <div 
-                  style={{ position: 'relative', flexShrink: 0, zIndex: 99999 }}
-                  onMouseEnter={() => { setActiveMegaMenu(null); setIsPortalsDropdownOpen(true); }}
-                  onMouseLeave={() => setIsPortalsDropdownOpen(false)}
-                >
-                  <button
-                    onClick={() => setIsPortalsDropdownOpen(!isPortalsDropdownOpen)}
-                    style={{
-                      background: isPortalsDropdownOpen ? '#FAF6EE' : '#1B5E20',
-                      color: isPortalsDropdownOpen ? '#1B5E20' : '#FFFFFF',
-                      border: '1px solid #FAF6EE',
-                      fontSize: '11px',
-                      fontWeight: 800,
-                      letterSpacing: '0.06em',
-                      padding: '6px 12px',
-                      textTransform: 'uppercase',
-                      whiteSpace: 'nowrap',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '5px',
-                      fontFamily: "'Manrope', sans-serif",
-                      borderRadius: '3px'
-                    }}
-                  >
-                    <Building2 size={13} />
-                    <span>PORTALS</span>
-                    <ChevronDown size={12} style={{ transform: isPortalsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
-                  </button>
+                {/* Dropdown Menu with 3 Simple Links */}
+                {isPortalsDropdownOpen && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '100%',
+                    right: 0,
+                    minWidth: '200px',
+                    background: '#FFFFFF',
+                    border: '1.5px solid #1B5E20',
+                    borderRadius: '4px',
+                    boxShadow: '0 15px 35px rgba(0,0,0,0.25)',
+                    zIndex: 999999,
+                    padding: '6px 0',
+                    marginTop: '4px'
+                  }}>
+                    {/* Link 1: Customer Portal */}
+                    <button
+                      onClick={() => {
+                        setIsPortalsDropdownOpen(false);
+                        if (onOpenPortalModal) onOpenPortalModal('customer');
+                      }}
+                      style={{
+                        width: '100%',
+                        textAlign: 'left',
+                        padding: '10px 16px',
+                        background: 'transparent',
+                        border: 'none',
+                        fontSize: '13px',
+                        fontWeight: 800,
+                        color: '#1B5E20',
+                        cursor: 'pointer',
+                        transition: 'background 0.2s',
+                        fontFamily: "'Manrope', sans-serif !important"
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.background = '#E8F5E9'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                    >
+                      Customer Portal
+                    </button>
 
-                  {/* Dropdown Menu with 3 Links */}
-                  {isPortalsDropdownOpen && (
-                    <div style={{
-                      position: 'absolute',
-                      top: '100%',
-                      right: 0,
-                      minWidth: '350px',
-                      background: '#FAF6EE',
-                      border: '2px solid #1B5E20',
-                      borderRadius: '4px',
-                      boxShadow: '0 25px 50px rgba(0,0,0,0.4)',
-                      zIndex: 999999,
-                      overflow: 'hidden',
-                      padding: '8px 0',
-                      marginTop: '4px'
-                    }}>
-                      <div style={{ padding: '8px 16px 6px 16px', fontSize: '10px', fontWeight: 900, color: '#1B5E20', letterSpacing: '0.12em', textTransform: 'uppercase', borderBottom: '1px solid #E5E7EB' }}>
-                        SELECT PORTAL TO REGISTER &amp; UPLOAD DRAWINGS
-                      </div>
+                    {/* Link 2: Vendor Portal */}
+                    <button
+                      onClick={() => {
+                        setIsPortalsDropdownOpen(false);
+                        if (onOpenPortalModal) onOpenPortalModal('vendor');
+                      }}
+                      style={{
+                        width: '100%',
+                        textAlign: 'left',
+                        padding: '10px 16px',
+                        background: 'transparent',
+                        border: 'none',
+                        fontSize: '13px',
+                        fontWeight: 800,
+                        color: '#B45309',
+                        cursor: 'pointer',
+                        transition: 'background 0.2s',
+                        fontFamily: "'Manrope', sans-serif !important"
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.background = '#FEF3C7'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                    >
+                      Vendor Portal
+                    </button>
 
-                      {/* Link 1: Customer Portal */}
-                      <button
-                        onClick={() => {
-                          setIsPortalsDropdownOpen(false);
-                          if (onOpenPortalModal) onOpenPortalModal('customer');
-                        }}
-                        style={{
-                          width: '100%',
-                          textAlign: 'left',
-                          padding: '12px 16px',
-                          background: 'transparent',
-                          border: 'none',
-                          borderBottom: '1px solid #E5E7EB',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '12px',
-                          transition: 'background 0.2s',
-                          fontFamily: "'Manrope', sans-serif !important"
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.background = '#E8F5E9'}
-                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                      >
-                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#1B5E20', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                          <UserCheck size={18} />
-                        </div>
-                        <div>
-                          <strong style={{ fontSize: '13px', color: '#111827', display: 'block', fontWeight: 900 }}>1. Customer Registration &amp; CAD Upload</strong>
-                          <span style={{ fontSize: '11px', color: '#2E7D32', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Customer onboarding &amp; 2D/3D CAD drawing submission</span>
-                        </div>
-                      </button>
-
-                      {/* Link 2: Vendor Portal */}
-                      <button
-                        onClick={() => {
-                          setIsPortalsDropdownOpen(false);
-                          if (onOpenPortalModal) onOpenPortalModal('vendor');
-                        }}
-                        style={{
-                          width: '100%',
-                          textAlign: 'left',
-                          padding: '12px 16px',
-                          background: 'transparent',
-                          border: 'none',
-                          borderBottom: '1px solid #E5E7EB',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '12px',
-                          transition: 'background 0.2s',
-                          fontFamily: "'Manrope', sans-serif !important"
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.background = '#FEF3C7'}
-                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                      >
-                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#D97706', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                          <Building2 size={18} />
-                        </div>
-                        <div>
-                          <strong style={{ fontSize: '13px', color: '#111827', display: 'block', fontWeight: 900 }}>2. Vendor &amp; Supplier Registration</strong>
-                          <span style={{ fontSize: '11px', color: '#B45309', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Supplier pre-qualification &amp; raw material spec upload</span>
-                        </div>
-                      </button>
-
-                      {/* Link 3: Government Portal */}
-                      <button
-                        onClick={() => {
-                          setIsPortalsDropdownOpen(false);
-                          if (onOpenPortalModal) onOpenPortalModal('government');
-                        }}
-                        style={{
-                          width: '100%',
-                          textAlign: 'left',
-                          padding: '12px 16px',
-                          background: 'transparent',
-                          border: 'none',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '12px',
-                          transition: 'background 0.2s',
-                          fontFamily: "'Manrope', sans-serif !important"
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.background = '#FEE2E2'}
-                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                      >
-                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#9B0403', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                          <ShieldCheck size={18} />
-                        </div>
-                        <div>
-                          <strong style={{ fontSize: '13px', color: '#111827', display: 'block', fontWeight: 900 }}>3. Government &amp; Transit Authority Portal</strong>
-                          <span style={{ fontSize: '11px', color: '#9B0403', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Public transit &amp; government tender drawing submission</span>
-                        </div>
-                      </button>
-                    </div>
-                  )}
-                </div>
+                    {/* Link 3: Government Portal */}
+                    <button
+                      onClick={() => {
+                        setIsPortalsDropdownOpen(false);
+                        if (onOpenPortalModal) onOpenPortalModal('government');
+                      }}
+                      style={{
+                        width: '100%',
+                        textAlign: 'left',
+                        padding: '10px 16px',
+                        background: 'transparent',
+                        border: 'none',
+                        fontSize: '13px',
+                        fontWeight: 800,
+                        color: '#9B0403',
+                        cursor: 'pointer',
+                        transition: 'background 0.2s',
+                        fontFamily: "'Manrope', sans-serif !important"
+                      }}
+                      onMouseEnter={e => e.currentTarget.style.background = '#FEE2E2'}
+                      onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                    >
+                      Government Portal
+                    </button>
+                  </div>
+                )}
+              </div>
 
                 <a
                   href="#downloads"
@@ -568,7 +544,6 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   <span>TECHNICAL LIBRARY</span>
                 </a>
               </div>
-            </nav>
 
           </div>
         </div>
