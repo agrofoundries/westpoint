@@ -448,142 +448,117 @@ export const Footer: React.FC = () => {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-            gap: '1.5rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+            gap: '1.25rem'
           }}>
             {/* 01 Westpoint Infrastructure */}
             <div style={{
               background: '#FFFFFF',
               borderRadius: '10px',
-              padding: '1.4rem 1.6rem',
+              padding: '1.2rem 1.4rem',
               boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
               display: 'flex',
-              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'space-between',
               border: '1.5px solid rgba(76, 175, 80, 0.3)',
               transition: 'transform 0.2s, box-shadow 0.2s'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <img
-                  src="/logos/Westpoint-Foundries-Industrial-Logo.png"
-                  alt="Westpoint Foundries Logo"
-                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
-                />
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Foundries Division
-                </span>
-              </div>
-              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
-                Heavy rail trackwork, transit castings, rolling stock forgings, base plates, and metallurgical infrastructure engineering.
-              </p>
+              <img
+                src="/logos/Westpoint-Foundries-Industrial-Logo.png"
+                alt="Westpoint Foundries Logo"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
+              <span style={{ fontSize: '10px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 8px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                Foundries
+              </span>
             </div>
 
             {/* 02 Westpoint Water */}
             <div style={{
               background: '#FFFFFF',
               borderRadius: '10px',
-              padding: '1.4rem 1.6rem',
+              padding: '1.2rem 1.4rem',
               boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
               display: 'flex',
-              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'space-between',
               border: '1.5px solid rgba(76, 175, 80, 0.3)',
               transition: 'transform 0.2s, box-shadow 0.2s'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <img
-                  src="/logos/Westpoint-Castings-Industrial-Logo.png"
-                  alt="Westpoint Castings Logo"
-                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
-                />
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Castings Division
-                </span>
-              </div>
-              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
-                Advanced industrial water management, municipal hydraulics, heavy ductile pumping systems, and environmental fluid infrastructure.
-              </p>
+              <img
+                src="/logos/Westpoint-Castings-Industrial-Logo.png"
+                alt="Westpoint Castings Logo"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
+              <span style={{ fontSize: '10px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 8px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                Castings
+              </span>
             </div>
 
             {/* 03 Westpoint Group Companies */}
             <div style={{
               background: '#FFFFFF',
               borderRadius: '10px',
-              padding: '1.4rem 1.6rem',
+              padding: '1.2rem 1.4rem',
               boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
               display: 'flex',
-              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'space-between',
               border: '1.5px solid rgba(76, 175, 80, 0.3)',
               transition: 'transform 0.2s, box-shadow 0.2s'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <img
-                  src="/logos/Westpoint-Forgings-Industrial-Logo.png"
-                  alt="Westpoint Forgings Logo"
-                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
-                />
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Forgings Division
-                </span>
-              </div>
-              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
-                Global parent holding conglomerate coordinating specialized foundries, precision CNC machining complexes, and supply logistics worldwide.
-              </p>
+              <img
+                src="/logos/Westpoint-Forgings-Industrial-Logo.png"
+                alt="Westpoint Forgings Logo"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
+              <span style={{ fontSize: '10px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 8px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                Forgings
+              </span>
             </div>
 
             {/* 04 Agro Foundries */}
             <div style={{
               background: '#FFFFFF',
               borderRadius: '10px',
-              padding: '1.4rem 1.6rem',
+              padding: '1.2rem 1.4rem',
               boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
               display: 'flex',
-              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'space-between',
               border: '1.5px solid rgba(76, 175, 80, 0.3)',
               transition: 'transform 0.2s, box-shadow 0.2s'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <img
-                  src="/associations/AFlogo.png"
-                  alt="Agro Foundries Logo"
-                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
-                />
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Agro Division
-                </span>
-              </div>
-              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
-                Specialized agricultural castings, tillage tools, rotavator components, and farm machinery equipment manufacturing.
-              </p>
+              <img
+                src="/associations/AFlogo.png"
+                alt="Agro Foundries Logo"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
+              <span style={{ fontSize: '10px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 8px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                Agro
+              </span>
             </div>
 
             {/* 05 Westpoint Waterworks */}
             <div style={{
               background: '#FFFFFF',
               borderRadius: '10px',
-              padding: '1.4rem 1.6rem',
+              padding: '1.2rem 1.4rem',
               boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
               display: 'flex',
-              flexDirection: 'column',
+              alignItems: 'center',
               justifyContent: 'space-between',
               border: '1.5px solid rgba(76, 175, 80, 0.3)',
               transition: 'transform 0.2s, box-shadow 0.2s'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <img
-                  src="/logos/Westpoint-Waterworks-Corporate-Logo.png"
-                  alt="Westpoint Waterworks Logo"
-                  style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
-                />
-                <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Waterworks Division
-                </span>
-              </div>
-              <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
-                Advanced industrial water management, municipal hydraulics, heavy ductile pumping systems, and environmental fluid infrastructure.
-              </p>
+              <img
+                src="/logos/Westpoint-Waterworks-Corporate-Logo.png"
+                alt="Westpoint Waterworks Logo"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
+              <span style={{ fontSize: '10px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 8px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                Waterworks
+              </span>
             </div>
           </div>
         </div>
