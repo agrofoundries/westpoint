@@ -170,8 +170,8 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
             </div>
 
             {/* Right Division Emblems (Desktop) with Tagline & Infinite Slider */}
-            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '500px' }}>
-              <span style={{ fontStyle: 'italic', fontSize: '13px', color: '#6B7280', whiteSpace: 'nowrap', fontWeight: 700 }}>
+            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '600px' }}>
+              <span style={{ fontStyle: 'italic', fontSize: '16px', color: '#1B5E20', whiteSpace: 'nowrap', fontWeight: 900, marginLeft: '32px' }}>
                 Our Total lineup.......
               </span>
               
