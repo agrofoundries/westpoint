@@ -394,11 +394,9 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                 <span>PRODUCT CATALOG</span>
               </button>
 
-              {/* Enterprise Portals Dropdown */}
+              {/* Enterprise Portals Dropdown (Clickable Only) */}
               <div 
                 style={{ position: 'relative', flexShrink: 0, zIndex: 99999 }}
-                onMouseEnter={() => { setActiveMegaMenu(null); setIsPortalsDropdownOpen(true); }}
-                onMouseLeave={() => setIsPortalsDropdownOpen(false)}
               >
                 <button
                   onClick={() => setIsPortalsDropdownOpen(!isPortalsDropdownOpen)}

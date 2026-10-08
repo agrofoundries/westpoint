@@ -27,9 +27,9 @@ import RequestQuoteModal from './components/RequestQuoteModal';
 import WatchVideoModal from './components/WatchVideoModal';
 import ProductDetailPage from './components/ProductDetailPage';
 import ProductCatalogPage from './components/ProductCatalogPage';
-import CustomerRegistrationModal from './components/CustomerRegistrationModal';
-import VendorRegistrationModal from './components/VendorRegistrationModal';
-import GovernmentRegistrationModal from './components/GovernmentRegistrationModal';
+import CustomerPortalPage from './components/CustomerPortalPage';
+import VendorPortalPage from './components/VendorPortalPage';
+import GovernmentPortalPage from './components/GovernmentPortalPage';
 export type PortalType = 'customer' | 'vendor' | 'government';
 
 function App() {
@@ -37,9 +37,7 @@ function App() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [selectedProductForDetail, setSelectedProductForDetail] = useState<ProductItem | null>(null);
-  const [isCustomerModalOpen, setIsCustomerModalOpen] = useState(false);
-  const [isVendorModalOpen, setIsVendorModalOpen] = useState(false);
-  const [isGovernmentModalOpen, setIsGovernmentModalOpen] = useState(false);
+  const [activePortalPage, setActivePortalPage] = useState<PortalType | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -59,11 +57,12 @@ function App() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // SEO Friendly URL Routing & Form Redirects
+    // SEO Friendly URL Routing & Dedicated Form Page Redirects
     const handleLocationChange = () => {
       const path = window.location.pathname;
       if (path.startsWith('/product/')) {
         setIsCatalogOpen(false);
+        setActivePortalPage(null);
         const slug = path.replace('/product/', '');
         const product = EXPLORER_PRODUCTS.find(p => p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') === slug);
         if (product) {
@@ -73,28 +72,27 @@ function App() {
         }
       } else if (path === '/products') {
         setSelectedProductForDetail(null);
+        setActivePortalPage(null);
         setIsCatalogOpen(true);
       } else if (path === '/portal/customer') {
         setSelectedProductForDetail(null);
         setIsCatalogOpen(false);
-        setIsCustomerModalOpen(true);
-        setIsVendorModalOpen(false);
-        setIsGovernmentModalOpen(false);
+        setActivePortalPage('customer');
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } else if (path === '/portal/vendor') {
         setSelectedProductForDetail(null);
         setIsCatalogOpen(false);
-        setIsVendorModalOpen(true);
-        setIsCustomerModalOpen(false);
-        setIsGovernmentModalOpen(false);
+        setActivePortalPage('vendor');
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } else if (path === '/portal/government') {
         setSelectedProductForDetail(null);
         setIsCatalogOpen(false);
-        setIsGovernmentModalOpen(true);
-        setIsCustomerModalOpen(false);
-        setIsVendorModalOpen(false);
+        setActivePortalPage('government');
+        window.scrollTo({ top: 0, behavior: 'auto' });
       } else {
         setSelectedProductForDetail(null);
         setIsCatalogOpen(false);
+        setActivePortalPage(null);
       }
     };
 
@@ -119,28 +117,16 @@ function App() {
 
   const handleOpenPortalModal = (type: PortalType = 'customer') => {
     window.history.pushState({}, '', `/portal/${type}`);
-    if (type === 'customer') {
-      setIsCustomerModalOpen(true);
-      setIsVendorModalOpen(false);
-      setIsGovernmentModalOpen(false);
-    } else if (type === 'vendor') {
-      setIsVendorModalOpen(true);
-      setIsCustomerModalOpen(false);
-      setIsGovernmentModalOpen(false);
-    } else if (type === 'government') {
-      setIsGovernmentModalOpen(true);
-      setIsCustomerModalOpen(false);
-      setIsVendorModalOpen(false);
-    }
+    setSelectedProductForDetail(null);
+    setIsCatalogOpen(false);
+    setActivePortalPage(type);
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
-  const handleClosePortalModal = (type: PortalType) => {
-    if (type === 'customer') setIsCustomerModalOpen(false);
-    if (type === 'vendor') setIsVendorModalOpen(false);
-    if (type === 'government') setIsGovernmentModalOpen(false);
-    if (window.location.pathname.startsWith('/portal/')) {
-      window.history.pushState({}, '', '/');
-    }
+  const handleBackToHome = () => {
+    setActivePortalPage(null);
+    window.history.pushState({}, '', '/');
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const handleOpenCatalog = () => {
@@ -221,6 +207,12 @@ function App() {
         <ProductCatalogPage 
           onSelectProduct={handleOpenProductDetail}
         />
+      ) : activePortalPage === 'customer' ? (
+        <CustomerPortalPage onBackToHome={handleBackToHome} />
+      ) : activePortalPage === 'vendor' ? (
+        <VendorPortalPage onBackToHome={handleBackToHome} />
+      ) : activePortalPage === 'government' ? (
+        <GovernmentPortalPage onBackToHome={handleBackToHome} />
       ) : (
         <main id="main-content">
         {/* 04 Full Screen Hero Section */}
@@ -301,9 +293,6 @@ function App() {
 
       <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={handleCloseQuote} />
       <WatchVideoModal isOpen={isVideoModalOpen} onClose={handleCloseVideo} />
-      <CustomerRegistrationModal isOpen={isCustomerModalOpen} onClose={() => handleClosePortalModal('customer')} />
-      <VendorRegistrationModal isOpen={isVendorModalOpen} onClose={() => handleClosePortalModal('vendor')} />
-      <GovernmentRegistrationModal isOpen={isGovernmentModalOpen} onClose={() => handleClosePortalModal('government')} />
 
       {/* Floating Action Buttons */}
       <div className="floating-action-btn">
