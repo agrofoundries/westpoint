@@ -64,7 +64,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <span style={{ fontSize: '11px', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.08em', display: 'block', fontWeight: 700, fontFamily: "'Manrope', sans-serif !important" }}>ENGINEERING ESTIMATING EMAIL</span>
-                  <strong style={{ fontSize: '15px', color: '#FFFFFF', fontWeight: 900, fontFamily: "'Manrope', sans-serif !important" }}>foundry@westpointndustries.com</strong>
+                  <strong style={{ fontSize: '15px', color: '#FFFFFF', fontWeight: 900, fontFamily: "'Manrope', sans-serif !important" }}>foundry@westpointindustries.com</strong>
                 </div>
               </div>
 

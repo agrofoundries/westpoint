@@ -46,7 +46,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ lang }) => {
       img: '/images/prod_pin_bracket.jpg'
     },
     {
-      title: lang === 'en' ? 'Custom Rail metal Forgings' : 'Forjas Metalúrgicas a Medida',
+      title: lang === 'en' ? 'Custom Rail Metal Forgings' : 'Forjas Metalúrgicas a Medida',
       desc: lang === 'en'
         ? 'Custom drop forgings, CNC machined tie-bar assemblies, and specialized turnout components engineered to custom client CAD specs.'
         : 'Forjas de precisión y componentes mecanizados CNC según especificaciones de clientes.',

@@ -70,7 +70,7 @@ export const SustainabilitySection: React.FC = () => {
             <div className="img-hover-zoom" style={{ border: '1px solid #E5E7EB', background: '#FAF6EE' }}>
               <img 
                 src="/images/prod_railway_track_plates.jpg" 
-                alt="Westpoint Environmental Heavy Rail metal Foundry" 
+                alt="Westpoint Environmental Heavy Rail Metal Foundry" 
                 style={{ width: '100%', height: '360px', objectFit: 'cover', display: 'block' }}
               />
             </div>

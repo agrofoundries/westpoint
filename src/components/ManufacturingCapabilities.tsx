@@ -97,7 +97,7 @@ export const ManufacturingCapabilities: React.FC = () => {
 
               {/* Card Label Overlay */}
               <div style={{ position: 'relative', zIndex: 10, padding: '1.5rem', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-                <span style={{ fontSize: '10px', fontWeight: 900, color: '#4CAF50', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '4px', fontFamily: "'Manrope', sans-serif !important" }}>
+                <span style={{ fontSize: '10px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '4px', fontFamily: "'Manrope', sans-serif !important" }}>
                   {cap.sub}
                 </span>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#FAF6EE', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: "'Manrope', sans-serif !important" }}>
