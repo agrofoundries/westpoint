@@ -54,7 +54,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Control Arm Upper, Lower Right, Lower Left - SG 400/18 manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/suspension-arm-vehicle-on-white-260nw-1232311150.jpg',
+    img: '/images/suspension-arm-vehicle-260nw-1232311150.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -190,7 +190,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Front and Rear Draft Lugs - Grade B & C manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/close-train-coupler-260nw-1680899338.jpg',
+    img: '/images/close-train-coupler-260nw-1680899338.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -207,7 +207,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Railway Track Plates manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/railroad-tracks-divided-into-two-260nw-2686728089.jpg',
+    img: '/images/railroad-tracks-divided-260nw-2686728089.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -241,7 +241,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Other railway components manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/close-train-coupler-260nw-1680899338.jpg',
+    img: '/images/close-train-coupler-260nw-1680899338.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -258,7 +258,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Jacking Pad manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/highprecision-cast-metal-engine-block-260nw-2786927443.jpg',
+    img: '/images/cast-metal-engine-block-260nw-2786927443.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -275,7 +275,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Coupler Carrier manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/close-train-coupler-260nw-1680899338.jpg',
+    img: '/images/close-train-coupler-260nw-1680899338.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -309,7 +309,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Brake Head for Brake rigging kit manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/drum-brake-truck-bus-tractor-260nw-2457408845.jpg',
+    img: '/images/drum-brake-truck-bus-260nw-2457408845.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -343,7 +343,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Fuel Pump Support manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/highprecision-cast-metal-engine-block-260nw-2786927443.jpg',
+    img: '/images/cast-metal-engine-block-260nw-2786927443.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -360,7 +360,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality 10 Ton Stub Axle manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/suspension-arm-vehicle-on-white-260nw-1232311150.jpg',
+    img: '/images/suspension-arm-vehicle-260nw-1232311150.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -411,7 +411,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Elliptical Pin manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/tow-hitch-modern-tractor-safety-260nw-2206903103.jpg',
+    img: '/images/tow-hitch-modern-tractor-260nw-2206903103.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -428,7 +428,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Sprockets for Undercarriage manufactured by Westpoint Industries.',
-    img: 'https://www.shutterstock.com/image-photo/track-drive-gear-bulldozer-sprocket-mechanism-260nw-623455658.jpg',
+    img: '/images/track-drive-gear-bulldozer-260nw-623455658.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
