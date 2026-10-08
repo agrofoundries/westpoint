@@ -36,9 +36,7 @@ export const AssociationsStandards: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '5rem 0', background: '#0a110a', borderTop: '1px solid #1B5E20', position: 'relative', overflow: 'hidden' }}>
-      {/* Abstract Background pattern */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0.05, backgroundImage: 'radial-gradient(#4CAF50 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+    <section style={{ padding: '5rem 0', background: '#F8F9FA', borderTop: '1px solid #E5E7EB', position: 'relative', overflow: 'hidden' }}>
       
       <div className="container-custom" style={{ position: 'relative', zIndex: 2 }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -52,7 +50,7 @@ export const AssociationsStandards: React.FC = () => {
           <h2 style={{
             fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
             fontWeight: 900,
-            color: '#FFFFFF',
+            color: '#111827',
             margin: 0,
             textTransform: 'uppercase',
             letterSpacing: '-0.02em',
@@ -61,7 +59,7 @@ export const AssociationsStandards: React.FC = () => {
           }}>
             Our Global <span style={{ color: '#4CAF50' }}>Divisions</span>
           </h2>
-          <p style={{ color: '#A3B8A8', marginTop: '1rem', maxWidth: '600px', marginInline: 'auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
+          <p style={{ color: '#4B5563', marginTop: '1rem', maxWidth: '600px', marginInline: 'auto', fontSize: '1.1rem', lineHeight: 1.6 }}>
             An integrated network of specialized manufacturing divisions delivering critical components across major industrial sectors worldwide.
           </p>
         </div>
@@ -74,15 +72,16 @@ export const AssociationsStandards: React.FC = () => {
         }}>
           {divisions.map((div, index) => (
             <div key={index} style={{
-              background: 'linear-gradient(145deg, #111c13 0%, #0d150e 100%)',
-              border: '1px solid #1B5E20',
+              background: '#FFFFFF',
+              border: '1px solid #E5E7EB',
               borderRadius: '12px',
               padding: '2.5rem 2rem',
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'flex-start',
+              alignItems: 'center',
+              justifyContent: 'center',
               width: '100%',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
               transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
               cursor: 'pointer',
               position: 'relative',
@@ -90,52 +89,41 @@ export const AssociationsStandards: React.FC = () => {
             }}
             onMouseEnter={e => {
               e.currentTarget.style.transform = 'translateY(-8px)';
-              e.currentTarget.style.boxShadow = '0 20px 40px rgba(76, 175, 80, 0.15)';
+              e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
               e.currentTarget.style.borderColor = '#4CAF50';
-              e.currentTarget.style.background = 'linear-gradient(145deg, #152418 0%, #0d150e 100%)';
+              e.currentTarget.style.background = '#FFFFFF';
             }}
             onMouseLeave={e => {
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-              e.currentTarget.style.borderColor = '#1B5E20';
-              e.currentTarget.style.background = 'linear-gradient(145deg, #111c13 0%, #0d150e 100%)';
+              e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+              e.currentTarget.style.borderColor = '#E5E7EB';
+              e.currentTarget.style.background = '#FFFFFF';
             }}
             >
               {/* Top Accent Line */}
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: 'linear-gradient(90deg, #4CAF50, transparent)' }}></div>
               
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', marginBottom: '2rem' }}>
-                <div style={{ padding: '12px', background: 'rgba(76, 175, 80, 0.1)', borderRadius: '8px', border: '1px solid rgba(76, 175, 80, 0.2)' }}>
-                  {div.icon}
-                </div>
-                {div.img && (
+              {div.img && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100px', marginBottom: '1.5rem', width: '100%' }}>
                   <img 
                     src={div.img} 
                     alt={div.name} 
-                    style={{ maxHeight: '35px', objectFit: 'contain', filter: 'brightness(0) invert(1) opacity(0.8)' }} 
+                    style={{ maxWidth: '220px', maxHeight: '100px', objectFit: 'contain' }} 
                   />
-                )}
-              </div>
+                </div>
+              )}
 
               <h3 style={{ 
                 fontSize: '1.6rem', 
                 fontWeight: 900, 
-                color: '#FFFFFF', 
-                marginBottom: '1rem',
+                color: '#111827', 
+                margin: 0,
                 letterSpacing: '0.05em',
-                fontFamily: "'Manrope', sans-serif"
+                fontFamily: "'Manrope', sans-serif",
+                textAlign: 'center'
               }}>
                 {div.name}
               </h3>
-              
-              <p style={{
-                color: '#8A9A8E',
-                fontSize: '0.95rem',
-                lineHeight: 1.6,
-                margin: 0
-              }}>
-                {div.desc}
-              </p>
             </div>
           ))}
         </div>
