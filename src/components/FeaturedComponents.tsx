@@ -38,7 +38,7 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
       series: 'SG 400/18',
       specs: 'DIN/EN/ISO Standards',
       desc: 'Under-chassis critical components of high speed German LHB/FIAT coaches.',
-      img: '/images/trackside_turnout_castings.jpg',
+      img: '/images/prod_pin_bracket.jpg',
     },
     {
       id: 'rail-02',
@@ -65,7 +65,7 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
       series: 'TRACKWORK',
       specs: 'Heavy Duty',
       desc: 'Precision cast steel track tie plates and turnout components.',
-      img: '/images/trackside_turnout_castings_2.jpg',
+      img: '/images/amsted_track_plate.jpg',
     },
 
     // Agri Industry
