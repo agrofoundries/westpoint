@@ -238,7 +238,7 @@ export const CustomerPortalPage: React.FC<CustomerPortalPageProps> = ({ onBackTo
                             <span style={{ fontSize: '13px', fontWeight: 700, color: '#1B5E20' }}>{file.name}</span>
                             <span style={{ fontSize: '11px', color: '#4B5563', background: '#FFFFFF', padding: '2px 6px', borderRadius: '3px' }}>{file.size}</span>
                           </div>
-                          <button type="button" onClick={() => removeFile(idx)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#C62828' }}>
+                          <button type="button" onClick={() => removeFile(idx)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#9B0403' }}>
                             <Trash2 size={16} />
                           </button>
                         </div>
