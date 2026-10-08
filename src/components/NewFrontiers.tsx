@@ -10,11 +10,11 @@ const NewFrontiers: React.FC = () => {
   ];
 
   return (
-    <section style={{ background: '#0F291E', padding: '1.5rem 0', position: 'relative', overflow: 'hidden', borderTop: '2px solid #4CAF50', borderBottom: '2px solid #4CAF50' }}>
+    <section style={{ background: '#FAF6EE', padding: '3.5rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
       <div className="container-custom" style={{ position: 'relative' }}>
         
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <span style={{ fontSize: '0.85rem', fontWeight: 900, letterSpacing: '0.15em', color: '#A5D6A7', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem', fontFamily: "'Manrope', sans-serif !important" }}>
+          <span style={{ fontSize: '0.85rem', fontWeight: 900, letterSpacing: '0.15em', color: '#1B5E20', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem', fontFamily: "'Manrope', sans-serif !important" }}>
             Expanding Our Capabilities
           </span>
           <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: 900, margin: 0, color: '#C8102E', letterSpacing: '0.02em', fontFamily: "'Manrope', sans-serif !important" }}>

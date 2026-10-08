@@ -198,8 +198,8 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
       >
 
         {/* Tier 1: Middle Corporate Branding Bar */}
-        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '12px 0' }}>
-          <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '14px' }}>
+        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '12px 2.5vw', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '14px', width: '100%' }}>
 
             {/* Corporate Group Emblems (First / Left) */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -303,8 +303,8 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
 
 
         {/* Tier 2: Fortune 500 Corporate Industrial Navigation Bar */}
-        <div style={{ background: '#4CAF50', borderBottom: '3px solid #388E3C', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)' }}>
-          <div className="container-custom" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ background: '#4CAF50', borderBottom: '3px solid #388E3C', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)', padding: '0 2.5vw', width: '100%' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
 
             <nav style={{ display: 'flex', alignItems: 'center', flexWrap: 'nowrap', overflowX: 'auto', scrollbarWidth: 'none', width: '100%' }}>
               {navCategories.map((cat) => {
