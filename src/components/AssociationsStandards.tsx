@@ -66,8 +66,8 @@ export const AssociationsStandards: React.FC = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '2rem',
+          gridTemplateColumns: 'repeat(5, 1fr)',
+          gap: '1.5rem',
           justifyItems: 'center'
         }}>
           {divisions.map((div, index) => (
@@ -75,7 +75,7 @@ export const AssociationsStandards: React.FC = () => {
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
               borderRadius: '12px',
-              padding: '2.5rem 2rem',
+              padding: '1.5rem 1rem',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -104,17 +104,17 @@ export const AssociationsStandards: React.FC = () => {
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: 'linear-gradient(90deg, #4CAF50, transparent)' }}></div>
               
               {div.img && (
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100px', marginBottom: '1.5rem', width: '100%' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '80px', marginBottom: '1.5rem', width: '100%' }}>
                   <img 
                     src={div.img} 
                     alt={div.name} 
-                    style={{ maxWidth: '220px', maxHeight: '100px', objectFit: 'contain' }} 
+                    style={{ maxWidth: '100%', maxHeight: '80px', objectFit: 'contain' }} 
                   />
                 </div>
               )}
 
               <h3 style={{ 
-                fontSize: '1.6rem', 
+                fontSize: '1.2rem', 
                 fontWeight: 900, 
                 color: '#111827', 
                 margin: 0,
