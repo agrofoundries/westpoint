@@ -37,7 +37,7 @@ const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
   }, [displayText, isDeleting, text]);
 
   return (
-    <span style={{ fontStyle: 'italic', fontSize: '28px', color: '#C8102E', whiteSpace: 'nowrap', fontWeight: 900, minWidth: '310px', display: 'inline-block', lineHeight: 1 }}>
+    <span style={{ fontStyle: 'italic', fontSize: '36px', color: '#C8102E', whiteSpace: 'nowrap', fontWeight: 900, minWidth: '420px', display: 'inline-block', lineHeight: 1 }}>
       {displayText}
       <span style={{ animation: 'blinkCursor 0.8s infinite', marginLeft: '2px', color: '#C8102E', fontWeight: 900 }}>|</span>
     </span>
