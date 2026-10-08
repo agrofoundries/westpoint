@@ -26,10 +26,6 @@ dist-ssr
 *.zip
 *.txt
 
-*.mp4
-
-!public/mokup/Westpointindustriesdesktoplive-Mockup.mp4
-
 # Design temp files
 *.psd
 * copy.*
