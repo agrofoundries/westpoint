@@ -169,10 +169,42 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
               <Logo division="group" height="65px" />
             </div>
 
-            {/* Right Division Emblems (Desktop) */}
-            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-              <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
-              <Logo division="infrastructure" height="65px" />
+            {/* Right Division Emblems (Desktop) with Tagline & Infinite Slider */}
+            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '500px' }}>
+              <span style={{ fontStyle: 'italic', fontSize: '13px', color: '#6B7280', whiteSpace: 'nowrap', fontWeight: 700 }}>
+                Our Total lineup.......
+              </span>
+              
+              <style>{`
+                @keyframes slideLogosHeader {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(calc(-50% - 12px)); } /* 12px is half the gap */
+                }
+                .header-logo-track {
+                  display: flex;
+                  gap: 24px;
+                  animation: slideLogosHeader 20s linear infinite;
+                  width: max-content;
+                  align-items: center;
+                }
+                .header-logo-track:hover {
+                  animation-play-state: paused;
+                }
+              `}</style>
+              
+              <div style={{ overflow: 'hidden', flex: 1, position: 'relative', width: '250px' }}>
+                <div className="header-logo-track">
+                  {/* --- SET 1 (Add your logos here) --- */}
+                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '55px', objectFit: 'contain' }} />
+                  <Logo division="infrastructure" height="55px" />
+                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '55px', objectFit: 'contain' }} />
+                  
+                  {/* --- SET 2 (Must be exact duplicate of SET 1 for infinite scroll) --- */}
+                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '55px', objectFit: 'contain' }} />
+                  <Logo division="infrastructure" height="55px" />
+                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '55px', objectFit: 'contain' }} />
+                </div>
+              </div>
             </div>
 
             {/* Mobile Header Right Controls: Fast Explorer Trigger + Hamburger Menu Toggle */}
