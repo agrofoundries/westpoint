@@ -17,7 +17,7 @@ const NewFrontiers: React.FC = () => {
           <span style={{ fontSize: '0.85rem', fontWeight: 900, letterSpacing: '0.15em', color: '#A5D6A7', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem', fontFamily: "'Manrope', sans-serif !important" }}>
             Expanding Our Capabilities
           </span>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 900, margin: 0, color: '#FFFFFF', fontFamily: "'Manrope', sans-serif !important" }}>
+          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: 900, margin: 0, color: '#C8102E', letterSpacing: '0.02em', fontFamily: "'Manrope', sans-serif !important" }}>
             OUR NEW FRONTIERS...
           </h2>
         </div>

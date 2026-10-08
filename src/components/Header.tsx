@@ -7,6 +7,43 @@ interface HeaderProps {
   onOpenExplorer?: () => void;
 }
 
+const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timer: number;
+    const speed = isDeleting ? 50 : 110;
+
+    if (!isDeleting && displayText.length < text.length) {
+      timer = window.setTimeout(() => {
+        setDisplayText(text.slice(0, displayText.length + 1));
+      }, speed);
+    } else if (!isDeleting && displayText.length === text.length) {
+      timer = window.setTimeout(() => {
+        setIsDeleting(true);
+      }, 2200);
+    } else if (isDeleting && displayText.length > 0) {
+      timer = window.setTimeout(() => {
+        setDisplayText(text.slice(0, displayText.length - 1));
+      }, speed);
+    } else if (isDeleting && displayText.length === 0) {
+      timer = window.setTimeout(() => {
+        setIsDeleting(false);
+      }, 400);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, text]);
+
+  return (
+    <span style={{ fontStyle: 'italic', fontSize: '21px', color: '#C8102E', whiteSpace: 'nowrap', fontWeight: 900, minWidth: '220px', display: 'inline-block' }}>
+      {displayText}
+      <span style={{ animation: 'blinkCursor 0.8s infinite', marginLeft: '2px', color: '#C8102E', fontWeight: 900 }}>|</span>
+    </span>
+  );
+};
+
 export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplorer }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
@@ -171,11 +208,13 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
 
             {/* Right Division Emblems (Desktop) with Tagline & Infinite Slider */}
             <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '750px', flex: 1, marginLeft: '12px' }}>
-              <span style={{ fontStyle: 'italic', fontSize: '21px', color: '#C8102E', whiteSpace: 'nowrap', fontWeight: 900 }}>
-                Our Total lineup.......
-              </span>
+              <TypewriterTagline text="Our Total lineup......." />
               
               <style>{`
+                @keyframes blinkCursor {
+                  0%, 100% { opacity: 1; }
+                  50% { opacity: 0; }
+                }
                 @keyframes slideLogosHeader {
                   0% { transform: translateX(0); }
                   100% { transform: translateX(calc(-50% - 12px)); } /* 12px is half the gap */
