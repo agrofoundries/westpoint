@@ -517,7 +517,8 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                 )}
               </div>
 
-                <a
+                {/* TECHNICAL LIBRARY (Hidden per user request) */}
+                {/* <a
                   href="#downloads"
                   style={{
                     color: '#FFFFFF',
@@ -540,7 +541,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = 'transparent'; }}
                 >
                   <span>TECHNICAL LIBRARY</span>
-                </a>
+                </a> */}
               </div>
 
           </div>
