@@ -27,7 +27,6 @@ import RequestQuoteModal from './components/RequestQuoteModal';
 import WatchVideoModal from './components/WatchVideoModal';
 import ProductDetailPage from './components/ProductDetailPage';
 import ProductCatalogPage from './components/ProductCatalogPage';
-import PortalsSection from './components/PortalsSection';
 import PortalRegistrationModal from './components/PortalRegistrationModal';
 import type { PortalType } from './components/PortalRegistrationModal';
 
@@ -221,9 +220,6 @@ function App() {
 
         {/* Our New Frontiers & Catalog Mockup */}
         <NewFrontiers />
-
-        {/* Enterprise Registration & Drawing Upload Portals */}
-        <PortalsSection onOpenPortalModal={handleOpenPortalModal} />
 
         {/* 14 Engineering Excellence (Text Heavy - Disabled) */}
         <EngineeringExcellence />

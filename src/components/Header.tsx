@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
-import { ArrowRight, Search, ChevronDown, Building2, Layers, ShieldCheck, Compass, Menu, X, ChevronRight, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Search, ChevronDown, Building2, Layers, ShieldCheck, Compass, Menu, X, ChevronRight, Phone, Mail, UserCheck } from 'lucide-react';
 
 interface HeaderProps {
   onRequestQuoteClick?: () => void;
@@ -48,6 +48,7 @@ const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
 export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplorer, onOpenPortalModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const [isPortalsDropdownOpen, setIsPortalsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileCategory, setExpandedMobileCategory] = useState<string | null>('rail_coach');
 
@@ -392,40 +393,155 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   <span>PRODUCT CATALOG</span>
                 </button>
 
-                <a
-                  href="#portals"
-                  onClick={(e) => {
-                    if (onOpenPortalModal) {
-                      e.preventDefault();
-                      onOpenPortalModal('customer');
-                    }
-                  }}
-                  style={{
-                    color: '#FFFFFF',
-                    background: '#1B5E20',
-                    border: '1px solid #FAF6EE',
-                    fontSize: '12.5px',
-                    fontWeight: 900,
-                    letterSpacing: '0.06em',
-                    padding: '8px 16px',
-                    textTransform: 'uppercase',
-                    whiteSpace: 'nowrap',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    flexShrink: 0,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontFamily: "'Manrope', sans-serif",
-                    borderRadius: '2px',
-                    textDecoration: 'none'
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.background = '#FAF6EE'; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = '#1B5E20'; }}
+                {/* Enterprise Portals Dropdown */}
+                <div 
+                  style={{ position: 'relative', flexShrink: 0 }}
+                  onMouseEnter={() => { setActiveMegaMenu(null); setIsPortalsDropdownOpen(true); }}
+                  onMouseLeave={() => setIsPortalsDropdownOpen(false)}
                 >
-                  <Building2 size={14} />
-                  <span>PORTALS &amp; DRAWINGS</span>
-                </a>
+                  <button
+                    onClick={() => setIsPortalsDropdownOpen(!isPortalsDropdownOpen)}
+                    style={{
+                      background: isPortalsDropdownOpen ? '#FAF6EE' : '#1B5E20',
+                      color: isPortalsDropdownOpen ? '#1B5E20' : '#FFFFFF',
+                      border: '1px solid #FAF6EE',
+                      fontSize: '12.5px',
+                      fontWeight: 900,
+                      letterSpacing: '0.06em',
+                      padding: '8px 16px',
+                      textTransform: 'uppercase',
+                      whiteSpace: 'nowrap',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      fontFamily: "'Manrope', sans-serif",
+                      borderRadius: '2px'
+                    }}
+                  >
+                    <Building2 size={14} />
+                    <span>ENTERPRISE PORTALS</span>
+                    <ChevronDown size={13} style={{ transform: isPortalsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
+                  </button>
+
+                  {/* Dropdown Menu with 3 Links */}
+                  {isPortalsDropdownOpen && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '100%',
+                      right: 0,
+                      minWidth: '350px',
+                      background: '#FAF6EE',
+                      border: '2px solid #1B5E20',
+                      borderRadius: '4px',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                      zIndex: 1100,
+                      overflow: 'hidden',
+                      padding: '8px 0',
+                      marginTop: '4px'
+                    }}>
+                      <div style={{ padding: '8px 16px 6px 16px', fontSize: '10px', fontWeight: 900, color: '#1B5E20', letterSpacing: '0.12em', textTransform: 'uppercase', borderBottom: '1px solid #E5E7EB' }}>
+                        SELECT PORTAL TO REGISTER &amp; UPLOAD DRAWINGS
+                      </div>
+
+                      {/* Link 1: Customer Portal */}
+                      <button
+                        onClick={() => {
+                          setIsPortalsDropdownOpen(false);
+                          if (onOpenPortalModal) onOpenPortalModal('customer');
+                        }}
+                        style={{
+                          width: '100%',
+                          textAlign: 'left',
+                          padding: '12px 16px',
+                          background: 'transparent',
+                          border: 'none',
+                          borderBottom: '1px solid #E5E7EB',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '12px',
+                          transition: 'background 0.2s',
+                          fontFamily: "'Manrope', sans-serif !important"
+                        }}
+                        onMouseEnter={e => e.currentTarget.style.background = '#E8F5E9'}
+                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                      >
+                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#1B5E20', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                          <UserCheck size={18} />
+                        </div>
+                        <div>
+                          <strong style={{ fontSize: '13px', color: '#111827', display: 'block', fontWeight: 900 }}>1. Customer Registration &amp; CAD Upload</strong>
+                          <span style={{ fontSize: '11px', color: '#2E7D32', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Customer onboarding &amp; 2D/3D CAD drawing submission</span>
+                        </div>
+                      </button>
+
+                      {/* Link 2: Vendor Portal */}
+                      <button
+                        onClick={() => {
+                          setIsPortalsDropdownOpen(false);
+                          if (onOpenPortalModal) onOpenPortalModal('vendor');
+                        }}
+                        style={{
+                          width: '100%',
+                          textAlign: 'left',
+                          padding: '12px 16px',
+                          background: 'transparent',
+                          border: 'none',
+                          borderBottom: '1px solid #E5E7EB',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '12px',
+                          transition: 'background 0.2s',
+                          fontFamily: "'Manrope', sans-serif !important"
+                        }}
+                        onMouseEnter={e => e.currentTarget.style.background = '#FEF3C7'}
+                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                      >
+                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#D97706', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                          <Building2 size={18} />
+                        </div>
+                        <div>
+                          <strong style={{ fontSize: '13px', color: '#111827', display: 'block', fontWeight: 900 }}>2. Vendor &amp; Supplier Registration</strong>
+                          <span style={{ fontSize: '11px', color: '#B45309', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Supplier pre-qualification &amp; raw material spec upload</span>
+                        </div>
+                      </button>
+
+                      {/* Link 3: Government Portal */}
+                      <button
+                        onClick={() => {
+                          setIsPortalsDropdownOpen(false);
+                          if (onOpenPortalModal) onOpenPortalModal('government');
+                        }}
+                        style={{
+                          width: '100%',
+                          textAlign: 'left',
+                          padding: '12px 16px',
+                          background: 'transparent',
+                          border: 'none',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '12px',
+                          transition: 'background 0.2s',
+                          fontFamily: "'Manrope', sans-serif !important"
+                        }}
+                        onMouseEnter={e => e.currentTarget.style.background = '#FEE2E2'}
+                        onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                      >
+                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#C62828', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                          <ShieldCheck size={18} />
+                        </div>
+                        <div>
+                          <strong style={{ fontSize: '13px', color: '#111827', display: 'block', fontWeight: 900 }}>3. Government &amp; Transit Authority Portal</strong>
+                          <span style={{ fontSize: '11px', color: '#C62828', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Public transit &amp; government tender drawing submission</span>
+                        </div>
+                      </button>
+                    </div>
+                  )}
+                </div>
 
                 <a
                   href="#downloads"
@@ -772,6 +888,50 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
 
               {/* Quick Section Anchors */}
               <div style={{ padding: '16px 20px 8px 20px', fontSize: '10.5px', fontWeight: 900, color: '#4CAF50', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                ENTERPRISE REGISTRATION PORTALS
+              </div>
+              <div style={{ padding: '0 20px 16px 20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    if (onOpenPortalModal) onOpenPortalModal('customer');
+                  }}
+                  style={{ background: '#E8F5E9', border: '1px solid #4CAF50', padding: '10px 14px', borderRadius: '4px', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
+                >
+                  <UserCheck size={16} color="#1B5E20" />
+                  <div>
+                    <strong style={{ fontSize: '12.5px', color: '#1B5E20', display: 'block' }}>1. Customer Registration &amp; CAD Upload</strong>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    if (onOpenPortalModal) onOpenPortalModal('vendor');
+                  }}
+                  style={{ background: '#FEF3C7', border: '1px solid #F59E0B', padding: '10px 14px', borderRadius: '4px', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
+                >
+                  <Building2 size={16} color="#B45309" />
+                  <div>
+                    <strong style={{ fontSize: '12.5px', color: '#B45309', display: 'block' }}>2. Vendor &amp; Supplier Registration</strong>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    if (onOpenPortalModal) onOpenPortalModal('government');
+                  }}
+                  style={{ background: '#FEE2E2', border: '1px solid #EF5350', padding: '10px 14px', borderRadius: '4px', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
+                >
+                  <ShieldCheck size={16} color="#C62828" />
+                  <div>
+                    <strong style={{ fontSize: '12.5px', color: '#C62828', display: 'block' }}>3. Government &amp; Transit Authority Portal</strong>
+                  </div>
+                </button>
+              </div>
+
+              <div style={{ padding: '8px 20px 8px 20px', fontSize: '10.5px', fontWeight: 900, color: '#4CAF50', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
                 DIRECT DIRECTORY
               </div>
               <div style={{ padding: '0 20px 16px 20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
