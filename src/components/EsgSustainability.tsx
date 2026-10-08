@@ -120,7 +120,7 @@ export const EsgSustainability: React.FC<EsgSustainabilityProps> = ({
           {/* Right Column: Visual Showcase & Floating Glass Stat Overlay */}
           <div style={{ position: 'relative', height: '100%', minHeight: '340px', overflow: 'hidden', border: '1px solid #E5E7EB' }}>
             <img
-              src="/images/rail_trackwork_mfg.png"
+              src="/images/prod_railway_track_plates.jpg"
               alt="Sustainable Westpoint metal casting facility"
               style={{ width: '100%', height: '100%', minHeight: '340px', objectFit: 'cover', display: 'block' }}
             />

@@ -15,35 +15,35 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ lang }) => {
       desc: t.prod1Desc,
       tag: '1000-3000 SERIES',
       specs: 'AREMA Ch. 4 | ASTM A27 / A536 Steel & Ductile Iron',
-      img: '/images/istockphoto-2263816291-1024x1024.jpg'
+      img: '/images/turnout_frog_manganese_stock.jpg'
     },
     {
       title: t.prod2Title,
       desc: t.prod2Desc,
       tag: '4000-6000 SERIES',
       specs: 'AAR M-107 / M-208 | Forged Alloy Steel (ASTM A668)',
-      img: '/images/istockphoto-2263817295-1024x1024.jpg'
+      img: '/images/prod_railway_track_plates.jpg'
     },
     {
       title: t.prod3Title,
       desc: t.prod3Desc,
       tag: '7000-8000 SERIES',
       specs: 'AAR M-201 Grade E Cast Steel Couplers',
-      img: '/images/istockphoto-2278348463-1024x1024.jpg'
+      img: '/images/locomotive_wheelset_stock.jpg'
     },
     {
       title: t.prod4Title,
       desc: t.prod4Desc,
       tag: '9000-10000 SERIES',
       specs: 'EN 13674 | High-Conductivity Bronze & Ductile Iron',
-      img: '/images/istockphoto-1313022650-1024x1024.jpg'
+      img: '/images/real_train_wheelset_stock.jpg'
     },
     {
       title: t.prod5Title,
       desc: t.prod5Desc,
       tag: '11000-12000 SERIES',
       specs: 'AASHTO M306 | Heavy Load Sub-Track Pull Boxes',
-      img: '/images/istockphoto-1345955492-1024x1024.jpg'
+      img: '/images/prod_pin_bracket.jpg'
     },
     {
       title: lang === 'en' ? 'Custom Rail metal Forgings' : 'Forjas Metalúrgicas a Medida',
@@ -52,7 +52,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ lang }) => {
         : 'Forjas de precisión y componentes mecanizados CNC según especificaciones de clientes.',
       tag: 'CUSTOM MANUFACTURING',
       specs: 'ISO 9001:2015 & PPAP Level 3 Compliant',
-      img: '/images/istockphoto-2166976559-1024x1024.jpg'
+      img: '/images/real_steel_gears_stock.jpg'
     },
     {
       title: lang === 'en' ? 'Heavy Axle Locomotive Wheelsets' : 'Juegos de Ruedas para Locomotoras',
@@ -61,7 +61,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ lang }) => {
         : 'Ruedas de acero forjado monobloque y ejes de alta capacidad para carga pesada.',
       tag: '13000-14000 SERIES',
       specs: 'AAR M-107 Class B & C | FRA Rule 213 Certified',
-      img: '/images/istockphoto-2263288423-1024x1024.jpg'
+      img: '/images/disused-electric-drive-rack-railway-600w-2624945193.webp'
     },
     {
       title: lang === 'en' ? 'High-Speed Rail Frog Crossovers' : 'Cruces de Rieles de Alta Velocidad',
@@ -70,7 +70,7 @@ export const ProductsSection: React.FC<ProductsSectionProps> = ({ lang }) => {
         : 'Cruces de manganeso endurecido y talones de cambio para líneas de alta velocidad.',
       tag: '15000-16000 SERIES',
       specs: 'AREMA Ch. 4 Spec 2.4 | High-Impact Cast Manganese',
-      img: '/images/istockphoto-2284955682-1024x1024.jpg'
+      img: '/images/prod_centering_disc.jpg'
     }
   ];
 

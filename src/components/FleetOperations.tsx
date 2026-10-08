@@ -30,7 +30,7 @@ export const FleetOperations: React.FC = () => {
 
         <div style={{ position: 'relative', overflow: 'hidden', border: '1px solid #E5E7EB' }}>
           <img
-            src="/images/rail_forging_press.png"
+            src="/images/real_metal_casting_stock.jpg"
             alt="Rail logistics facility"
             style={{ width: '100%', height: '380px', objectFit: 'cover', display: 'block' }}
           />

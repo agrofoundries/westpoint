@@ -40,7 +40,7 @@ const NewFrontiers: React.FC = () => {
                 {/* Image Container (4 columns) */}
                 <div style={{ flex: '4 1 250px', display: 'flex', position: 'relative', borderRight: isEven ? '1px solid rgba(76, 175, 80, 0.2)' : 'none', borderLeft: !isEven ? '1px solid rgba(76, 175, 80, 0.2)' : 'none', overflow: 'hidden' }}>
                   <img 
-                    src="/Westpoint Industries catalog mockup.png" 
+                    src="/mokup/Westpoint-Industries-catalog-mockup.png" 
                     alt={`${card.title} Catalog`} 
                     style={{
                       width: '100%',

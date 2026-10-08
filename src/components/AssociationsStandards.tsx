@@ -101,7 +101,7 @@ export const AssociationsStandards: React.FC = () => {
             }}
             >
               {/* Top Accent Line */}
-              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: 'linear-gradient(90deg, #4CAF50, transparent)' }}></div>
+              <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: '#4CAF50' }}></div>
               
               {div.img && (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '80px', marginBottom: '1.5rem', width: '100%' }}>

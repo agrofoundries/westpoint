@@ -70,7 +70,7 @@ export const ManufacturingExcellence: React.FC<ManufacturingExcellenceProps> = (
           <div style={{ position: 'relative' }}>
             <div style={{ overflow: 'hidden', border: '1px solid #059669' }}>
               <img
-                src="/images/rail_trackwork_mfg.png"
+                src="/images/prod_railway_track_plates.jpg"
                 alt="Automated Rail Foundry Facility"
                 style={{ width: '100%', height: '480px', objectFit: 'cover', display: 'block' }}
               />

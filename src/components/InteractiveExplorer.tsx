@@ -105,7 +105,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Set Of Console manufactured by Westpoint Industries.',
-    img: '/images/169263915-1024x1024 (1).jpg',
+    img: '/images/169263915-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {

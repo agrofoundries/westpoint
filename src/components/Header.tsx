@@ -170,8 +170,8 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
             </div>
 
             {/* Right Division Emblems (Desktop) with Tagline & Infinite Slider */}
-            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '600px' }}>
-              <span style={{ fontStyle: 'italic', fontSize: '20px', color: '#000000', whiteSpace: 'nowrap', fontWeight: 900, marginLeft: '32px' }}>
+            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '750px', flex: 1, marginLeft: '12px' }}>
+              <span style={{ fontStyle: 'italic', fontSize: '21px', color: '#C8102E', whiteSpace: 'nowrap', fontWeight: 900 }}>
                 Our Total lineup.......
               </span>
               
@@ -192,17 +192,19 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                 }
               `}</style>
               
-              <div style={{ overflow: 'hidden', flex: 1, position: 'relative', width: '250px' }}>
+              <div style={{ overflow: 'hidden', flex: 1, position: 'relative' }}>
                 <div className="header-logo-track">
-                  {/* --- SET 1 (Add your logos here) --- */}
-                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '55px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '55px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '55px', objectFit: 'contain' }} />
+                  {/* --- SET 1 --- */}
+                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
                   
-                  {/* --- SET 2 (Must be exact duplicate of SET 1 for infinite scroll) --- */}
-                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '55px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '55px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '55px', objectFit: 'contain' }} />
+                  {/* --- SET 2 (Exact duplicate for infinite scroll) --- */}
+                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
                 </div>
               </div>
             </div>

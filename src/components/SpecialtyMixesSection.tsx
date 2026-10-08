@@ -2,14 +2,14 @@ import React from 'react';
 
 export const SpecialtyMixesSection: React.FC = () => {
   const alloys = [
-    { name: 'Manganese Steel Castings', psi: '11% - 14% Austenitic Mn', app: 'Turnout frogs, crossover diamonds, track switches', avail: 'All Foundries', img: '/images/istockphoto-2263816291-1024x1024.jpg' },
-    { name: 'Ductile Iron Track Castings', psi: 'ASTM A536 80-55-06', app: 'Rail tie plates, base plates, rail anchors', avail: 'High-Volume', img: '/images/istockphoto-2263817295-1024x1024.jpg' },
-    { name: 'Forged Carbon & Alloy Axles', psi: 'ASTM A668 / AAR M-101', app: 'Heavy freight & passenger locomotive wheelsets', avail: 'Stock & Custom', img: '/images/istockphoto-2278348463-1024x1024.jpg' },
-    { name: 'Monobloc Cast/Forged Wheels', psi: 'AAR M-107 Class B & C', app: 'Freight car & transit passenger car wheelsets', avail: 'Stock & Custom', img: '/images/istockphoto-1313022650-1024x1024.jpg' },
-    { name: 'Cast Steel Couplers & Yokes', psi: 'AAR M-201 Grade E Steel', app: 'Automatic train couplers, draft gear housings', avail: 'All Foundries', img: '/images/istockphoto-1345955492-1024x1024.jpg' },
-    { name: 'High-Conductivity Catenary Arms', psi: 'Copper-Bronze & Aluminum', app: 'Transit overhead contact wire & pantograph cantilever', avail: 'Custom Spec', img: '/images/istockphoto-2166976559-1024x1024.jpg' },
-    { name: 'Ductile Third-Rail Supports', psi: 'Dielectric Insulation Base', app: 'Urban metro third-rail insulator shoe brackets', avail: 'Stock & Custom', img: '/images/istockphoto-2263288423-1024x1024.jpg' },
-    { name: 'Track Drainage Trench Grates', psi: 'AASHTO H-20 / M306 Load', app: 'Trackbed water management & cable pull boxes', avail: 'All Foundries', img: '/images/istockphoto-2284955682-1024x1024.jpg' }
+    { name: 'Manganese Steel Castings', psi: '11% - 14% Austenitic Mn', app: 'Turnout frogs, crossover diamonds, track switches', avail: 'All Foundries', img: '/images/turnout_frog_manganese_stock.jpg' },
+    { name: 'Ductile Iron Track Castings', psi: 'ASTM A536 80-55-06', app: 'Rail tie plates, base plates, rail anchors', avail: 'High-Volume', img: '/images/prod_railway_track_plates.jpg' },
+    { name: 'Forged Carbon & Alloy Axles', psi: 'ASTM A668 / AAR M-101', app: 'Heavy freight & passenger locomotive wheelsets', avail: 'Stock & Custom', img: '/images/locomotive_wheelset_stock.jpg' },
+    { name: 'Monobloc Cast/Forged Wheels', psi: 'AAR M-107 Class B & C', app: 'Freight car & transit passenger car wheelsets', avail: 'Stock & Custom', img: '/images/real_train_wheelset_stock.jpg' },
+    { name: 'Cast Steel Couplers & Yokes', psi: 'AAR M-201 Grade E Steel', app: 'Automatic train couplers, draft gear housings', avail: 'All Foundries', img: '/images/prod_pin_bracket.jpg' },
+    { name: 'High-Conductivity Catenary Arms', psi: 'Copper-Bronze & Aluminum', app: 'Transit overhead contact wire & pantograph cantilever', avail: 'Custom Spec', img: '/images/real_steel_gears_stock.jpg' },
+    { name: 'Ductile Third-Rail Supports', psi: 'Dielectric Insulation Base', app: 'Urban metro third-rail insulator shoe brackets', avail: 'Stock & Custom', img: '/images/disused-electric-drive-rack-railway-600w-2624945193.webp' },
+    { name: 'Track Drainage Trench Grates', psi: 'AASHTO H-20 / M306 Load', app: 'Trackbed water management & cable pull boxes', avail: 'All Foundries', img: '/images/prod_centering_disc.jpg' }
   ];
 
   return (

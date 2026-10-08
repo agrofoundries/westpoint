@@ -11,7 +11,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onRequestQuoteClick }) => 
       {/* Background Photo */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
         <img
-          src="/images/istockphoto-1196704251-2048x2048.jpg"
+          src="/images/real_metal_casting_stock.jpg"
           alt="Factory Assembly Facility"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />

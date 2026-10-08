@@ -16,7 +16,7 @@ export const EngineeringDrawingModal: React.FC<EngineeringDrawingModalProps> = (
   productTitle = 'Jacking Pad for Diesel Locomotives',
   productSeries = 'SERIES 1000',
   productSpecs = 'AAR M-201 Grade E Cast Steel',
-  productImg = '/images/bogie_callouts_diagram.png'
+  productImg = '/images/amsted_jacking_pad.jpg'
 }) => {
   if (!isOpen) return null;
 
@@ -82,7 +82,7 @@ export const EngineeringDrawingModal: React.FC<EngineeringDrawingModalProps> = (
               </div>
 
               <img 
-                src={productImg || '/images/bogie_callouts_diagram.png'} 
+                src={productImg || '/images/amsted_jacking_pad.jpg'} 
                 alt="Technical CAD Engineering Drawing Blueprint" 
                 style={{ width: '100%', height: '360px', objectFit: 'contain', display: 'block', margin: '0 auto' }}
               />
@@ -134,7 +134,7 @@ export const EngineeringDrawingModal: React.FC<EngineeringDrawingModalProps> = (
             {/* Action Buttons */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <a 
-                href={productImg || '/images/bogie_callouts_diagram.png'} 
+                href={productImg || '/images/amsted_jacking_pad.jpg'} 
                 download
                 className="btn-animated"
                 style={{

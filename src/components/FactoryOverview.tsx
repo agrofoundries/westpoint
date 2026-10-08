@@ -37,7 +37,7 @@ export const FactoryOverview: React.FC = () => {
           {/* Left Column: Large Machined Axlebox Housing Photo */}
           <div className="factory-col-img">
             <img
-              src="/images/prod_railway_track_plates copy.jpg"
+              src="/images/prod_railway_track_plates.jpg"
               alt="Westpoint 5-Axis CNC Machined Axlebox Housing"
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
