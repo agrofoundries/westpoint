@@ -434,9 +434,9 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                     right: 0,
                     minWidth: '200px',
                     background: '#FFFFFF',
-                    border: '1.5px solid #1B5E20',
-                    borderRadius: '4px',
-                    boxShadow: '0 15px 35px rgba(0,0,0,0.25)',
+                    border: '1px solid #E2E8F0',
+                    borderRadius: '6px',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.12)',
                     zIndex: 999999,
                     padding: '6px 0',
                     marginTop: '4px'
@@ -454,13 +454,13 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                         background: 'transparent',
                         border: 'none',
                         fontSize: '13px',
-                        fontWeight: 800,
-                        color: '#1B5E20',
+                        fontWeight: 700,
+                        color: '#1E293B',
                         cursor: 'pointer',
-                        transition: 'background 0.2s',
+                        transition: 'all 0.15s ease',
                         fontFamily: "'Manrope', sans-serif !important"
                       }}
-                      onMouseEnter={e => e.currentTarget.style.background = '#E8F5E9'}
+                      onMouseEnter={e => e.currentTarget.style.background = '#F1F5F9'}
                       onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                     >
                       Customer Portal
@@ -479,13 +479,13 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                         background: 'transparent',
                         border: 'none',
                         fontSize: '13px',
-                        fontWeight: 800,
-                        color: '#B45309',
+                        fontWeight: 700,
+                        color: '#1E293B',
                         cursor: 'pointer',
-                        transition: 'background 0.2s',
+                        transition: 'all 0.15s ease',
                         fontFamily: "'Manrope', sans-serif !important"
                       }}
-                      onMouseEnter={e => e.currentTarget.style.background = '#FEF3C7'}
+                      onMouseEnter={e => e.currentTarget.style.background = '#F1F5F9'}
                       onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                     >
                       Vendor Portal
@@ -504,13 +504,13 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                         background: 'transparent',
                         border: 'none',
                         fontSize: '13px',
-                        fontWeight: 800,
-                        color: '#9B0403',
+                        fontWeight: 700,
+                        color: '#1E293B',
                         cursor: 'pointer',
-                        transition: 'background 0.2s',
+                        transition: 'all 0.15s ease',
                         fontFamily: "'Manrope', sans-serif !important"
                       }}
-                      onMouseEnter={e => e.currentTarget.style.background = '#FEE2E2'}
+                      onMouseEnter={e => e.currentTarget.style.background = '#F1F5F9'}
                       onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                     >
                       Government Portal

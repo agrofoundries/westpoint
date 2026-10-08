@@ -59,7 +59,7 @@ function App() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // SEO Friendly URL Routing
+    // SEO Friendly URL Routing & Form Redirects
     const handleLocationChange = () => {
       const path = window.location.pathname;
       if (path.startsWith('/product/')) {
@@ -74,6 +74,24 @@ function App() {
       } else if (path === '/products') {
         setSelectedProductForDetail(null);
         setIsCatalogOpen(true);
+      } else if (path === '/portal/customer') {
+        setSelectedProductForDetail(null);
+        setIsCatalogOpen(false);
+        setIsCustomerModalOpen(true);
+        setIsVendorModalOpen(false);
+        setIsGovernmentModalOpen(false);
+      } else if (path === '/portal/vendor') {
+        setSelectedProductForDetail(null);
+        setIsCatalogOpen(false);
+        setIsVendorModalOpen(true);
+        setIsCustomerModalOpen(false);
+        setIsGovernmentModalOpen(false);
+      } else if (path === '/portal/government') {
+        setSelectedProductForDetail(null);
+        setIsCatalogOpen(false);
+        setIsGovernmentModalOpen(true);
+        setIsCustomerModalOpen(false);
+        setIsVendorModalOpen(false);
       } else {
         setSelectedProductForDetail(null);
         setIsCatalogOpen(false);
@@ -100,9 +118,29 @@ function App() {
   const handleCloseVideo = () => setIsVideoModalOpen(false);
 
   const handleOpenPortalModal = (type: PortalType = 'customer') => {
-    if (type === 'customer') setIsCustomerModalOpen(true);
-    if (type === 'vendor') setIsVendorModalOpen(true);
-    if (type === 'government') setIsGovernmentModalOpen(true);
+    window.history.pushState({}, '', `/portal/${type}`);
+    if (type === 'customer') {
+      setIsCustomerModalOpen(true);
+      setIsVendorModalOpen(false);
+      setIsGovernmentModalOpen(false);
+    } else if (type === 'vendor') {
+      setIsVendorModalOpen(true);
+      setIsCustomerModalOpen(false);
+      setIsGovernmentModalOpen(false);
+    } else if (type === 'government') {
+      setIsGovernmentModalOpen(true);
+      setIsCustomerModalOpen(false);
+      setIsVendorModalOpen(false);
+    }
+  };
+
+  const handleClosePortalModal = (type: PortalType) => {
+    if (type === 'customer') setIsCustomerModalOpen(false);
+    if (type === 'vendor') setIsVendorModalOpen(false);
+    if (type === 'government') setIsGovernmentModalOpen(false);
+    if (window.location.pathname.startsWith('/portal/')) {
+      window.history.pushState({}, '', '/');
+    }
   };
 
   const handleOpenCatalog = () => {
@@ -263,9 +301,9 @@ function App() {
 
       <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={handleCloseQuote} />
       <WatchVideoModal isOpen={isVideoModalOpen} onClose={handleCloseVideo} />
-      <CustomerRegistrationModal isOpen={isCustomerModalOpen} onClose={() => setIsCustomerModalOpen(false)} />
-      <VendorRegistrationModal isOpen={isVendorModalOpen} onClose={() => setIsVendorModalOpen(false)} />
-      <GovernmentRegistrationModal isOpen={isGovernmentModalOpen} onClose={() => setIsGovernmentModalOpen(false)} />
+      <CustomerRegistrationModal isOpen={isCustomerModalOpen} onClose={() => handleClosePortalModal('customer')} />
+      <VendorRegistrationModal isOpen={isVendorModalOpen} onClose={() => handleClosePortalModal('vendor')} />
+      <GovernmentRegistrationModal isOpen={isGovernmentModalOpen} onClose={() => handleClosePortalModal('government')} />
 
       {/* Floating Action Buttons */}
       <div className="floating-action-btn">
