@@ -198,12 +198,14 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
                   <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
                   <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/westpoint-water.png" alt="Westpoint Waterworks" style={{ height: '65px', objectFit: 'contain' }} />
                   <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
                   
                   {/* --- SET 2 (Exact duplicate for infinite scroll) --- */}
                   <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
                   <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
                   <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/westpoint-water.png" alt="Westpoint Waterworks" style={{ height: '65px', objectFit: 'contain' }} />
                   <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
                 </div>
               </div>
