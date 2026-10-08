@@ -10,7 +10,7 @@ export const RailwayTelemetryWidget: React.FC = () => {
     switch (signalStatus) {
       case 'CLEAR': return '#4CAF50';
       case 'CAUTION': return '#F59E0B';
-      case 'STOP': return '#DC2626';
+      case 'STOP': return '#9B0403';
     }
   };
 
@@ -120,9 +120,9 @@ export const RailwayTelemetryWidget: React.FC = () => {
                   <button
                     onClick={() => { setSignalStatus('STOP'); setAxleTemp(135); }}
                     style={{
-                      background: signalStatus === 'STOP' ? '#DC2626' : 'rgba(255,255,255,0.08)',
+                      background: signalStatus === 'STOP' ? '#9B0403' : 'rgba(255,255,255,0.08)',
                       color: signalStatus === 'STOP' ? '#FFFFFF' : '#FAF6EE',
-                      border: '1px solid #DC2626',
+                      border: '1px solid #9B0403',
                       padding: '10px',
                       fontSize: '11px',
                       fontWeight: 900,
@@ -169,7 +169,7 @@ export const RailwayTelemetryWidget: React.FC = () => {
 
                 <div style={{ background: '#F8F9FA', border: '1px solid #E5E7EB', padding: '1.15rem', borderLeft: `4px solid ${getSignalColor()}` }}>
                   <span style={{ fontSize: '10px', fontWeight: 800, color: '#4CAF50', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '4px', fontFamily: "'Manrope', sans-serif !important" }}>AXLEBOX BEARING TEMP</span>
-                  <strong style={{ fontSize: '20px', fontWeight: 900, color: axleTemp > 100 ? '#DC2626' : '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>{axleTemp} °C</strong>
+                  <strong style={{ fontSize: '20px', fontWeight: 900, color: axleTemp > 100 ? '#9B0403' : '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>{axleTemp} °C</strong>
                   <span style={{ fontSize: '10px', color: '#4CAF50', display: 'block', marginTop: '2px', fontWeight: 600 }}>Max threshold: 120°C</span>
                 </div>
 

@@ -38,9 +38,9 @@ const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
   }, [displayText, isDeleting, text]);
 
   return (
-    <span style={{ fontStyle: 'italic', fontSize: '36px', color: '#C8102E', whiteSpace: 'nowrap', fontWeight: 900, minWidth: '420px', display: 'inline-block', lineHeight: 1 }}>
+    <span style={{ fontStyle: 'italic', fontSize: '36px', color: '#9B0403', whiteSpace: 'nowrap', fontWeight: 900, minWidth: '420px', display: 'inline-block', lineHeight: 1 }}>
       {displayText}
-      <span style={{ animation: 'blinkCursor 0.8s infinite', marginLeft: '2px', color: '#C8102E', fontWeight: 900 }}>|</span>
+      <span style={{ animation: 'blinkCursor 0.8s infinite', marginLeft: '2px', color: '#9B0403', fontWeight: 900 }}>|</span>
     </span>
   );
 };
@@ -395,7 +395,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
 
                 {/* Enterprise Portals Dropdown */}
                 <div 
-                  style={{ position: 'relative', flexShrink: 0 }}
+                  style={{ position: 'relative', flexShrink: 0, zIndex: 99999 }}
                   onMouseEnter={() => { setActiveMegaMenu(null); setIsPortalsDropdownOpen(true); }}
                   onMouseLeave={() => setIsPortalsDropdownOpen(false)}
                 >
@@ -435,8 +435,8 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                       background: '#FAF6EE',
                       border: '2px solid #1B5E20',
                       borderRadius: '4px',
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                      zIndex: 1100,
+                      boxShadow: '0 25px 50px rgba(0,0,0,0.4)',
+                      zIndex: 999999,
                       overflow: 'hidden',
                       padding: '8px 0',
                       marginTop: '4px'
@@ -531,12 +531,12 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                         onMouseEnter={e => e.currentTarget.style.background = '#FEE2E2'}
                         onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                       >
-                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#C62828', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                        <div style={{ width: '32px', height: '32px', borderRadius: '4px', background: '#9B0403', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
                           <ShieldCheck size={18} />
                         </div>
                         <div>
                           <strong style={{ fontSize: '13px', color: '#111827', display: 'block', fontWeight: 900 }}>3. Government &amp; Transit Authority Portal</strong>
-                          <span style={{ fontSize: '11px', color: '#C62828', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Public transit &amp; government tender drawing submission</span>
+                          <span style={{ fontSize: '11px', color: '#9B0403', lineHeight: 1.3, display: 'block', marginTop: '2px' }}>Public transit &amp; government tender drawing submission</span>
                         </div>
                       </button>
                     </div>
@@ -922,11 +922,11 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                     setIsMobileMenuOpen(false);
                     if (onOpenPortalModal) onOpenPortalModal('government');
                   }}
-                  style={{ background: '#FEE2E2', border: '1px solid #EF5350', padding: '10px 14px', borderRadius: '4px', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
+                  style={{ background: '#FEE2E2', border: '1px solid #9B0403', padding: '10px 14px', borderRadius: '4px', textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px' }}
                 >
-                  <ShieldCheck size={16} color="#C62828" />
+                  <ShieldCheck size={16} color="#9B0403" />
                   <div>
-                    <strong style={{ fontSize: '12.5px', color: '#C62828', display: 'block' }}>3. Government &amp; Transit Authority Portal</strong>
+                    <strong style={{ fontSize: '12.5px', color: '#9B0403', display: 'block' }}>3. Government &amp; Transit Authority Portal</strong>
                   </div>
                 </button>
               </div>

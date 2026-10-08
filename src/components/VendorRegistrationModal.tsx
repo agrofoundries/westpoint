@@ -50,19 +50,21 @@ export const VendorRegistrationModal: React.FC<VendorRegistrationModalProps> = (
   };
 
   return (
-    <div className="modal-backdrop" onClick={onClose} style={{ zIndex: 9999 }}>
+    <div className="modal-backdrop" onClick={onClose} style={{ zIndex: 999999, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}>
       <div 
         style={{ 
-          background: '#FAF6EE', 
-          border: '2px solid #D97706', 
+          background: '#FFFFFF', 
+          border: '1px solid #E5E7EB',
+          borderTop: '4px solid #D97706', 
+          borderRadius: '8px',
           width: '100%', 
-          maxWidth: '680px', 
+          maxWidth: '640px', 
           maxHeight: '90vh',
           overflowY: 'auto',
-          padding: '2.25rem', 
+          padding: '2rem', 
           position: 'relative',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.45)',
-          color: '#1B5E20'
+          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.35)',
+          color: '#111827'
         }}
         onClick={e => e.stopPropagation()}
       >

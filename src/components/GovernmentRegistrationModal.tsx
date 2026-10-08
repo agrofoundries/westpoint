@@ -50,19 +50,21 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
   };
 
   return (
-    <div className="modal-backdrop" onClick={onClose} style={{ zIndex: 9999 }}>
+    <div className="modal-backdrop" onClick={onClose} style={{ zIndex: 999999, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}>
       <div 
         style={{ 
-          background: '#FAF6EE', 
-          border: '2px solid #C62828', 
+          background: '#FFFFFF', 
+          border: '1px solid #E5E7EB',
+          borderTop: '4px solid #9B0403', 
+          borderRadius: '8px',
           width: '100%', 
-          maxWidth: '680px', 
+          maxWidth: '640px', 
           maxHeight: '90vh',
           overflowY: 'auto',
-          padding: '2.25rem', 
+          padding: '2rem', 
           position: 'relative',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.45)',
-          color: '#1B5E20'
+          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.35)',
+          color: '#111827'
         }}
         onClick={e => e.stopPropagation()}
       >
@@ -89,10 +91,10 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
 
         {submitted ? (
           <div style={{ textAlign: 'center', padding: '1.5rem 0.5rem' }}>
-            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: '#C62828', color: '#FAF6EE', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto' }}>
+            <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: '#9B0403', color: '#FAF6EE', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto' }}>
               <CheckCircle2 size={34} color="#FFFFFF" />
             </div>
-            <span style={{ fontSize: '11px', fontWeight: 900, color: '#C62828', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 900, color: '#9B0403', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>
               GOVERNMENT SUBMISSION CONFIRMED
             </span>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#111827', marginBottom: '0.75rem', fontFamily: "'Manrope', sans-serif !important" }}>
@@ -100,7 +102,7 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
             </h3>
             <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', padding: '0.85rem 1.5rem', borderRadius: '4px', display: 'inline-block', marginBottom: '1.25rem' }}>
               <span style={{ fontSize: '10.5px', color: '#6B7280', display: 'block', fontWeight: 700 }}>GOVERNMENT DOCKET TRACKING NO.</span>
-              <strong style={{ fontSize: '17px', color: '#C62828', letterSpacing: '0.05em' }}>{trackingId}</strong>
+              <strong style={{ fontSize: '17px', color: '#9B0403', letterSpacing: '0.05em' }}>{trackingId}</strong>
             </div>
             <p style={{ fontSize: '13.5px', color: '#4B5563', lineHeight: 1.6, marginBottom: '1.75rem', maxWidth: '500px', margin: '0 auto 1.75rem auto' }}>
               Your official agency registration and tender technical drawings have been logged under ISO 27001 security protocols into the Westpoint Defense &amp; Public Transit Contracting Vault.
@@ -109,9 +111,9 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
               onClick={() => { setSubmitted(false); onClose(); }}
               className="btn-animated"
               style={{
-                background: '#C62828',
+                background: '#9B0403',
                 color: '#FFFFFF',
-                border: '1.5px solid #EF5350',
+                border: '1.5px solid #9B0403',
                 padding: '12px 28px',
                 fontSize: '12px',
                 fontWeight: 900,
@@ -127,11 +129,11 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
           <div>
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem', paddingBottom: '1rem', borderBottom: '1px solid #E5E7EB' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '4px', background: '#C62828', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '4px', background: '#9B0403', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <ShieldCheck size={22} color="#FFFFFF" />
               </div>
               <div>
-                <span style={{ fontSize: '10px', fontWeight: 900, color: '#C62828', letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block' }}>
+                <span style={{ fontSize: '10px', fontWeight: 900, color: '#9B0403', letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block' }}>
                   PUBLIC SECTOR &amp; TRANSIT VAULT
                 </span>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#111827', margin: 0, textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
@@ -144,13 +146,13 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#C62828', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#9B0403', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
                     TRANSIT AUTHORITY / GOVERNMENT AGENCY *
                   </label>
                   <input type="text" required style={{ width: '100%', padding: '9px 11px', border: '1px solid #D1D5DB', background: '#FFFFFF', fontSize: '13px', color: '#111827', outline: 'none' }} />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#C62828', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#9B0403', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
                     AGENCY CODE / CAGE / EIN / TAX ID *
                   </label>
                   <input type="text" required style={{ width: '100%', padding: '9px 11px', border: '1px solid #D1D5DB', background: '#FFFFFF', fontSize: '13px', color: '#111827', outline: 'none' }} />
@@ -159,13 +161,13 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#C62828', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#9B0403', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
                     PROCUREMENT OFFICER / REPRESENTATIVE *
                   </label>
                   <input type="text" required style={{ width: '100%', padding: '9px 11px', border: '1px solid #D1D5DB', background: '#FFFFFF', fontSize: '13px', color: '#111827', outline: 'none' }} />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#C62828', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#9B0403', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
                     OFFICIAL GOVERNMENT EMAIL *
                   </label>
                   <input type="email" required style={{ width: '100%', padding: '9px 11px', border: '1px solid #D1D5DB', background: '#FFFFFF', fontSize: '13px', color: '#111827', outline: 'none' }} />
@@ -174,12 +176,12 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
 
               {/* Upload Classified Tender & CAD Specification Vault */}
               <div>
-                <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#C62828', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#9B0403', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '6px' }}>
                   ATTACH CLASSIFIED TENDER DRAWINGS &amp; SPECIFICATIONS (.DWG, .STEP, .PDF, .ZIP) *
                 </label>
                 <div 
                   style={{ 
-                    border: '2px dashed #EF5350', 
+                    border: '2px dashed #9B0403', 
                     background: '#FFFFFF', 
                     padding: '1.25rem', 
                     textAlign: 'center', 
@@ -196,8 +198,8 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
                     accept=".pdf,.dwg,.dxf,.step,.doc,.docx,.zip"
                     style={{ position: 'absolute', inset: 0, opacity: 0, cursor: 'pointer', width: '100%', height: '100%' }}
                   />
-                  <Upload size={24} color="#C62828" style={{ margin: '0 auto 6px auto' }} />
-                  <p style={{ fontSize: '12.5px', fontWeight: 800, color: '#C62828', margin: 0 }}>
+                  <Upload size={24} color="#9B0403" style={{ margin: '0 auto 6px auto' }} />
+                  <p style={{ fontSize: '12.5px', fontWeight: 800, color: '#9B0403', margin: 0 }}>
                     Click or Drag Official Tender Drawings &amp; Specifications Here
                   </p>
                   <span style={{ fontSize: '10.5px', color: '#6B7280', display: 'block', marginTop: '4px' }}>
@@ -210,11 +212,11 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
                     {files.map((file, idx) => (
                       <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: '#FEE2E2', padding: '6px 10px', borderRadius: '4px', border: '1px solid #FCA5A5' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                          <FileText size={15} color="#C62828" />
-                          <span style={{ fontSize: '12px', fontWeight: 700, color: '#7F1D1D' }}>{file.name}</span>
+                          <FileText size={15} color="#9B0403" />
+                          <span style={{ fontSize: '12px', fontWeight: 700, color: '#9B0403' }}>{file.name}</span>
                           <span style={{ fontSize: '10px', color: '#4B5563', background: '#FFFFFF', padding: '1px 5px', borderRadius: '2px' }}>{file.size}</span>
                         </div>
-                        <button type="button" onClick={() => removeFile(idx)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#C62828' }}>
+                        <button type="button" onClick={() => removeFile(idx)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#9B0403' }}>
                           <Trash2 size={13} />
                         </button>
                       </div>
@@ -224,7 +226,7 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#C62828', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
+                <label style={{ display: 'block', fontSize: '10.5px', fontWeight: 800, color: '#9B0403', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '4px' }}>
                   TENDER REFERENCE NO. &amp; COMPLIANCE REQUIREMENTS
                 </label>
                 <textarea 
@@ -234,7 +236,7 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '10.5px', color: '#4B5563' }}>
-                <ShieldCheck size={15} color="#C62828" />
+                <ShieldCheck size={15} color="#9B0403" />
                 <span>Government Confidentiality: Encrypted under ISO 27001 Public Sector Data Security Vault.</span>
               </div>
 
@@ -243,9 +245,9 @@ export const GovernmentRegistrationModal: React.FC<GovernmentRegistrationModalPr
                 disabled={isSubmitting}
                 className="btn-animated"
                 style={{
-                  background: '#C62828',
+                  background: '#9B0403',
                   color: '#FFFFFF',
-                  border: '1.5px solid #EF5350',
+                  border: '1.5px solid #9B0403',
                   padding: '13px',
                   fontSize: '12px',
                   fontWeight: 900,
