@@ -405,24 +405,24 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                       background: isPortalsDropdownOpen ? '#FAF6EE' : '#1B5E20',
                       color: isPortalsDropdownOpen ? '#1B5E20' : '#FFFFFF',
                       border: '1px solid #FAF6EE',
-                      fontSize: '12.5px',
-                      fontWeight: 900,
+                      fontSize: '11px',
+                      fontWeight: 800,
                       letterSpacing: '0.06em',
-                      padding: '8px 16px',
+                      padding: '6px 12px',
                       textTransform: 'uppercase',
                       whiteSpace: 'nowrap',
                       cursor: 'pointer',
                       transition: 'all 0.2s',
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '6px',
+                      gap: '5px',
                       fontFamily: "'Manrope', sans-serif",
-                      borderRadius: '2px'
+                      borderRadius: '3px'
                     }}
                   >
-                    <Building2 size={14} />
-                    <span>ENTERPRISE PORTALS</span>
-                    <ChevronDown size={13} style={{ transform: isPortalsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
+                    <Building2 size={13} />
+                    <span>PORTALS</span>
+                    <ChevronDown size={12} style={{ transform: isPortalsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} />
                   </button>
 
                   {/* Dropdown Menu with 3 Links */}

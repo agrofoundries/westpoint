@@ -27,16 +27,19 @@ import RequestQuoteModal from './components/RequestQuoteModal';
 import WatchVideoModal from './components/WatchVideoModal';
 import ProductDetailPage from './components/ProductDetailPage';
 import ProductCatalogPage from './components/ProductCatalogPage';
-import PortalRegistrationModal from './components/PortalRegistrationModal';
-import type { PortalType } from './components/PortalRegistrationModal';
+import CustomerRegistrationModal from './components/CustomerRegistrationModal';
+import VendorRegistrationModal from './components/VendorRegistrationModal';
+import GovernmentRegistrationModal from './components/GovernmentRegistrationModal';
+export type PortalType = 'customer' | 'vendor' | 'government';
 
 function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [selectedProductForDetail, setSelectedProductForDetail] = useState<ProductItem | null>(null);
-  const [isPortalModalOpen, setIsPortalModalOpen] = useState(false);
-  const [portalModalType, setPortalModalType] = useState<PortalType>('customer');
+  const [isCustomerModalOpen, setIsCustomerModalOpen] = useState(false);
+  const [isVendorModalOpen, setIsVendorModalOpen] = useState(false);
+  const [isGovernmentModalOpen, setIsGovernmentModalOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -97,8 +100,9 @@ function App() {
   const handleCloseVideo = () => setIsVideoModalOpen(false);
 
   const handleOpenPortalModal = (type: PortalType = 'customer') => {
-    setPortalModalType(type);
-    setIsPortalModalOpen(true);
+    if (type === 'customer') setIsCustomerModalOpen(true);
+    if (type === 'vendor') setIsVendorModalOpen(true);
+    if (type === 'government') setIsGovernmentModalOpen(true);
   };
 
   const handleOpenCatalog = () => {
@@ -259,11 +263,9 @@ function App() {
 
       <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={handleCloseQuote} />
       <WatchVideoModal isOpen={isVideoModalOpen} onClose={handleCloseVideo} />
-      <PortalRegistrationModal
-        isOpen={isPortalModalOpen}
-        initialType={portalModalType}
-        onClose={() => setIsPortalModalOpen(false)}
-      />
+      <CustomerRegistrationModal isOpen={isCustomerModalOpen} onClose={() => setIsCustomerModalOpen(false)} />
+      <VendorRegistrationModal isOpen={isVendorModalOpen} onClose={() => setIsVendorModalOpen(false)} />
+      <GovernmentRegistrationModal isOpen={isGovernmentModalOpen} onClose={() => setIsGovernmentModalOpen(false)} />
 
       {/* Floating Action Buttons */}
       <div className="floating-action-btn">

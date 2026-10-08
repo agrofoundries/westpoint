@@ -12,7 +12,7 @@ const NewFrontiers: React.FC = () => {
   return (
     <section style={{ background: '#FAF6EE', padding: '3.5rem 0', position: 'relative', overflow: 'hidden', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
       <div className="container-custom" style={{ position: 'relative' }}>
-        
+
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <span style={{ fontSize: '0.85rem', fontWeight: 900, letterSpacing: '0.15em', color: '#1B5E20', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem', fontFamily: "'Manrope', sans-serif !important" }}>
             Expanding Our Capabilities
@@ -39,9 +39,9 @@ const NewFrontiers: React.FC = () => {
               }}>
                 {/* Image Container (4 columns) */}
                 <div style={{ flex: '4 1 250px', display: 'flex', position: 'relative', borderRight: isEven ? '1px solid rgba(76, 175, 80, 0.2)' : 'none', borderLeft: !isEven ? '1px solid rgba(76, 175, 80, 0.2)' : 'none', overflow: 'hidden' }}>
-                  <img 
-                    src="/mokup/Westpoint-Industries-catalog-mockup.png" 
-                    alt={`${card.title} Catalog`} 
+                  <img
+                    src="/mokup/Westpoint-Industries-catalog-mockup.png"
+                    alt={`${card.title} Catalog`}
                     style={{
                       width: '100%',
                       height: '100%',
@@ -63,9 +63,9 @@ const NewFrontiers: React.FC = () => {
                   <p style={{ fontSize: '1.05rem', color: '#E8F5E9', margin: '0 0 2rem 0', lineHeight: 1.6, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important", maxWidth: '800px' }}>
                     We are expanding our capabilities to deliver high-performance engineered metal components for {card.title.toLowerCase()}. Built with our legacy of quality, durability, and strict manufacturing standards.
                   </p>
-                  
+
                   <div style={{ alignSelf: 'flex-start', marginTop: 'auto' }}>
-                    <button 
+                    <button
                       onClick={() => window.open('#catalog', '_self')}
                       style={{
                         background: '#4CAF50',
