@@ -21,8 +21,8 @@ export default function Logo({
     logoSrc = '/logos/westpoint-infrastructure.png';
     altText = 'Westpoint Infrastructure Logo';
   } else if (division === 'water') {
-    logoSrc = '/logos/westpoint-water.png';
-    altText = 'Westpoint Water Logo';
+    logoSrc = '/logos/Westpoint-Waterworks-Corporate-Logo.png';
+    altText = 'Westpoint Waterworks Logo';
   }
 
   return (

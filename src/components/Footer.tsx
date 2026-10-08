@@ -573,7 +573,7 @@ export const Footer: React.FC = () => {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <img
-                  src="/logos/westpoint-water.png"
+                  src="/logos/Westpoint-Waterworks-Corporate-Logo.png"
                   alt="Westpoint Waterworks Logo"
                   style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
                 />
