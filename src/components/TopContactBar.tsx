@@ -11,6 +11,9 @@ export const TopContactBar: React.FC = () => {
           <span style={{ color: '#A5D6A7', fontWeight: 900, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
             WESTPOINT GROUP COMPANIES
           </span>
+          <span style={{ background: '#C8102E', color: '#FFFFFF', fontSize: '9.5px', fontWeight: 900, padding: '2px 7px', borderRadius: '2px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            ISO 9001 &amp; RDSO APPROVED
+          </span>
 
           <span style={{ color: 'rgba(255,255,255,0.35)' }}>|</span>
 

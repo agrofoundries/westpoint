@@ -11,25 +11,25 @@ export const AssociationsStandards: React.FC = () => {
     },
     { 
       name: 'CONSTRUCTION CASTINGS', 
-      img: '/associations/AFlogo.png',
+      img: '/logos/Westpoint-Foundries-Industrial-Logo.png',
       desc: 'Heavy-duty infrastructure castings built to withstand extreme environmental stress.',
       icon: <Settings size={24} color="#4CAF50" />
     },
     { 
       name: 'FARM EQUIPMENT', 
-      img: '/associations/AFlogo.png',
+      img: '/logos/Westpoint-Forgings-Industrial-Logo.png',
       desc: 'Complete assemblies and structural parts for heavy harvesting and planting tractors.',
       icon: <Tractor size={24} color="#4CAF50" />
     },
     { 
       name: 'PETRO EQUIPMENT', 
-      img: '/associations/AFlogo.png',
+      img: '/logos/Westpoint-Castings-Industrial-Logo.png',
       desc: 'High-pressure valves, pumps, and drilling components for the oil and gas sector.',
       icon: <Fuel size={24} color="#4CAF50" />
     },
     { 
       name: 'PRECAST FORMS & MOLDS', 
-      img: '/associations/AFlogo.png',
+      img: '/logos/Westpoint-Waterworks-Corporate-Logo.png',
       desc: 'Precision-machined molds for large-scale concrete precasting operations.',
       icon: <Blocks size={24} color="#4CAF50" />
     },
