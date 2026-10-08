@@ -104,26 +104,14 @@ export const AssociationsStandards: React.FC = () => {
               <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '3px', background: '#4CAF50' }}></div>
               
               {div.img && (
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '80px', marginBottom: '1.5rem', width: '100%' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '90px', width: '100%', padding: '0.5rem' }}>
                   <img 
                     src={div.img} 
                     alt={div.name} 
-                    style={{ maxWidth: '100%', maxHeight: '80px', objectFit: 'contain' }} 
+                    style={{ maxWidth: '100%', maxHeight: '85px', objectFit: 'contain', display: 'block' }} 
                   />
                 </div>
               )}
-
-              <h3 style={{ 
-                fontSize: '1.2rem', 
-                fontWeight: 900, 
-                color: '#111827', 
-                margin: 0,
-                letterSpacing: '0.05em',
-                fontFamily: "'Manrope', sans-serif",
-                textAlign: 'center'
-              }}>
-                {div.name}
-              </h3>
             </div>
           ))}
         </div>
