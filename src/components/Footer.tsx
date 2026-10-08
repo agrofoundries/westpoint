@@ -465,12 +465,12 @@ export const Footer: React.FC = () => {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <img
-                  src="/logos/westpoint-infrastructure.png"
-                  alt="Westpoint Infrastructure Logo"
+                  src="/logos/Westpoint-Foundries-Industrial-Logo.png"
+                  alt="Westpoint Foundries Logo"
                   style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
                 />
                 <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Infrastructure Division
+                  Foundries Division
                 </span>
               </div>
               <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
@@ -492,12 +492,12 @@ export const Footer: React.FC = () => {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <img
-                  src="/logos/westpoint-water.png"
-                  alt="Westpoint Water Logo"
+                  src="/logos/Westpoint-Castings-Industrial-Logo.png"
+                  alt="Westpoint Castings Logo"
                   style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
                 />
                 <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Water Division
+                  Castings Division
                 </span>
               </div>
               <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
@@ -519,12 +519,12 @@ export const Footer: React.FC = () => {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <img
-                  src="/logos/logo-white.png"
-                  alt="Westpoint Group Companies Logo"
+                  src="/logos/Westpoint-Forgings-Industrial-Logo.png"
+                  alt="Westpoint Forgings Logo"
                   style={{ height: '46px', width: 'auto', objectFit: 'contain' }}
                 />
                 <span style={{ fontSize: '10.5px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 10px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                  Parent Enterprise
+                  Forgings Division
                 </span>
               </div>
               <p style={{ fontSize: '12.5px', color: '#4A5568', lineHeight: 1.5, margin: 0, fontWeight: 500, fontFamily: "'Manrope', sans-serif !important" }}>
