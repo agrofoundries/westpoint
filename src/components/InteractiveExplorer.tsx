@@ -71,7 +71,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Centering Disc Assembly (All Types) - DIN 17182 GS-20Mn5V manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-1124259795-1024x1024.jpg',
+    img: '/images/1124259795-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -88,7 +88,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Brake support - GS-20Mn5V manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-520686084-1024x1024.jpg',
+    img: '/images/520686084-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -105,7 +105,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Set Of Console manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-169263915-1024x1024 (1).jpg',
+    img: '/images/169263915-1024x1024 (1).jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -122,7 +122,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Pin Bracket manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-976893614-1024x1024.jpg',
+    img: '/images/976893614-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -139,7 +139,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Bump Stop Bracket manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-1020709664-1024x1024.jpg',
+    img: '/images/1020709664-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -173,7 +173,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Axlebox Housing - IS 1030 manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-169263915-1024x1024.jpg',
+    img: '/images/169263915-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -224,7 +224,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Castings for Buffers manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-980499052-1024x1024.jpg',
+    img: '/images/980499052-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -377,7 +377,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality 8 Ton Knuckle manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-2234684923-1024x1024.jpg',
+    img: '/images/2234684923-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   {
@@ -445,7 +445,7 @@ export const EXPLORER_PRODUCTS: ProductItem[] = [
     yieldStrength: 'N/A',
     hardness: 'N/A',
     desc: 'High-quality Trailer Components manufactured by Westpoint Industries.',
-    img: '/images/gettyimages-1756783058-1024x1024.jpg',
+    img: '/images/1756783058-1024x1024.jpg',
     keyFeatures: ['Precision Manufactured', 'Quality Assured', 'Durable Construction']
   },
   ];

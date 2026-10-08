@@ -121,7 +121,7 @@ export const StandardsGrid: React.FC = () => {
 
           <div className="img-hover-zoom" style={{ border: '1px solid #D1D5DB', borderRadius: '2px', overflow: 'hidden', position: 'relative', height: '220px' }}>
             <img
-              src="/images/gettyimages-144461984-1024x1024 (1).jpg"
+              src="/images/144461984-1024x1024 (1).jpg"
               alt="Machined Industrial Rotavator Gearboxes"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />

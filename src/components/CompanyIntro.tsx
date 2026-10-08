@@ -85,11 +85,14 @@ export const CompanyIntro: React.FC = () => {
                 AAR M-1003 QA
               </div>
 
-              {/* Dynamic Image */}
-              <div style={{ height: '440px', overflow: 'hidden', position: 'relative', background: '#F8F9FA' }}>
-                <img
-                  src="/images/istockphoto-1196704251-2048x2048.jpg"
-                  alt="FINISH MACHINED AXLEBOX HOUSING"
+              {/* Dynamic Video */}
+              <div style={{ height: '600px', overflow: 'hidden', position: 'relative', background: '#000000' }}>
+                <video
+                  src="/Westpointindustriesdesktoplive-Mockup.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
               </div>

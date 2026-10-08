@@ -170,7 +170,7 @@ export const FeaturedComponents: React.FC<FeaturedComponentsProps> = ({ onOpenPr
       series: 'OEM SPROCKET',
       specs: 'Wear Resistant',
       desc: 'Heavy duty sprockets for tracked undercarriage systems.',
-      img: '/images/gettyimages-157479520-1024x1024.jpg',
+      img: '/images/157479520-1024x1024.jpg',
     },
     {
       id: 'oem-04',
