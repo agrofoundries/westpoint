@@ -88,7 +88,7 @@ export const CompanyIntro: React.FC = () => {
               {/* Dynamic Video */}
               <div style={{ height: '600px', overflow: 'hidden', position: 'relative', background: '#000000' }}>
                 <video
-                  src="/Westpointindustriesdesktoplive-Mockup.mp4"
+                  src="/mokup/Westpointindustriesdesktoplive-Mockup.mp4"
                   autoPlay
                   loop
                   muted
