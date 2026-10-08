@@ -27,12 +27,17 @@ import RequestQuoteModal from './components/RequestQuoteModal';
 import WatchVideoModal from './components/WatchVideoModal';
 import ProductDetailPage from './components/ProductDetailPage';
 import ProductCatalogPage from './components/ProductCatalogPage';
+import PortalsSection from './components/PortalsSection';
+import PortalRegistrationModal from './components/PortalRegistrationModal';
+import type { PortalType } from './components/PortalRegistrationModal';
 
 function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [selectedProductForDetail, setSelectedProductForDetail] = useState<ProductItem | null>(null);
+  const [isPortalModalOpen, setIsPortalModalOpen] = useState(false);
+  const [portalModalType, setPortalModalType] = useState<PortalType>('customer');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -91,6 +96,11 @@ function App() {
 
   const handleOpenVideo = () => setIsVideoModalOpen(true);
   const handleCloseVideo = () => setIsVideoModalOpen(false);
+
+  const handleOpenPortalModal = (type: PortalType = 'customer') => {
+    setPortalModalType(type);
+    setIsPortalModalOpen(true);
+  };
 
   const handleOpenCatalog = () => {
     setIsCatalogOpen(true);
@@ -152,6 +162,7 @@ function App() {
       <Header
         onRequestQuoteClick={handleOpenQuote}
         onOpenExplorer={handleOpenCatalog}
+        onOpenPortalModal={handleOpenPortalModal}
       />
 
       {selectedProductForDetail ? (
@@ -211,6 +222,9 @@ function App() {
         {/* Our New Frontiers & Catalog Mockup */}
         <NewFrontiers />
 
+        {/* Enterprise Registration & Drawing Upload Portals */}
+        <PortalsSection onOpenPortalModal={handleOpenPortalModal} />
+
         {/* 14 Engineering Excellence (Text Heavy - Disabled) */}
         <EngineeringExcellence />
 
@@ -249,6 +263,11 @@ function App() {
 
       <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={handleCloseQuote} />
       <WatchVideoModal isOpen={isVideoModalOpen} onClose={handleCloseVideo} />
+      <PortalRegistrationModal
+        isOpen={isPortalModalOpen}
+        initialType={portalModalType}
+        onClose={() => setIsPortalModalOpen(false)}
+      />
 
       {/* Floating Action Buttons */}
       <div className="floating-action-btn">

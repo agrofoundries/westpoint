@@ -5,6 +5,7 @@ import { ArrowRight, Search, ChevronDown, Building2, Layers, ShieldCheck, Compas
 interface HeaderProps {
   onRequestQuoteClick?: () => void;
   onOpenExplorer?: () => void;
+  onOpenPortalModal?: (type?: any) => void;
 }
 
 const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
@@ -44,7 +45,7 @@ const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
   );
 };
 
-export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplorer }) => {
+export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplorer, onOpenPortalModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -390,6 +391,41 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   <Compass size={14} />
                   <span>PRODUCT CATALOG</span>
                 </button>
+
+                <a
+                  href="#portals"
+                  onClick={(e) => {
+                    if (onOpenPortalModal) {
+                      e.preventDefault();
+                      onOpenPortalModal('customer');
+                    }
+                  }}
+                  style={{
+                    color: '#FFFFFF',
+                    background: '#1B5E20',
+                    border: '1px solid #FAF6EE',
+                    fontSize: '12.5px',
+                    fontWeight: 900,
+                    letterSpacing: '0.06em',
+                    padding: '8px 16px',
+                    textTransform: 'uppercase',
+                    whiteSpace: 'nowrap',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    flexShrink: 0,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontFamily: "'Manrope', sans-serif",
+                    borderRadius: '2px',
+                    textDecoration: 'none'
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.background = '#FAF6EE'; }}
+                  onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = '#1B5E20'; }}
+                >
+                  <Building2 size={14} />
+                  <span>PORTALS &amp; DRAWINGS</span>
+                </a>
 
                 <a
                   href="#downloads"
