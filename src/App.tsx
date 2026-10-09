@@ -12,6 +12,7 @@ import type { ProductItem } from './components/InteractiveExplorer';
 import ProductShowcaseStrip from './components/ProductShowcaseStrip';
 import RailwayTelemetryWidget from './components/RailwayTelemetryWidget';
 import ManufacturingCapabilities from './components/ManufacturingCapabilities';
+import ForgingCapabilitiesSection from './components/ForgingCapabilitiesSection';
 import SolidificationCalculator from './components/SolidificationCalculator';
 import ManufacturingProcess from './components/ManufacturingProcess';
 import IndustriesWeServe from './components/IndustriesWeServe';
@@ -240,6 +241,9 @@ function App() {
 
         {/* 09 Manufacturing Capabilities */}
         <ManufacturingCapabilities />
+
+        {/* 09B Forging Capabilities Section (Hammer, Ring Rolling, Cold/Warm Forging, Axle Shaft) */}
+        <ForgingCapabilitiesSection />
 
         {/* 10 Solidification & Metallurgy Calculator - Hidden per user request */}
         <SolidificationCalculator />
