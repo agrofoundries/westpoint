@@ -460,45 +460,80 @@ export const CorporateAdditionsSection: React.FC = () => {
               </div>
             </div>
 
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '1.25rem'
-              }}
-            >
+            <style>{`
+              .directory-grid-4 {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+              }
+              .directory-card-item {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 14px;
+                padding: 1.75rem 1.85rem;
+                border: 1.5px solid rgba(129, 199, 132, 0.25);
+                display: flex;
+                align-items: flex-start;
+                gap: 18px;
+                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                grid-column: span 1;
+              }
+              .directory-card-stretched {
+                grid-column: span 2 !important;
+              }
+              @media (max-width: 1200px) {
+                .directory-grid-4 {
+                  grid-template-columns: repeat(2, 1fr);
+                }
+                .directory-card-stretched {
+                  grid-column: span 1 !important;
+                }
+              }
+              @media (max-width: 640px) {
+                .directory-grid-4 {
+                  grid-template-columns: 1fr;
+                }
+                .directory-card-stretched {
+                  grid-column: span 1 !important;
+                }
+              }
+              .directory-card-item:hover {
+                background: rgba(76, 175, 80, 0.18);
+                border-color: #69F0AE;
+                transform: translateY(-4px);
+                box-shadow: 0 12px 30px rgba(105, 240, 174, 0.2);
+              }
+            `}</style>
+
+            <div className="directory-grid-4">
               {globalDirectory.map((dir, idx) => {
                 const DirIcon = dir.icon;
+                const isLastStretched = idx === globalDirectory.length - 1; // 7th item stretches span 2
                 return (
                   <div
                     key={idx}
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.04)',
-                      borderRadius: '12px',
-                      padding: '1.25rem',
-                      border: '1px solid rgba(129, 199, 132, 0.2)',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '14px',
-                      transition: 'all 0.25s ease'
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.background = 'rgba(76, 175, 80, 0.15)';
-                      e.currentTarget.style.borderColor = '#69F0AE';
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
-                      e.currentTarget.style.borderColor = 'rgba(129, 199, 132, 0.2)';
-                    }}
+                    className={`directory-card-item ${isLastStretched ? 'directory-card-stretched' : ''}`}
                   >
-                    <div style={{ background: 'rgba(27, 94, 32, 0.6)', padding: '10px', borderRadius: '10px', border: '1px solid rgba(105, 240, 174, 0.3)' }}>
-                      <DirIcon size={20} color="#69F0AE" />
+                    <div
+                      style={{
+                        width: '52px',
+                        height: '52px',
+                        borderRadius: '12px',
+                        background: 'rgba(27, 94, 32, 0.8)',
+                        border: '1.5px solid rgba(105, 240, 174, 0.4)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                        boxShadow: '0 0 14px rgba(105, 240, 174, 0.15)'
+                      }}
+                    >
+                      <DirIcon size={24} color="#69F0AE" />
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', margin: '0 0 4px 0', letterSpacing: '0.04em', fontFamily: "'Manrope', sans-serif !important" }}>
+                      <h4 style={{ fontSize: '1.1rem', fontWeight: 900, color: '#FFFFFF', margin: '0 0 6px 0', letterSpacing: '0.03em', fontFamily: "'Manrope', sans-serif !important" }}>
                         {dir.title}
                       </h4>
-                      <p style={{ fontSize: '0.82rem', color: '#A5D6A7', margin: 0, lineHeight: 1.45, fontFamily: "'Manrope', sans-serif !important" }}>
+                      <p style={{ fontSize: '0.9rem', color: '#C8E6C9', margin: 0, lineHeight: 1.5, fontFamily: "'Manrope', sans-serif !important" }}>
                         {dir.desc}
                       </p>
                     </div>
