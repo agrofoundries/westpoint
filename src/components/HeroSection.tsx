@@ -139,12 +139,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
           playsInline
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
-        {/* Dark Vignette Overlay for Text Readability */}
+        {/* Vignette Overlay for Text Readability & High Background Visibility */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'radial-gradient(circle at 75% 50%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 80%), linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.5) 100%)'
+            background: 'linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.5) 100%), linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%)'
           }}
         />
       </div>
