@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Hammer, Disc, Zap, Maximize2, Flame, Snowflake, ShieldCheck, Cpu, Layers, Wrench
+  Hammer, Disc, Zap, Maximize2, Flame, Snowflake, ShieldCheck, Cpu, Layers, Wrench, ChevronRight
 } from 'lucide-react';
 
 const forgingCapabilities = [
@@ -81,7 +81,7 @@ export const ForgingCapabilitiesSection: React.FC = () => {
         }}
       />
 
-      <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+      <div style={{ maxWidth: '1380px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 3.5rem auto' }}>
@@ -93,14 +93,14 @@ export const ForgingCapabilitiesSection: React.FC = () => {
               alignItems: 'center',
               gap: '8px',
               padding: '6px 18px',
-              borderRadius: '9999px',
+              borderRadius: '0px',
               background: 'rgba(27, 94, 32, 0.85)',
               border: '1px solid rgba(129, 199, 132, 0.5)',
               marginBottom: '1rem',
               boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
             }}
           >
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#69F0AE', boxShadow: '0 0 8px #69F0AE' }} />
+            <span style={{ width: '8px', height: '8px', background: '#69F0AE', boxShadow: '0 0 8px #69F0AE' }} />
             <span
               style={{
                 fontSize: '12px',
@@ -141,116 +141,127 @@ export const ForgingCapabilitiesSection: React.FC = () => {
               margin: 0
             }}
           >
-            State-of-the-art precision forging lines and alloy component manufacturing
+            Precision forging lines and heavy industrial metal forming specifications
           </p>
         </div>
 
-        {/* 10 Square Cards (5 columns per row x 2 rows) */}
+        {/* 3 Columns Per Row Sharp Industrial Square Cards Grid */}
         <style>{`
-          .forging-grid-10 {
+          .forging-grid-3 {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
           }
-          @media (max-width: 1200px) {
-            .forging-grid-10 {
-              grid-template-columns: repeat(3, 1fr);
-            }
-          }
-          @media (max-width: 768px) {
-            .forging-grid-10 {
+          @media (max-width: 992px) {
+            .forging-grid-3 {
               grid-template-columns: repeat(2, 1fr);
             }
           }
-          @media (max-width: 480px) {
-            .forging-grid-10 {
+          @media (max-width: 576px) {
+            .forging-grid-3 {
               grid-template-columns: 1fr;
             }
           }
+          .forging-card-sharp {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.35rem 1.6rem;
+            background: rgba(15, 51, 20, 0.75);
+            border: 1.5px solid rgba(129, 199, 132, 0.3);
+            border-radius: 0px !important; /* Sharp Square Corners */
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            position: relative;
+          }
+          .forging-card-sharp:hover {
+            transform: translateY(-4px);
+            border-color: #69F0AE;
+            background: rgba(27, 94, 32, 0.92);
+            box-shadow: 0 12px 35px rgba(105, 240, 174, 0.3);
+          }
+          .forging-card-sharp:hover .card-arrow {
+            transform: translateX(5px);
+            color: #69F0AE !important;
+            border-color: #69F0AE !important;
+          }
         `}</style>
 
-        <div className="forging-grid-10">
+        <div className="forging-grid-3">
           {forgingCapabilities.map((item) => {
             const IconComponent = item.icon;
             return (
-              <div
-                key={item.id}
-                style={{
-                  aspectRatio: '1 / 1',
-                  background: 'rgba(15, 51, 20, 0.75)',
-                  border: '1px solid rgba(129, 199, 132, 0.3)',
-                  borderRadius: '16px',
-                  padding: '1.5rem',
-                  backdropFilter: 'blur(10px)',
-                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  boxShadow: '0 8px 25px rgba(0,0,0,0.3)',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
-                  e.currentTarget.style.borderColor = '#69F0AE';
-                  e.currentTarget.style.boxShadow = '0 14px 35px rgba(105, 240, 174, 0.35)';
-                  e.currentTarget.style.background = 'rgba(27, 94, 32, 0.9)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.borderColor = 'rgba(129, 199, 132, 0.3)';
-                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.3)';
-                  e.currentTarget.style.background = 'rgba(15, 51, 20, 0.75)';
-                }}
-              >
-                {/* Number Badge Top Right */}
+              <div key={item.id} className="forging-card-sharp">
+                
+                {/* Number Badge Top Left Accent */}
                 <span
                   style={{
                     position: 'absolute',
-                    top: '14px',
-                    right: '16px',
-                    fontSize: '11px',
+                    top: '8px',
+                    right: '12px',
+                    fontSize: '10px',
                     fontWeight: 900,
-                    color: 'rgba(105, 240, 174, 0.6)',
+                    color: 'rgba(105, 240, 174, 0.5)',
                     fontFamily: "'Manrope', sans-serif !important"
                   }}
                 >
                   #{item.id}
                 </span>
 
-                {/* Glowing Icon Circle */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.1rem', flex: 1, paddingRight: '1rem' }}>
+                  
+                  {/* Square Glowing Icon Box */}
+                  <div
+                    style={{
+                      width: '46px',
+                      height: '46px',
+                      borderRadius: '0px', /* Sharp Square Icon Box */
+                      background: 'rgba(76, 175, 80, 0.18)',
+                      border: '1.5px solid rgba(105, 240, 174, 0.4)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      boxShadow: '0 0 14px rgba(105, 240, 174, 0.12)'
+                    }}
+                  >
+                    <IconComponent size={24} color="#69F0AE" />
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    style={{
+                      fontSize: '1.05rem',
+                      fontWeight: 800,
+                      color: '#FFFFFF',
+                      margin: 0,
+                      lineHeight: 1.3,
+                      fontFamily: "'Manrope', sans-serif !important"
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                </div>
+
+                {/* Square Right Arrow Box */}
                 <div
+                  className="card-arrow"
                   style={{
-                    width: '60px',
-                    height: '60px',
-                    borderRadius: '50%',
-                    background: 'rgba(76, 175, 80, 0.18)',
-                    border: '1.5px solid rgba(105, 240, 174, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '1rem',
-                    boxShadow: '0 0 20px rgba(105, 240, 174, 0.15)'
+                    width: '34px',
+                    height: '34px',
+                    borderRadius: '0px', /* Sharp Square Arrow Container */
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    transition: 'all 0.3s ease',
+                    flexShrink: 0
                   }}
                 >
-                  <IconComponent size={26} color="#69F0AE" />
+                  <ChevronRight size={18} color="#A5D6A7" />
                 </div>
-
-                {/* Clean Bold Title */}
-                <h3
-                  style={{
-                    fontSize: '1rem',
-                    fontWeight: 800,
-                    color: '#FFFFFF',
-                    margin: 0,
-                    lineHeight: 1.35,
-                    fontFamily: "'Manrope', sans-serif !important"
-                  }}
-                >
-                  {item.title}
-                </h3>
               </div>
             );
           })}
