@@ -10,6 +10,43 @@ interface HeaderProps {
 
 
 
+const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timer: number;
+    const speed = isDeleting ? 50 : 110;
+
+    if (!isDeleting && displayText.length < text.length) {
+      timer = window.setTimeout(() => {
+        setDisplayText(text.slice(0, displayText.length + 1));
+      }, speed);
+    } else if (!isDeleting && displayText.length === text.length) {
+      timer = window.setTimeout(() => {
+        setIsDeleting(true);
+      }, 2200);
+    } else if (isDeleting && displayText.length > 0) {
+      timer = window.setTimeout(() => {
+        setDisplayText(text.slice(0, displayText.length - 1));
+      }, speed);
+    } else if (isDeleting && displayText.length === 0) {
+      timer = window.setTimeout(() => {
+        setIsDeleting(false);
+      }, 400);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, text]);
+
+  return (
+    <span style={{ fontStyle: 'italic', fontSize: '36px', color: '#9B0403', whiteSpace: 'nowrap', fontWeight: 900, minWidth: '420px', display: 'inline-block', lineHeight: 1 }}>
+      {displayText}
+      <span style={{ animation: 'blinkCursor 0.8s infinite', marginLeft: '2px', color: '#9B0403', fontWeight: 900 }}>|</span>
+    </span>
+  );
+};
+
 export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplorer, onOpenPortalModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
@@ -164,41 +201,57 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
         onMouseLeave={() => setActiveMegaMenu(null)}
       >
 
-        {/* Tier 1: Middle Corporate Branding Bar (Compact Sleek Design) */}
-        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '8px 2.5vw', width: '100%' }}>
+        {/* Tier 1: Middle Corporate Branding Bar */}
+        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '12px 2.5vw', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '14px', width: '100%' }}>
 
-            {/* Corporate Group Emblems */}
+            {/* Corporate Group Emblems (First / Left) */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <Logo division="group" height="44px" />
+              <Logo division="group" height="65px" />
             </div>
 
-            {/* Right Desktop Quick Actions & Info */}
-            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginLeft: 'auto' }}>
-              <button
-                onClick={onRequestQuoteClick}
-                style={{
-                  background: '#1B5E20',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  fontSize: '12px',
-                  fontWeight: 800,
-                  letterSpacing: '0.04em',
-                  padding: '7px 16px',
-                  borderRadius: '4px',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  transition: 'all 0.2s ease',
-                  fontFamily: "'Manrope', sans-serif"
-                }}
-                onMouseEnter={e => e.currentTarget.style.background = '#2E7D32'}
-                onMouseLeave={e => e.currentTarget.style.background = '#1B5E20'}
-              >
-                <span>REQUEST QUOTE</span>
-                <ArrowRight size={13} color="#4CAF50" />
-              </button>
+            {/* Right Division Emblems (Desktop) with Tagline & Infinite Slider */}
+            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '750px', flex: 1, marginLeft: '12px' }}>
+              <TypewriterTagline text="Our Total lineup......." />
+              
+              <style>{`
+                @keyframes blinkCursor {
+                  0%, 100% { opacity: 1; }
+                  50% { opacity: 0; }
+                }
+                @keyframes slideLogosHeader {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(calc(-50% - 12px)); } /* 12px is half the gap */
+                }
+                .header-logo-track {
+                  display: flex;
+                  gap: 24px;
+                  animation: slideLogosHeader 20s linear infinite;
+                  width: max-content;
+                  align-items: center;
+                }
+                .header-logo-track:hover {
+                  animation-play-state: paused;
+                }
+              `}</style>
+              
+              <div style={{ overflow: 'hidden', flex: 1, position: 'relative' }}>
+                <div className="header-logo-track">
+                  {/* --- SET 1 --- */}
+                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Waterworks-Corporate-Logo.png" alt="Westpoint Waterworks" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
+                  
+                  {/* --- SET 2 (Exact duplicate for infinite scroll) --- */}
+                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/logos/Westpoint-Waterworks-Corporate-Logo.png" alt="Westpoint Waterworks" style={{ height: '65px', objectFit: 'contain' }} />
+                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
+                </div>
+              </div>
             </div>
 
             {/* Mobile Header Right Controls: Fast Explorer Trigger + Hamburger Menu Toggle */}
