@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import {
   Building2, Layers, Award, ShieldCheck, CheckCircle2,
-  Cpu, ArrowRight, Sparkles, MapPin, Calendar,
-  Wrench, Code2, Users, FileSignature
+  Cpu, ArrowRight, MapPin, Calendar, Wrench, Code2, Users, FileSignature
 } from 'lucide-react';
 
 export const CorporateAdditionsSection: React.FC = () => {
@@ -13,8 +12,8 @@ export const CorporateAdditionsSection: React.FC = () => {
       id: 'brands',
       category: 'BRANDS',
       icon: Layers,
-      color: '#2E7D32',
-      bgGradient: 'linear-gradient(135deg, #0F3314 0%, #1B5E20 100%)',
+      color: '#69F0AE',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
       title: 'Westpoint Group Brand Portfolio',
       subtitle: 'Specialized Industrial Divisions',
       items: [
@@ -29,8 +28,8 @@ export const CorporateAdditionsSection: React.FC = () => {
       id: 'companies',
       category: 'GROUP COMPANIES',
       icon: Building2,
-      color: '#1565C0',
-      bgGradient: 'linear-gradient(135deg, #0D47A1 0%, #1565C0 100%)',
+      color: '#81C784',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
       title: 'Corporate Entities & Subsidiaries',
       subtitle: 'Global Operations Network',
       items: [
@@ -43,9 +42,9 @@ export const CorporateAdditionsSection: React.FC = () => {
     {
       id: 'products',
       category: 'NEW PRODUCT LINES',
-      icon: Sparkles,
-      color: '#C62828',
-      bgGradient: 'linear-gradient(135deg, #7F0000 0%, #B71C1C 100%)',
+      icon: Cpu,
+      color: '#69F0AE',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
       title: 'Next-Gen Manufacturing Capabilities',
       subtitle: 'Expanded Industrial Lines',
       items: [
@@ -59,8 +58,8 @@ export const CorporateAdditionsSection: React.FC = () => {
       id: 'ventures',
       category: 'ACQUISITIONS & VENTURES',
       icon: Users,
-      color: '#E65100',
-      bgGradient: 'linear-gradient(135deg, #BF360C 0%, #E65100 100%)',
+      color: '#A5D6A7',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
       title: 'Strategic Alliances & Joint Ventures',
       subtitle: 'Global Metallurgy Partnerships',
       items: [
@@ -74,8 +73,8 @@ export const CorporateAdditionsSection: React.FC = () => {
       id: 'locations',
       category: 'LOCATIONS & FOOTPRINT',
       icon: MapPin,
-      color: '#6A1B9A',
-      bgGradient: 'linear-gradient(135deg, #4A148C 0%, #6A1B9A 100%)',
+      color: '#81C784',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
       title: 'Global Manufacturing & Logistics',
       subtitle: 'Worldwide Footprint',
       items: [
@@ -89,8 +88,8 @@ export const CorporateAdditionsSection: React.FC = () => {
       id: 'standards',
       category: 'BEYOND STANDARDS',
       icon: Award,
-      color: '#00838F',
-      bgGradient: 'linear-gradient(135deg, #004D40 0%, #00695C 100%)',
+      color: '#69F0AE',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
       title: 'Quality Accreditations & Compliance',
       subtitle: 'Exceeding Global Specs',
       items: [
@@ -104,8 +103,8 @@ export const CorporateAdditionsSection: React.FC = () => {
       id: 'backed',
       category: 'BACKED BY THE BEST',
       icon: ShieldCheck,
-      color: '#283593',
-      bgGradient: 'linear-gradient(135deg, #1A237E 0%, #283593 100%)',
+      color: '#A5D6A7',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
       title: 'Guarantees & Advanced Testing',
       subtitle: '100% Quality Assurance',
       items: [
@@ -119,8 +118,8 @@ export const CorporateAdditionsSection: React.FC = () => {
       id: 'checklist',
       category: 'VENDOR & FOUNDRY CHECKLIST',
       icon: FileSignature,
-      color: '#D84315',
-      bgGradient: 'linear-gradient(135deg, #4E342E 0%, #6D4C41 100%)',
+      color: '#69F0AE',
+      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
       title: 'Confidential Vendor Sign-Offs',
       subtitle: 'Governance & IP Compliance',
       items: [
@@ -173,36 +172,22 @@ export const CorporateAdditionsSection: React.FC = () => {
   return (
     <section
       style={{
-        background: '#0B132B',
+        background: 'linear-gradient(180deg, #0B2212 0%, #05140A 100%)',
         color: '#FFFFFF',
         padding: '5rem 0',
         position: 'relative',
         overflow: 'hidden',
-        fontFamily: "'Manrope', sans-serif"
+        fontFamily: "'Manrope', sans-serif !important"
       }}
     >
-      {/* Background Decorative Gradient Orbs */}
+      {/* Decorative Grid Pattern matching theme */}
       <div
         style={{
           position: 'absolute',
-          top: '-10%',
-          left: '-5%',
-          width: '500px',
-          height: '500px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(46, 125, 50, 0.15) 0%, rgba(0,0,0,0) 70%)',
-          pointerEvents: 'none'
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          bottom: '-10%',
-          right: '-5%',
-          width: '500px',
-          height: '500px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(21, 101, 192, 0.15) 0%, rgba(0,0,0,0) 70%)',
+          inset: 0,
+          backgroundImage: 'radial-gradient(rgba(129, 199, 132, 0.12) 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+          opacity: 0.6,
           pointerEvents: 'none'
         }}
       />
@@ -210,27 +195,29 @@ export const CorporateAdditionsSection: React.FC = () => {
       <div className="container-custom" style={{ position: 'relative', zIndex: 10 }}>
 
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3.5rem auto' }}>
+        <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 3.5rem auto' }}>
           <div
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
               padding: '6px 18px',
-              borderRadius: '20px',
-              background: 'rgba(76, 175, 80, 0.12)',
-              border: '1px solid rgba(76, 175, 80, 0.3)',
-              marginBottom: '1rem'
+              borderRadius: '9999px',
+              background: 'rgba(27, 94, 32, 0.85)',
+              border: '1px solid rgba(129, 199, 132, 0.5)',
+              marginBottom: '1rem',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
             }}
           >
-            <Sparkles size={16} color="#69F0AE" />
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#69F0AE', boxShadow: '0 0 8px #69F0AE' }} />
             <span
               style={{
-                fontSize: '11px',
+                fontSize: '12px',
                 fontWeight: 800,
-                color: '#A5D6A7',
+                color: '#E8F5E9',
                 letterSpacing: '0.12em',
-                textTransform: 'uppercase'
+                textTransform: 'uppercase',
+                fontFamily: "'Manrope', sans-serif !important"
               }}
             >
               WESTPOINT GROUP CORPORATE ADDITIONS
@@ -239,24 +226,27 @@ export const CorporateAdditionsSection: React.FC = () => {
 
           <h2
             style={{
-              fontSize: 'clamp(2.2rem, 3.5vw, 3rem)',
+              fontSize: 'clamp(2rem, 3.5vw, 2.85rem)',
               fontWeight: 900,
               color: '#FFFFFF',
-              letterSpacing: '-0.02em',
+              letterSpacing: '0.02em',
               margin: '0 0 1rem 0',
               textTransform: 'uppercase',
-              lineHeight: 1.15
+              lineHeight: 1.2,
+              fontFamily: "'Manrope', sans-serif !important",
+              textShadow: '0 4px 16px rgba(0,0,0,0.5)'
             }}
           >
-            Brands, Ventures &amp; Beyond Standards
+            BRANDS, VENTURES &amp; BEYOND STANDARDS
           </h2>
 
           <p
             style={{
               fontSize: '1.05rem',
-              color: '#94A3B8',
+              color: '#A5D6A7',
               lineHeight: 1.6,
-              margin: 0
+              margin: 0,
+              fontFamily: "'Manrope', sans-serif !important"
             }}
           >
             Explore our expanding portfolio of corporate brands, new forging lines, global footprint,
@@ -293,10 +283,11 @@ export const CorporateAdditionsSection: React.FC = () => {
                     textTransform: 'uppercase',
                     borderRadius: '20px',
                     cursor: 'pointer',
-                    background: isActive ? '#4CAF50' : 'rgba(255, 255, 255, 0.06)',
-                    color: isActive ? '#FFFFFF' : '#CBD5E1',
-                    border: `1px solid ${isActive ? '#4CAF50' : 'rgba(255, 255, 255, 0.15)'}`,
-                    transition: 'all 0.3s ease'
+                    background: isActive ? '#4CAF50' : 'rgba(15, 51, 20, 0.75)',
+                    color: isActive ? '#FFFFFF' : '#A5D6A7',
+                    border: `1px solid ${isActive ? '#69F0AE' : 'rgba(129, 199, 132, 0.3)'}`,
+                    transition: 'all 0.3s ease',
+                    fontFamily: "'Manrope', sans-serif !important"
                   }}
                 >
                   {btn.label}
@@ -330,24 +321,26 @@ export const CorporateAdditionsSection: React.FC = () => {
                   <div
                     key={pillar.id}
                     style={{
-                      background: 'rgba(15, 23, 42, 0.75)',
+                      background: 'rgba(15, 51, 20, 0.75)',
                       borderRadius: '16px',
                       padding: '2rem',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                      boxShadow: '0 10px 30px rgba(0, 0, 0, 0.35)',
+                      border: '1px solid rgba(129, 199, 132, 0.3)',
+                      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
                       backdropFilter: 'blur(10px)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      transition: 'all 0.3s ease'
+                      transition: 'all 0.35s ease'
                     }}
                     onMouseEnter={e => {
                       e.currentTarget.style.transform = 'translateY(-5px)';
-                      e.currentTarget.style.borderColor = pillar.color;
+                      e.currentTarget.style.borderColor = '#69F0AE';
+                      e.currentTarget.style.boxShadow = '0 12px 30px rgba(105, 240, 174, 0.25)';
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                      e.currentTarget.style.borderColor = 'rgba(129, 199, 132, 0.3)';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.3)';
                     }}
                   >
                     <div>
@@ -358,14 +351,15 @@ export const CorporateAdditionsSection: React.FC = () => {
                             width: '46px',
                             height: '46px',
                             borderRadius: '12px',
-                            background: pillar.bgGradient,
+                            background: 'rgba(76, 175, 80, 0.2)',
+                            border: '1px solid rgba(105, 240, 174, 0.4)',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            boxShadow: '0 4px 14px rgba(0,0,0,0.3)'
+                            boxShadow: '0 0 14px rgba(105, 240, 174, 0.15)'
                           }}
                         >
-                          <IconComponent size={22} color="#FFFFFF" />
+                          <IconComponent size={22} color="#69F0AE" />
                         </div>
 
                         <span
@@ -374,11 +368,12 @@ export const CorporateAdditionsSection: React.FC = () => {
                             fontWeight: 900,
                             letterSpacing: '0.1em',
                             textTransform: 'uppercase',
-                            color: '#94A3B8',
-                            background: 'rgba(255, 255, 255, 0.05)',
+                            color: '#69F0AE',
+                            background: 'rgba(76, 175, 80, 0.15)',
                             padding: '4px 12px',
                             borderRadius: '12px',
-                            border: '1px solid rgba(255, 255, 255, 0.1)'
+                            border: '1px solid rgba(105, 240, 174, 0.3)',
+                            fontFamily: "'Manrope', sans-serif !important"
                           }}
                         >
                           {pillar.category}
@@ -390,30 +385,31 @@ export const CorporateAdditionsSection: React.FC = () => {
                           fontSize: '1.25rem',
                           fontWeight: 800,
                           color: '#FFFFFF',
-                          margin: '0 0 0.25rem 0'
+                          margin: '0 0 0.25rem 0',
+                          fontFamily: "'Manrope', sans-serif !important"
                         }}
                       >
                         {pillar.title}
                       </h3>
 
-                      <p style={{ fontSize: '0.85rem', color: pillar.color, fontWeight: 700, margin: '0 0 1.25rem 0' }}>
+                      <p style={{ fontSize: '0.85rem', color: '#A5D6A7', fontWeight: 700, margin: '0 0 1.25rem 0', fontFamily: "'Manrope', sans-serif !important" }}>
                         {pillar.subtitle}
                       </p>
 
                       {/* Item List */}
                       <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                         {pillar.items.map((item, idx) => (
-                          <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#CBD5E1', lineHeight: 1.4 }}>
-                            <CheckCircle2 size={16} color={pillar.color} style={{ flexShrink: 0, marginTop: '2px' }} />
+                          <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#E8F5E9', lineHeight: 1.4, fontFamily: "'Manrope', sans-serif !important" }}>
+                            <CheckCircle2 size={16} color="#69F0AE" style={{ flexShrink: 0, marginTop: '2px' }} />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div style={{ marginTop: '1.75rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 800, color: '#64748B', letterSpacing: '0.05em' }}>VERIFIED ADDITION</span>
-                      <ArrowRight size={16} color={pillar.color} />
+                    <div style={{ marginTop: '1.75rem', paddingTop: '1rem', borderTop: '1px solid rgba(129, 199, 132, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 800, color: '#A5D6A7', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>VERIFIED ADDITION</span>
+                      <ArrowRight size={16} color="#69F0AE" />
                     </div>
                   </div>
                 );
@@ -421,29 +417,30 @@ export const CorporateAdditionsSection: React.FC = () => {
           </div>
         )}
 
-        {/* Grid 2: Global Presence Directory from Canva Slide 30 */}
+        {/* Grid 2: Global Presence Directory */}
         {(activeTab === 'all' || activeTab === 'directory') && (
           <div
             style={{
-              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%)',
+              background: 'rgba(15, 51, 20, 0.75)',
               borderRadius: '20px',
               padding: '2.5rem',
-              border: '1px solid rgba(76, 175, 80, 0.3)',
+              border: '1px solid rgba(129, 199, 132, 0.4)',
               boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-              marginTop: '1rem'
+              marginTop: '1rem',
+              backdropFilter: 'blur(10px)'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
               <div>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: '#4CAF50', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                <span style={{ fontSize: '11px', fontWeight: 800, color: '#69F0AE', letterSpacing: '0.12em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
                   GLOBAL DIRECTORY &amp; SUBMENUS
                 </span>
-                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: '#FFFFFF', margin: '0.2rem 0 0 0' }}>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: '#FFFFFF', margin: '0.2rem 0 0 0', fontFamily: "'Manrope', sans-serif !important" }}>
                   Infrastructure, CAD, Equipment &amp; Trade Shows
                 </h3>
               </div>
-              <div style={{ background: '#1B5E20', color: '#FFFFFF', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 800 }}>
-                Canva Directory Slide 30
+              <div style={{ background: '#1B5E20', color: '#E8F5E9', border: '1px solid #4CAF50', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 800, fontFamily: "'Manrope', sans-serif !important" }}>
+                Global Infrastructure Directory
               </div>
             </div>
 
@@ -463,29 +460,29 @@ export const CorporateAdditionsSection: React.FC = () => {
                       background: 'rgba(255, 255, 255, 0.04)',
                       borderRadius: '12px',
                       padding: '1.25rem',
-                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(129, 199, 132, 0.2)',
                       display: 'flex',
                       alignItems: 'flex-start',
                       gap: '14px',
                       transition: 'all 0.25s ease'
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.background = 'rgba(76, 175, 80, 0.1)';
-                      e.currentTarget.style.borderColor = '#4CAF50';
+                      e.currentTarget.style.background = 'rgba(76, 175, 80, 0.15)';
+                      e.currentTarget.style.borderColor = '#69F0AE';
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.background = 'rgba(255, 255, 255, 0.04)';
-                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                      e.currentTarget.style.borderColor = 'rgba(129, 199, 132, 0.2)';
                     }}
                   >
-                    <div style={{ background: '#1E293B', padding: '10px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      <DirIcon size={20} color="#81C784" />
+                    <div style={{ background: 'rgba(27, 94, 32, 0.6)', padding: '10px', borderRadius: '10px', border: '1px solid rgba(105, 240, 174, 0.3)' }}>
+                      <DirIcon size={20} color="#69F0AE" />
                     </div>
                     <div>
-                      <h4 style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', margin: '0 0 4px 0', letterSpacing: '0.04em' }}>
+                      <h4 style={{ fontSize: '0.95rem', fontWeight: 800, color: '#FFFFFF', margin: '0 0 4px 0', letterSpacing: '0.04em', fontFamily: "'Manrope', sans-serif !important" }}>
                         {dir.title}
                       </h4>
-                      <p style={{ fontSize: '0.82rem', color: '#94A3B8', margin: 0, lineHeight: 1.45 }}>
+                      <p style={{ fontSize: '0.82rem', color: '#A5D6A7', margin: 0, lineHeight: 1.45, fontFamily: "'Manrope', sans-serif !important" }}>
                         {dir.desc}
                       </p>
                     </div>
