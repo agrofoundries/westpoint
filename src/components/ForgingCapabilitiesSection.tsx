@@ -1,58 +1,38 @@
 import React from 'react';
 import {
-  Hammer, Disc, Zap, Maximize2, Flame, Snowflake, ShieldCheck, Cpu, Layers, Wrench
+  Hammer, Disc, Zap, Flame, ShieldCheck
 } from 'lucide-react';
 
 const forgingCapabilities = [
   {
     id: '01',
     title: 'Hammer & Upsetter Forgings',
+    subtitle: 'Heavy-Duty Impact & Upset Rods',
     icon: Hammer
   },
   {
     id: '02',
-    title: 'Ring Rolling',
+    title: 'Ring Rolling (Upto 200mm)',
+    subtitle: 'Seamless Precision Ring Rolling',
     icon: Disc
   },
   {
     id: '03',
-    title: 'Press Forging',
+    title: 'Press & Extrusion Forging',
+    subtitle: 'Hydraulic Multi-Ram & Extrusions',
     icon: Zap
   },
   {
     id: '04',
-    title: 'Extrusion Forging',
-    icon: Maximize2
-  },
-  {
-    id: '05',
-    title: 'Warm Forging',
+    title: 'Warm & Cold Forging',
+    subtitle: 'Near-Net Shape Controlled Temp',
     icon: Flame
   },
   {
-    id: '06',
-    title: 'Cold Forging',
-    icon: Snowflake
-  },
-  {
-    id: '07',
-    title: 'Aluminium Forging',
+    id: '05',
+    title: 'Aluminium, Axle Shaft & Pins',
+    subtitle: 'Aerospace Alloy, Axle & Fulcrum Pins',
     icon: ShieldCheck
-  },
-  {
-    id: '08',
-    title: 'Axle Shaft',
-    icon: Cpu
-  },
-  {
-    id: '09',
-    title: 'Small Ring Rolling (Upto 200mm)',
-    icon: Layers
-  },
-  {
-    id: '10',
-    title: 'Excavator Pins, Fulcrum Pins and U Bolt',
-    icon: Wrench
   }
 ];
 
@@ -145,31 +125,31 @@ export const ForgingCapabilitiesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 5-Column Responsive Square Cards Grid */}
+        {/* 5 Cards Single Row Responsive Grid */}
         <style>{`
-          .forging-grid {
+          .forging-grid-5 {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 1.5rem;
           }
           @media (max-width: 1200px) {
-            .forging-grid {
+            .forging-grid-5 {
               grid-template-columns: repeat(3, 1fr);
             }
           }
           @media (max-width: 768px) {
-            .forging-grid {
+            .forging-grid-5 {
               grid-template-columns: repeat(2, 1fr);
             }
           }
           @media (max-width: 480px) {
-            .forging-grid {
+            .forging-grid-5 {
               grid-template-columns: 1fr;
             }
           }
         `}</style>
 
-        <div className="forging-grid">
+        <div className="forging-grid-5">
           {forgingCapabilities.map((item) => {
             const IconComponent = item.icon;
             return (
@@ -244,13 +224,25 @@ export const ForgingCapabilitiesSection: React.FC = () => {
                     fontSize: '1.05rem',
                     fontWeight: 800,
                     color: '#FFFFFF',
-                    margin: 0,
+                    margin: '0 0 4px 0',
                     lineHeight: 1.35,
                     fontFamily: "'Manrope', sans-serif !important"
                   }}
                 >
                   {item.title}
                 </h3>
+
+                {/* Subtitle / Short Spec */}
+                <span
+                  style={{
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    color: '#A5D6A7',
+                    fontFamily: "'Manrope', sans-serif !important"
+                  }}
+                >
+                  {item.subtitle}
+                </span>
               </div>
             );
           })}
