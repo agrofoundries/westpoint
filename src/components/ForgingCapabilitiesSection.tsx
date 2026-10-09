@@ -1,38 +1,58 @@
 import React from 'react';
 import {
-  Hammer, Disc, Zap, Flame, ShieldCheck
+  Hammer, Disc, Zap, Maximize2, Flame, Snowflake, ShieldCheck, Cpu, Layers, Wrench
 } from 'lucide-react';
 
 const forgingCapabilities = [
   {
     id: '01',
     title: 'Hammer & Upsetter Forgings',
-    subtitle: 'Heavy-Duty Impact & Upset Rods',
     icon: Hammer
   },
   {
     id: '02',
-    title: 'Ring Rolling (Upto 200mm)',
-    subtitle: 'Seamless Precision Ring Rolling',
+    title: 'Ring Rolling',
     icon: Disc
   },
   {
     id: '03',
-    title: 'Press & Extrusion Forging',
-    subtitle: 'Hydraulic Multi-Ram & Extrusions',
+    title: 'Press Forging',
     icon: Zap
   },
   {
     id: '04',
-    title: 'Warm & Cold Forging',
-    subtitle: 'Near-Net Shape Controlled Temp',
-    icon: Flame
+    title: 'Extrusion Forging',
+    icon: Maximize2
   },
   {
     id: '05',
-    title: 'Aluminium, Axle Shaft & Pins',
-    subtitle: 'Aerospace Alloy, Axle & Fulcrum Pins',
+    title: 'Warm Forging',
+    icon: Flame
+  },
+  {
+    id: '06',
+    title: 'Cold Forging',
+    icon: Snowflake
+  },
+  {
+    id: '07',
+    title: 'Aluminium Forging',
     icon: ShieldCheck
+  },
+  {
+    id: '08',
+    title: 'Axle Shaft',
+    icon: Cpu
+  },
+  {
+    id: '09',
+    title: 'Small Ring Rolling (Upto 200mm)',
+    icon: Layers
+  },
+  {
+    id: '10',
+    title: 'Excavator Pins, Fulcrum Pins and U Bolt',
+    icon: Wrench
   }
 ];
 
@@ -125,31 +145,31 @@ export const ForgingCapabilitiesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 5 Cards Single Row Responsive Grid */}
+        {/* 10 Square Cards (5 columns per row x 2 rows) */}
         <style>{`
-          .forging-grid-5 {
+          .forging-grid-10 {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 1.5rem;
           }
           @media (max-width: 1200px) {
-            .forging-grid-5 {
+            .forging-grid-10 {
               grid-template-columns: repeat(3, 1fr);
             }
           }
           @media (max-width: 768px) {
-            .forging-grid-5 {
+            .forging-grid-10 {
               grid-template-columns: repeat(2, 1fr);
             }
           }
           @media (max-width: 480px) {
-            .forging-grid-5 {
+            .forging-grid-10 {
               grid-template-columns: 1fr;
             }
           }
         `}</style>
 
-        <div className="forging-grid-5">
+        <div className="forging-grid-10">
           {forgingCapabilities.map((item) => {
             const IconComponent = item.icon;
             return (
@@ -203,46 +223,34 @@ export const ForgingCapabilitiesSection: React.FC = () => {
                 {/* Glowing Icon Circle */}
                 <div
                   style={{
-                    width: '64px',
-                    height: '64px',
+                    width: '60px',
+                    height: '60px',
                     borderRadius: '50%',
                     background: 'rgba(76, 175, 80, 0.18)',
                     border: '1.5px solid rgba(105, 240, 174, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '1.2rem',
+                    marginBottom: '1rem',
                     boxShadow: '0 0 20px rgba(105, 240, 174, 0.15)'
                   }}
                 >
-                  <IconComponent size={28} color="#69F0AE" />
+                  <IconComponent size={26} color="#69F0AE" />
                 </div>
 
                 {/* Clean Bold Title */}
                 <h3
                   style={{
-                    fontSize: '1.05rem',
+                    fontSize: '1rem',
                     fontWeight: 800,
                     color: '#FFFFFF',
-                    margin: '0 0 4px 0',
+                    margin: 0,
                     lineHeight: 1.35,
                     fontFamily: "'Manrope', sans-serif !important"
                   }}
                 >
                   {item.title}
                 </h3>
-
-                {/* Subtitle / Short Spec */}
-                <span
-                  style={{
-                    fontSize: '0.8rem',
-                    fontWeight: 600,
-                    color: '#A5D6A7',
-                    fontFamily: "'Manrope', sans-serif !important"
-                  }}
-                >
-                  {item.subtitle}
-                </span>
               </div>
             );
           })}
