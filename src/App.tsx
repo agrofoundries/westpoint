@@ -19,7 +19,7 @@ import IndustriesWeServe from './components/IndustriesWeServe';
 import FactoryOverview from './components/FactoryOverview';
 import EngineeringExcellence from './components/EngineeringExcellence';
 import CorporateAdditionsSection from './components/CorporateAdditionsSection';
-import AssociationsStandards from './components/AssociationsStandards';
+// import AssociationsStandards from './components/AssociationsStandards';
 import NewsInsights from './components/NewsInsights';
 import CtaBanner from './components/CtaBanner';
 import OfficeLocations from './components/OfficeLocations';
@@ -288,8 +288,8 @@ function App() {
       </main>
       )}
 
-      {/* Unified Associations & Standards Section */}
-      <AssociationsStandards />
+      {/* Unified Associations & Standards Section (Hidden for now) */}
+      {/* <AssociationsStandards /> */}
 
       {/* 22 Strategic Office Locations */}
       <OfficeLocations />
