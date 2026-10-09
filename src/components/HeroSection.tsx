@@ -441,7 +441,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             </div>
           </div>
 
-          {/* RIGHT COLUMN: WIDER CARD WITH BOLD & LARGER DESCRIPTION FONT */}
+          {/* RIGHT COLUMN: CLEAN DARK-THEME OUR TRAVELS SECTION (NO WHITE CARD CONTAINER) */}
           <div
             ref={cardRef}
             style={{
@@ -451,66 +451,58 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
               margin: '0 auto',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
               alignItems: 'center',
               textAlign: 'center',
-              background: 'radial-gradient(ellipse 140% 45% at 50% 105%, #F1F5F9 0%, #FFFFFF 70%)',
-              borderRadius: '22px',
-              padding: '1.5rem 1.6rem 1.4rem 1.6rem',
-              boxShadow: '0 25px 65px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.95)',
-              border: '2px solid rgba(255, 255, 255, 0.95)',
-              transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease',
-              overflow: 'hidden'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-4px) scale(1.01)';
-              e.currentTarget.style.boxShadow = '0 32px 75px rgba(0, 0, 0, 0.7)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0) scale(1)';
-              e.currentTarget.style.boxShadow = '0 25px 65px rgba(0, 0, 0, 0.6)';
+              padding: '1.5rem 1rem',
+              background: 'transparent',
+              borderRadius: '0px',
+              boxShadow: 'none',
+              border: 'none'
             }}
           >
-            {/* Header: OUR TRAVELS with short double underline bar */}
-            <div style={{ width: '100%', marginBottom: '0.85rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px' }}>
+            {/* Header: OUR TRAVELS with short double green underline bar */}
+            <div style={{ width: '100%', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
               <h3
                 style={{
-                  color: '#000000',
+                  color: '#FFFFFF',
                   fontWeight: 900,
-                  fontSize: 'clamp(1.9rem, 2.4vw, 2.2rem)',
-                  letterSpacing: '0.06em',
-                  margin: '0 0 0.15rem 0',
+                  fontSize: 'clamp(2rem, 2.6vw, 2.4rem)',
+                  letterSpacing: '0.08em',
+                  margin: '0 0 0.2rem 0',
                   textTransform: 'uppercase',
                   fontFamily: "'Manrope', sans-serif !important",
-                  lineHeight: 1
+                  lineHeight: 1,
+                  textShadow: '0 2px 10px rgba(0,0,0,0.5)'
                 }}
               >
                 OUR TRAVELS
               </h3>
-              <div style={{ width: '38px', height: '3px', background: '#000000', borderRadius: '2px' }} />
-              <div style={{ width: '14px', height: '2px', background: '#000000', borderRadius: '1px' }} />
+              <div style={{ width: '42px', height: '3px', background: '#4CAF50', borderRadius: '2px', boxShadow: '0 0 10px #4CAF50' }} />
+              <div style={{ width: '16px', height: '2px', background: '#81C784', borderRadius: '1px' }} />
             </div>
 
             {/* Timeline Stepper with 3 Circular Nodes */}
-            <div style={{ width: '100%', position: 'relative', marginBottom: '0.85rem', padding: '0 0.75rem' }}>
+            <div style={{ width: '100%', position: 'relative', marginBottom: '1.5rem', padding: '0 0.5rem' }}>
               {/* Connecting Lines behind nodes */}
               <div
                 style={{
                   position: 'absolute',
-                  top: '18px',
+                  top: '19px',
                   left: '18%',
                   right: '18%',
                   height: '2.5px',
-                  background: '#CBD5E1',
+                  background: 'rgba(255, 255, 255, 0.2)',
                   zIndex: 0
                 }}
               >
-                {/* Active dark progress line fill */}
+                {/* Active green progress line fill */}
                 <div
                   style={{
                     height: '100%',
                     width: currentSlide === 0 ? '0%' : currentSlide === 1 ? '50%' : '100%',
-                    background: '#000000',
+                    background: '#4CAF50',
+                    boxShadow: '0 0 8px #4CAF50',
                     transition: 'width 0.4s ease'
                   }}
                 />
@@ -532,46 +524,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        gap: '4px'
+                        gap: '5px'
                       }}
                     >
                       <div
                         style={{
-                          width: '36px',
-                          height: '36px',
+                          width: '38px',
+                          height: '38px',
                           borderRadius: '50%',
-                          background: isSelected ? '#000000' : '#FFFFFF',
-                          color: isSelected ? '#FFFFFF' : '#475569',
-                          border: `2px solid ${isSelected ? '#000000' : '#CBD5E1'}`,
+                          background: isSelected ? '#4CAF50' : 'rgba(0, 0, 0, 0.65)',
+                          color: '#FFFFFF',
+                          border: `2px solid ${isSelected ? '#69F0AE' : 'rgba(255, 255, 255, 0.3)'}`,
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          fontSize: '12.5px',
-                          fontWeight: 800,
+                          fontSize: '13px',
+                          fontWeight: 900,
                           transition: 'all 0.3s ease',
-                          boxShadow: isSelected ? '0 4px 12px rgba(0,0,0,0.25)' : '0 1px 4px rgba(0,0,0,0.05)'
+                          backdropFilter: 'blur(6px)',
+                          boxShadow: isSelected ? '0 0 16px rgba(76, 175, 80, 0.6)' : 'none'
                         }}
                       >
                         {item.stepNum}
                       </div>
 
-                      {/* Small Bullet Dot */}
+                      {/* Small Active Bullet Dot */}
                       <div
                         style={{
                           width: '4px',
                           height: '4px',
                           borderRadius: '50%',
-                          background: '#475569',
-                          opacity: isSelected ? 1 : 0.4,
-                          marginTop: '1px'
+                          background: isSelected ? '#69F0AE' : 'rgba(255,255,255,0.4)',
+                          marginTop: '2px',
+                          boxShadow: isSelected ? '0 0 6px #69F0AE' : 'none'
                         }}
                       />
 
                       <span
                         style={{
-                          fontSize: '11px',
+                          fontSize: '11.5px',
                           fontWeight: isSelected ? 800 : 600,
-                          color: isSelected ? '#000000' : '#64748B',
+                          color: isSelected ? '#69F0AE' : 'rgba(255, 255, 255, 0.65)',
                           fontFamily: "'Manrope', sans-serif !important"
                         }}
                       >
@@ -583,7 +576,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
               </div>
             </div>
 
-            {/* Middle Slide Paragraph Text - BOLDER AND BIGGER FONT */}
+            {/* Middle Slide Paragraph Text - Crisp Dark Theme White Text */}
             <div
               style={{
                 display: 'flex',
@@ -591,47 +584,49 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '100%',
-                minHeight: '95px',
-                margin: '0.3rem 0'
+                minHeight: '110px',
+                margin: '0.5rem 0'
               }}
             >
               <div
                 ref={travelTextRef}
                 style={{
-                  color: '#000000',
-                  fontSize: 'clamp(1.15rem, 1.6vw, 1.4rem)',
+                  color: '#FFFFFF',
+                  fontSize: 'clamp(1.2rem, 1.7vw, 1.45rem)',
                   fontWeight: 800,
-                  lineHeight: 1.45,
+                  lineHeight: 1.5,
                   fontFamily: "'Manrope', sans-serif !important",
                   textAlign: 'center',
-                  padding: '0 0.5rem'
+                  padding: '0 0.5rem',
+                  textShadow: '0 3px 12px rgba(0, 0, 0, 0.8)'
                 }}
               >
                 {slide.travelText}
               </div>
             </div>
 
-            {/* Divider with 3-bar audio pulse symbol */}
-            <div style={{ display: 'flex', alignItems: 'center', width: '85%', margin: '0.6rem auto', gap: '12px' }}>
-              <div style={{ flex: 1, height: '1px', background: '#94A3B8', opacity: 0.5 }} />
+            {/* Translucent Divider with 3-bar audio pulse symbol */}
+            <div style={{ display: 'flex', alignItems: 'center', width: '85%', margin: '0.8rem auto', gap: '14px' }}>
+              <div style={{ flex: 1, height: '1px', background: 'rgba(255, 255, 255, 0.2)' }} />
               <div style={{ display: 'flex', gap: '3px', alignItems: 'center' }}>
-                <span style={{ width: '3px', height: '9px', background: '#334155', borderRadius: '1.5px' }} />
-                <span style={{ width: '3px', height: '14px', background: '#0F172A', borderRadius: '1.5px' }} />
-                <span style={{ width: '3px', height: '9px', background: '#334155', borderRadius: '1.5px' }} />
+                <span style={{ width: '3px', height: '10px', background: '#81C784', borderRadius: '1.5px' }} />
+                <span style={{ width: '3px', height: '16px', background: '#69F0AE', borderRadius: '1.5px', boxShadow: '0 0 8px #69F0AE' }} />
+                <span style={{ width: '3px', height: '10px', background: '#81C784', borderRadius: '1.5px' }} />
               </div>
-              <div style={{ flex: 1, height: '1px', background: '#94A3B8', opacity: 0.5 }} />
+              <div style={{ flex: 1, height: '1px', background: 'rgba(255, 255, 255, 0.2)' }} />
             </div>
 
-            {/* Brand Title: WESTPOINT GROUP (Smaller & Compact) */}
+            {/* Brand Title: WESTPOINT GROUP (Green Glow Dark-Theme Header) */}
             <div
               style={{
-                color: '#006837',
+                color: '#81C784',
                 fontWeight: 900,
-                fontSize: '1.35rem',
-                letterSpacing: '0.04em',
+                fontSize: 'clamp(1.6rem, 2.2vw, 1.9rem)',
+                letterSpacing: '0.06em',
                 textTransform: 'uppercase',
                 lineHeight: 1.1,
-                fontFamily: "'Manrope', sans-serif !important"
+                fontFamily: "'Manrope', sans-serif !important",
+                textShadow: '0 2px 10px rgba(0,0,0,0.6)'
               }}
             >
               WESTPOINT GROUP
