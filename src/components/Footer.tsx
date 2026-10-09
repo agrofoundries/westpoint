@@ -560,6 +560,28 @@ export const Footer: React.FC = () => {
                 Waterworks
               </span>
             </div>
+
+            {/* 06 Marine Castings */}
+            <div style={{
+              background: '#FFFFFF',
+              borderRadius: '10px',
+              padding: '1.2rem 1.4rem',
+              boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              border: '1.5px solid rgba(76, 175, 80, 0.3)',
+              transition: 'transform 0.2s, box-shadow 0.2s'
+            }}>
+              <img
+                src="/IMG-20261009-WA0017.jpg"
+                alt="Marine Castings Logo"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
+              <span style={{ fontSize: '10px', fontWeight: 800, color: '#1B5E20', background: '#E8F5E9', padding: '4px 8px', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                Marine
+              </span>
+            </div>
           </div>
         </div>
 
