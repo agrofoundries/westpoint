@@ -13,7 +13,6 @@ import ProductShowcaseStrip from './components/ProductShowcaseStrip';
 import RailwayTelemetryWidget from './components/RailwayTelemetryWidget';
 import ManufacturingCapabilities from './components/ManufacturingCapabilities';
 import ForgingCapabilitiesSection from './components/ForgingCapabilitiesSection';
-import TotalLineupBanner from './components/TotalLineupBanner';
 import SolidificationCalculator from './components/SolidificationCalculator';
 import ManufacturingProcess from './components/ManufacturingProcess';
 import IndustriesWeServe from './components/IndustriesWeServe';
@@ -224,9 +223,6 @@ function App() {
           onRequestQuoteClick={handleOpenQuote}
           onWatchVideoClick={handleOpenVideo}
         />
-
-        {/* 04B Dedicated Group Divisions & Total Lineup Banner Section */}
-        <TotalLineupBanner />
 
         {/* 05 Company Introduction (Text Heavy - Disabled) */}
         <CompanyIntro />
