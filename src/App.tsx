@@ -18,7 +18,7 @@ import ManufacturingProcess from './components/ManufacturingProcess';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import FactoryOverview from './components/FactoryOverview';
 import EngineeringExcellence from './components/EngineeringExcellence';
-import CorporateAdditionsSection from './components/CorporateAdditionsSection';
+// import CorporateAdditionsSection from './components/CorporateAdditionsSection';
 // import AssociationsStandards from './components/AssociationsStandards';
 import NewsInsights from './components/NewsInsights';
 import CtaBanner from './components/CtaBanner';
@@ -263,8 +263,8 @@ function App() {
         {/* 14 Engineering Excellence */}
         <EngineeringExcellence />
 
-        {/* 14B Corporate Additions, Brands & Global Directory (Canva Slides 6, 30 & 3) */}
-        <CorporateAdditionsSection />
+        {/* 14B Corporate Additions, Brands & Global Directory (Hidden) */}
+        {/* <CorporateAdditionsSection /> */}
 
         {/* 15 International Standards & Wheelsets Showcase */}
         {/* <StandardsGrid /> */}
@@ -285,9 +285,6 @@ function App() {
 
         {/* 21 Critical Rail & Industrial Components */}
         <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} onOpenCatalog={handleOpenCatalog} />
-
-        {/* Global Divisions, Brands & Directory */}
-        <CorporateAdditionsSection />
       </main>
       )}
 
