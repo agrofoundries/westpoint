@@ -188,33 +188,6 @@ export const CorporateAdditionsSection: React.FC = () => {
 
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 3.5rem auto' }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 18px',
-              borderRadius: '9999px',
-              background: 'rgba(27, 94, 32, 0.85)',
-              border: '1px solid rgba(129, 199, 132, 0.5)',
-              marginBottom: '1rem',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.3)'
-            }}
-          >
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#69F0AE', boxShadow: '0 0 8px #69F0AE' }} />
-            <span
-              style={{
-                fontSize: '12px',
-                fontWeight: 800,
-                color: '#E8F5E9',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                fontFamily: "'Manrope', sans-serif !important"
-              }}
-            >
-              WESTPOINT GROUP CORPORATE DIVISIONS &amp; FOOTPRINT
-            </span>
-          </div>
 
           <h2
             style={{
