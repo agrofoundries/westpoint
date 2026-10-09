@@ -441,6 +441,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             </div>
           </div>
 
+          {/* VERTICAL DIVIDER LINE (Between left hero block & right OUR TRAVELS column) */}
+          <div
+            className="hero-divider-line"
+            style={{
+              width: '2px',
+              height: '340px',
+              background: 'linear-gradient(180deg, rgba(76, 175, 80, 0) 0%, rgba(76, 175, 80, 0.75) 25%, rgba(129, 199, 132, 0.85) 50%, rgba(76, 175, 80, 0.75) 75%, rgba(76, 175, 80, 0) 100%)',
+              boxShadow: '0 0 12px rgba(76, 175, 80, 0.5)',
+              borderRadius: '2px'
+            }}
+          />
+
           {/* RIGHT COLUMN: CLEAN DARK-THEME OUR TRAVELS SECTION (NO WHITE CARD CONTAINER) */}
           <div
             ref={cardRef}
@@ -476,7 +488,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
                   textShadow: '0 2px 10px rgba(0,0,0,0.5)'
                 }}
               >
-                OUR TRAVELS
+                OUR TRAVELS SINCE 1991
               </h3>
               <div style={{ width: '42px', height: '3px', background: '#4CAF50', borderRadius: '2px', boxShadow: '0 0 10px #4CAF50' }} />
               <div style={{ width: '16px', height: '2px', background: '#81C784', borderRadius: '1px' }} />
