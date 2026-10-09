@@ -5,7 +5,6 @@ import { ChevronUp } from 'lucide-react';
 import TopContactBar from './components/TopContactBar';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
-import OurTravelsSection from './components/OurTravelsSection';
 import CompanyIntro from './components/CompanyIntro';
 import FeaturedComponents from './components/FeaturedComponents';
 import { EXPLORER_PRODUCTS } from './components/InteractiveExplorer';
