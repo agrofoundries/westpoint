@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import {
-  Building2, MapPin, Calendar, Wrench, Cpu, Code2, Users
+  Building2, MapPin, Calendar, Wrench, Cpu, Code2, Users,
+  Award, ShieldCheck, FileSignature, CheckCircle2, ArrowRight
 } from 'lucide-react';
 
 export const CorporateAdditionsSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'brands' | 'directory'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'brands' | 'pillars' | 'directory'>('all');
 
   const brandDivisions = [
     { name: 'Westpoint Foundries', desc: 'Heavy Rail & Transit Castings', logo: '/logos/Westpoint-Foundries-Industrial-Logo.png' },
@@ -12,6 +13,61 @@ export const CorporateAdditionsSection: React.FC = () => {
     { name: 'Westpoint Forgings', desc: 'Aerospace, Solar & Precision Forgings', logo: '/logos/Westpoint-Forgings-Industrial-Logo.png' },
     { name: 'Westpoint Waterworks', desc: 'Valves, Hydrants & Industrial Waterworks', logo: '/logos/Westpoint-Waterworks-Corporate-Logo.png' },
     { name: 'Agro Foundries', desc: 'Agricultural & Mining Castings', logo: '/associations/AFlogo.png' }
+  ];
+
+  const corporatePillars = [
+    {
+      id: 'locations',
+      category: 'LOCATIONS & FOOTPRINT',
+      icon: MapPin,
+      title: 'Global Manufacturing & Logistics',
+      subtitle: 'Worldwide Footprint',
+      items: [
+        'Corporate HQ & US Supply Chain Desk',
+        'India Manufacturing Foundries & Machining Hubs',
+        'EU Technical & Engineering Liaison Office',
+        'Global Warehousing & Consignment Hubs'
+      ]
+    },
+    {
+      id: 'standards',
+      category: 'BEYOND STANDARDS',
+      icon: Award,
+      title: 'Quality Accreditations & Compliance',
+      subtitle: 'Exceeding Global Specs',
+      items: [
+        'AAR M-1003 Certified Railway Foundries',
+        'RDSO Class-A Approved Manufacturer (Indian Railways)',
+        'ISO 9001:2015 & IATF 16949 Automotive QA',
+        'FRA & Amtrak Specification Compliance'
+      ]
+    },
+    {
+      id: 'backed',
+      category: 'BACKED BY THE BEST',
+      icon: ShieldCheck,
+      title: 'Guarantees & Advanced Testing',
+      subtitle: '100% Quality Assurance',
+      items: [
+        '100% Volumetric Ultrasonic NDT Testing',
+        'CMM 3D Coordinate Measuring Machine Inspection',
+        'Personal Guarantees & Full Traceability',
+        'Zero-Defect Metallurgical Sign-Off'
+      ]
+    },
+    {
+      id: 'checklist',
+      category: 'VENDOR & FOUNDRY CHECKLIST',
+      icon: FileSignature,
+      title: 'Confidential Vendor Sign-Offs',
+      subtitle: 'Governance & IP Compliance',
+      items: [
+        'NDA (Non-Disclosure Agreement) Sign-Off',
+        'Individual Render / 3D CAD Drawing Sign-Off',
+        'MCA / SOS / ZUBA Governance Sign-Off',
+        'Confidential Vendor Portal Registration'
+      ]
+    }
   ];
 
   const globalDirectory = [
@@ -77,6 +133,21 @@ export const CorporateAdditionsSection: React.FC = () => {
         }
         .section-logo-track:hover {
           animation-play-state: paused;
+        }
+        .pillars-grid-4 {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.5rem;
+        }
+        @media (max-width: 1200px) {
+          .pillars-grid-4 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 640px) {
+          .pillars-grid-4 {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
 
@@ -149,7 +220,7 @@ export const CorporateAdditionsSection: React.FC = () => {
               fontFamily: "'Manrope', sans-serif !important"
             }}
           >
-            Explore our group divisions, manufacturing footprint, metallurgical CAD toolsets, and international trade show schedule.
+            Explore our group divisions, quality accreditations, manufacturing footprint, and global infrastructure directory.
           </p>
 
           {/* Filter Pills */}
@@ -165,6 +236,7 @@ export const CorporateAdditionsSection: React.FC = () => {
             {[
               { id: 'all', label: 'All Showcase' },
               { id: 'brands', label: 'Global Brand Divisions' },
+              { id: 'pillars', label: 'Corporate Pillars' },
               { id: 'directory', label: 'Global Directory' }
             ].map((btn) => {
               const isActive = activeTab === btn.id;
@@ -283,6 +355,120 @@ export const CorporateAdditionsSection: React.FC = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* 4 Corporate Pillars Cards Grid */}
+        {(activeTab === 'all' || activeTab === 'pillars') && (
+          <div style={{ marginBottom: '3.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
+              <span style={{ width: '4px', height: '24px', background: '#69F0AE', borderRadius: '2px' }} />
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFFFFF', margin: 0, fontFamily: "'Manrope', sans-serif !important" }}>
+                CORPORATE GOVERNANCE &amp; ACCREDITATIONS
+              </h3>
+            </div>
+
+            <div className="pillars-grid-4">
+              {corporatePillars.map((pillar) => {
+                const IconComponent = pillar.icon;
+                return (
+                  <div
+                    key={pillar.id}
+                    style={{
+                      background: 'rgba(15, 51, 20, 0.75)',
+                      borderRadius: '16px',
+                      padding: '1.75rem',
+                      border: '1.5px solid rgba(129, 199, 132, 0.3)',
+                      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+                      backdropFilter: 'blur(10px)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      transition: 'all 0.35s ease'
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.transform = 'translateY(-5px)';
+                      e.currentTarget.style.borderColor = '#69F0AE';
+                      e.currentTarget.style.boxShadow = '0 12px 30px rgba(105, 240, 174, 0.25)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.borderColor = 'rgba(129, 199, 132, 0.3)';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.3)';
+                    }}
+                  >
+                    <div>
+                      {/* Top Header Row */}
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+                        <div
+                          style={{
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '12px',
+                            background: 'rgba(76, 175, 80, 0.18)',
+                            border: '1.5px solid rgba(105, 240, 174, 0.4)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 0 14px rgba(105, 240, 174, 0.15)'
+                          }}
+                        >
+                          <IconComponent size={22} color="#69F0AE" />
+                        </div>
+
+                        <span
+                          style={{
+                            fontSize: '10px',
+                            fontWeight: 900,
+                            letterSpacing: '0.08em',
+                            textTransform: 'uppercase',
+                            color: '#69F0AE',
+                            background: 'rgba(76, 175, 80, 0.15)',
+                            padding: '4px 10px',
+                            borderRadius: '12px',
+                            border: '1px solid rgba(105, 240, 174, 0.3)',
+                            fontFamily: "'Manrope', sans-serif !important"
+                          }}
+                        >
+                          {pillar.category}
+                        </span>
+                      </div>
+
+                      <h4
+                        style={{
+                          fontSize: '1.15rem',
+                          fontWeight: 800,
+                          color: '#FFFFFF',
+                          margin: '0 0 0.25rem 0',
+                          fontFamily: "'Manrope', sans-serif !important"
+                        }}
+                      >
+                        {pillar.title}
+                      </h4>
+
+                      <p style={{ fontSize: '0.82rem', color: '#A5D6A7', fontWeight: 700, margin: '0 0 1.25rem 0', fontFamily: "'Manrope', sans-serif !important" }}>
+                        {pillar.subtitle}
+                      </p>
+
+                      {/* Item List */}
+                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                        {pillar.items.map((item, idx) => (
+                          <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.88rem', color: '#E8F5E9', lineHeight: 1.4, fontFamily: "'Manrope', sans-serif !important" }}>
+                            <CheckCircle2 size={16} color="#69F0AE" style={{ flexShrink: 0, marginTop: '2px' }} />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div style={{ marginTop: '1.5rem', paddingTop: '0.85rem', borderTop: '1px solid rgba(129, 199, 132, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 800, color: '#A5D6A7', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>VERIFIED ADDITION</span>
+                      <ArrowRight size={16} color="#69F0AE" />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
