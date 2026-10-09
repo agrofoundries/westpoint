@@ -181,6 +181,87 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
           links: ['Federal Railroad Admin (FRA)', 'Amtrak Approved Manufacturer', 'BNSF & Union Pacific Qualified', 'Metra Transit Agency Spec']
         }
       ]
+    },
+    {
+      id: 'brands_ventures',
+      label: 'BRANDS & VENTURES',
+      icon: Building2,
+      columns: [
+        {
+          title: 'WESTPOINT GROUP BRANDS & SUBSIDIARIES',
+          links: [
+            'Westpoint Foundries (Heavy Rail & Transit)',
+            'Westpoint Castings (Infrastructure & Municipal)',
+            'Westpoint Forgings (Aerospace, Solar & Energy)',
+            'Westpoint Waterworks (Valves, Hydrants & Pumps)',
+            'Agro Foundries (Agricultural & Mining Castings)'
+          ]
+        },
+        {
+          title: 'ACQUISITIONS & VENDOR GOVERNANCE',
+          links: [
+            'Strategic European Metallurgical Alliances',
+            'NDA (Non-Disclosure Agreement) Sign-Off',
+            'Individual Render / 3D CAD Drawing Sign-Off',
+            'MCA / SOS / ZUBA Compliance Sign-Off',
+            'Confidential Vendor Portal Registration'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'forging_tech',
+      label: 'FORGING & RING ROLLING',
+      icon: Layers,
+      columns: [
+        {
+          title: 'FORGING & EXTRUSION LINES',
+          links: [
+            'Small Ring Rolling (Upto 200mm Outer Diameter)',
+            'Hammer & Upsetter Heavy Precision Forgings',
+            'Cold & Warm Extrusions for Automotive/Rail',
+            'Aluminium Forgings & Structural Castings',
+            'Axle Shaft, Excavator Pins & Fulcrum Pins'
+          ]
+        },
+        {
+          title: 'SOLAR, WIND & AEROSPACE',
+          links: [
+            'Solar Tracker Gearbox & Bearing Flanges',
+            'Wind Turbine Hub & Blade Mount Forgings',
+            'Aerospace High-Strength Alloy Components',
+            'U-Bolts, Shackle Pins & Haulage Pulleys',
+            '100% Ultrasonic NDT & CMM Quality Sign-Off'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'global_directory',
+      label: 'GLOBAL DIRECTORY',
+      icon: Compass,
+      columns: [
+        {
+          title: 'LOCATIONS & EXPOS',
+          links: [
+            'InnoTrans Berlin & Railway Interchange USA',
+            'USA Corporate HQ & Global Supply Desk',
+            'India Foundry Hubs (Units 1-4 & Machining)',
+            'EU Technical & Engineering Liaison Office',
+            'Global Warehousing & Consignment Centers'
+          ]
+        },
+        {
+          title: 'CAD & METALLURGICAL TOOLS',
+          links: [
+            'MAGMASOFT Casting & Solidification Simulation',
+            'SolidWorks 3D CAD & FEA Stress Analysis',
+            'Inductotherm Furnace & Spectrometer Lab',
+            'AAR M-1003 & RDSO Class-A Certifications',
+            'Confidential CAD Review & Vendor Room'
+          ]
+        }
+      ]
     }
   ];
 

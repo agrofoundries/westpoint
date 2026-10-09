@@ -17,6 +17,7 @@ import ManufacturingProcess from './components/ManufacturingProcess';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import FactoryOverview from './components/FactoryOverview';
 import EngineeringExcellence from './components/EngineeringExcellence';
+import CorporateAdditionsSection from './components/CorporateAdditionsSection';
 import AssociationsStandards from './components/AssociationsStandards';
 import NewsInsights from './components/NewsInsights';
 import CtaBanner from './components/CtaBanner';
@@ -255,8 +256,11 @@ function App() {
         {/* Our New Frontiers & Catalog Mockup */}
         <NewFrontiers />
 
-        {/* 14 Engineering Excellence (Text Heavy - Disabled) */}
+        {/* 14 Engineering Excellence */}
         <EngineeringExcellence />
+
+        {/* 14B Corporate Additions, Brands & Global Directory (Canva Slides 6, 30 & 3) */}
+        <CorporateAdditionsSection />
 
         {/* 15 International Standards & Wheelsets Showcase */}
         {/* <StandardsGrid /> */}
