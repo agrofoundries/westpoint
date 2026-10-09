@@ -121,20 +121,39 @@ export const CorporateAdditionsSection: React.FC = () => {
       }}
     >
       <style>{`
-        .brand-logos-grid-6 {
-          display: grid;
-          grid-template-columns: repeat(6, 1fr);
-          gap: 1.5rem;
+        @keyframes brandMarquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
-        @media (max-width: 1200px) {
-          .brand-logos-grid-6 {
-            grid-template-columns: repeat(3, 1fr);
-          }
+        .brands-slider-track {
+          display: flex;
+          align-items: center;
+          gap: 1.75rem;
+          width: max-content;
+          animation: brandMarquee 24s linear infinite;
         }
-        @media (max-width: 640px) {
-          .brand-logos-grid-6 {
-            grid-template-columns: repeat(2, 1fr);
-          }
+        .brands-slider-track:hover {
+          animation-play-state: paused;
+        }
+        .brand-slide-card {
+          background: #FFFFFF;
+          border-radius: 16px;
+          padding: 1.5rem 2.25rem;
+          border: 2px solid rgba(105, 240, 174, 0.45);
+          box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 230px;
+          height: 125px;
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          cursor: pointer;
+          flex-shrink: 0;
+        }
+        .brand-slide-card:hover {
+          transform: translateY(-6px) scale(1.05);
+          border-color: #4CAF50;
+          box-shadow: 0 16px 40px rgba(105, 240, 174, 0.4);
         }
         .pillars-grid-4 {
           display: grid;
@@ -268,55 +287,66 @@ export const CorporateAdditionsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Big Brand Logos Grid Showcase (Only Large Clean Logos - No Text Side Label) */}
+        {/* Big Brand Logos Slider Showcase */}
         {(activeTab === 'all' || activeTab === 'brands') && (
           <div style={{ marginBottom: '4rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.75rem' }}>
-              <span style={{ width: '5px', height: '28px', background: '#69F0AE', borderRadius: '3px' }} />
-              <h3 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#FFFFFF', margin: 0, fontFamily: "'Manrope', sans-serif !important" }}>
-                OUR GROUP DIVISIONS &amp; BRANDS
-              </h3>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.75rem', flexWrap: 'wrap', gap: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <span style={{ width: '5px', height: '28px', background: '#69F0AE', borderRadius: '3px' }} />
+                <h3 style={{ fontSize: '1.65rem', fontWeight: 900, color: '#FFFFFF', margin: 0, fontFamily: "'Manrope', sans-serif !important" }}>
+                  OUR GROUP DIVISIONS &amp; BRANDS
+                </h3>
+              </div>
+              <span style={{ fontSize: '11px', fontWeight: 800, color: '#69F0AE', textTransform: 'uppercase', letterSpacing: '0.12em', background: 'rgba(76, 175, 80, 0.15)', padding: '5px 14px', borderRadius: '20px', border: '1px solid rgba(105, 240, 174, 0.35)', fontFamily: "'Manrope', sans-serif !important" }}>
+                Auto-Scrolling Division Slider (Hover to Pause)
+              </span>
             </div>
 
-            <div className="brand-logos-grid-6">
-              {brandLogos.map((brand, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    background: '#FFFFFF',
-                    borderRadius: '16px',
-                    padding: '1.75rem 2rem',
-                    border: '2px solid rgba(105, 240, 174, 0.45)',
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    minHeight: '130px',
-                    transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                    cursor: 'pointer'
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.transform = 'translateY(-6px) scale(1.04)';
-                    e.currentTarget.style.borderColor = '#4CAF50';
-                    e.currentTarget.style.boxShadow = '0 16px 40px rgba(105, 240, 174, 0.4)';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                    e.currentTarget.style.borderColor = 'rgba(105, 240, 174, 0.45)';
-                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
-                  }}
-                >
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    style={{
-                      height: '78px',
-                      maxWidth: '100%',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-              ))}
+            <div
+              style={{
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: '20px',
+                background: 'rgba(15, 51, 20, 0.45)',
+                padding: '1.5rem 0',
+                border: '1.5px solid rgba(129, 199, 132, 0.3)',
+                boxShadow: '0 12px 35px rgba(0,0,0,0.35)'
+              }}
+            >
+              {/* Fade Overlays on Edges */}
+              <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: '50px', background: 'linear-gradient(to right, #0B2212, transparent)', zIndex: 5, pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: '50px', background: 'linear-gradient(to left, #05140A, transparent)', zIndex: 5, pointerEvents: 'none' }} />
+
+              <div className="brands-slider-track">
+                {/* --- SET 1 --- */}
+                {brandLogos.map((brand, idx) => (
+                  <div key={`s1-${idx}`} className="brand-slide-card">
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      style={{
+                        height: '78px',
+                        maxWidth: '100%',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </div>
+                ))}
+                {/* --- SET 2 (Duplicate for Infinite Loop) --- */}
+                {brandLogos.map((brand, idx) => (
+                  <div key={`s2-${idx}`} className="brand-slide-card">
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      style={{
+                        height: '78px',
+                        maxWidth: '100%',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         )}
