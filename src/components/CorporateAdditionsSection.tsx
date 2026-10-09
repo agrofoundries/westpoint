@@ -396,15 +396,66 @@ export const CorporateAdditionsSection: React.FC = () => {
                         {pillar.subtitle}
                       </p>
 
-                      {/* Item List */}
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                        {pillar.items.map((item, idx) => (
-                          <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#E8F5E9', lineHeight: 1.4, fontFamily: "'Manrope', sans-serif !important" }}>
-                            <CheckCircle2 size={16} color="#69F0AE" style={{ flexShrink: 0, marginTop: '2px' }} />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Item List or Brand Logos Grid */}
+                      {pillar.id === 'brands' ? (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                          {[
+                            { name: 'Westpoint Foundries', desc: 'Heavy Rail & Transit Castings', logo: '/logos/Westpoint-Foundries-Industrial-Logo.png' },
+                            { name: 'Westpoint Castings', desc: 'Infrastructure & Municipal Castings', logo: '/logos/Westpoint-Castings-Industrial-Logo.png' },
+                            { name: 'Westpoint Forgings', desc: 'Aerospace, Solar & Precision Forgings', logo: '/logos/Westpoint-Forgings-Industrial-Logo.png' },
+                            { name: 'Westpoint Waterworks', desc: 'Valves, Hydrants & Industrial Waterworks', logo: '/logos/Westpoint-Waterworks-Corporate-Logo.png' },
+                            { name: 'Agro Foundries', desc: 'Agricultural & Mining Castings', logo: '/associations/AFlogo.png' }
+                          ].map((brand, bIdx) => (
+                            <div
+                              key={bIdx}
+                              style={{
+                                background: '#FFFFFF',
+                                borderRadius: '10px',
+                                padding: '10px 16px',
+                                border: '1px solid rgba(105, 240, 174, 0.4)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '14px',
+                                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                                transition: 'all 0.25s ease'
+                              }}
+                              onMouseEnter={e => {
+                                e.currentTarget.style.transform = 'translateX(4px)';
+                                e.currentTarget.style.borderColor = '#4CAF50';
+                                e.currentTarget.style.boxShadow = '0 6px 16px rgba(105, 240, 174, 0.3)';
+                              }}
+                              onMouseLeave={e => {
+                                e.currentTarget.style.transform = 'translateX(0)';
+                                e.currentTarget.style.borderColor = 'rgba(105, 240, 174, 0.4)';
+                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                              }}
+                            >
+                              <img
+                                src={brand.logo}
+                                alt={brand.name}
+                                style={{ height: '42px', maxWidth: '120px', objectFit: 'contain', flexShrink: 0 }}
+                              />
+                              <div>
+                                <h4 style={{ fontSize: '0.92rem', fontWeight: 800, color: '#1B5E20', margin: 0, fontFamily: "'Manrope', sans-serif !important" }}>
+                                  {brand.name}
+                                </h4>
+                                <span style={{ fontSize: '0.78rem', color: '#4CAF50', fontWeight: 600, fontFamily: "'Manrope', sans-serif !important" }}>
+                                  {brand.desc}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                          {pillar.items.map((item, idx) => (
+                            <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#E8F5E9', lineHeight: 1.4, fontFamily: "'Manrope', sans-serif !important" }}>
+                              <CheckCircle2 size={16} color="#69F0AE" style={{ flexShrink: 0, marginTop: '2px' }} />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
 
                     <div style={{ marginTop: '1.75rem', paddingTop: '1rem', borderTop: '1px solid rgba(129, 199, 132, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
