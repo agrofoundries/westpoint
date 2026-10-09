@@ -611,49 +611,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
               </div>
             </div>
 
-            {/* Divider 1 with 3-bar audio pulse symbol */}
-            <div style={{ display: 'flex', alignItems: 'center', width: '85%', margin: '0.45rem auto', gap: '12px' }}>
-              <div style={{ flex: 1, height: '1px', background: '#94A3B8', opacity: 0.5 }} />
-              <div style={{ display: 'flex', gap: '3px', alignItems: 'center' }}>
-                <span style={{ width: '3px', height: '9px', background: '#334155', borderRadius: '1.5px' }} />
-                <span style={{ width: '3px', height: '14px', background: '#0F172A', borderRadius: '1.5px' }} />
-                <span style={{ width: '3px', height: '9px', background: '#334155', borderRadius: '1.5px' }} />
-              </div>
-              <div style={{ flex: 1, height: '1px', background: '#94A3B8', opacity: 0.5 }} />
-            </div>
-
-            {/* Tagline: ASPIRING TO COVER THE UNIVERSE */}
-            <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '2px' }}>
-              <div
-                style={{
-                  color: '#1E293B',
-                  fontWeight: 800,
-                  fontSize: '0.85rem',
-                  letterSpacing: '0.11em',
-                  textTransform: 'uppercase',
-                  fontFamily: "'Manrope', sans-serif !important"
-                }}
-              >
-                ASPIRING TO COVER THE
-              </div>
-
-              <div
-                style={{
-                  color: '#000000',
-                  fontWeight: 900,
-                  fontSize: '1.55rem',
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                  lineHeight: 1,
-                  fontFamily: "'Manrope', sans-serif !important"
-                }}
-              >
-                UNIVERSE
-              </div>
-            </div>
-
-            {/* Divider 2 with 3-bar audio pulse symbol */}
-            <div style={{ display: 'flex', alignItems: 'center', width: '85%', margin: '0.45rem auto', gap: '12px' }}>
+            {/* Divider with 3-bar audio pulse symbol */}
+            <div style={{ display: 'flex', alignItems: 'center', width: '85%', margin: '0.6rem auto', gap: '12px' }}>
               <div style={{ flex: 1, height: '1px', background: '#94A3B8', opacity: 0.5 }} />
               <div style={{ display: 'flex', gap: '3px', alignItems: 'center' }}>
                 <span style={{ width: '3px', height: '9px', background: '#334155', borderRadius: '1.5px' }} />
