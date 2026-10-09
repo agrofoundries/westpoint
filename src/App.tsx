@@ -283,8 +283,11 @@ function App() {
         {/* 20 CTA Banner */}
         <CtaBanner onRequestQuoteClick={handleOpenQuote} />
 
-        {/* 21 Critical Rail & Industrial Components (Moved to last section) */}
+        {/* 21 Critical Rail & Industrial Components */}
         <ProductShowcaseStrip onOpenProductDetail={handleOpenProductDetail} onOpenCatalog={handleOpenCatalog} />
+
+        {/* Global Divisions, Brands & Directory */}
+        <CorporateAdditionsSection />
       </main>
       )}
 
