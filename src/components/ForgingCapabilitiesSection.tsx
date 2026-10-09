@@ -81,7 +81,7 @@ export const ForgingCapabilitiesSection: React.FC = () => {
         }}
       />
 
-      <div style={{ maxWidth: '1380px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+      <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 3.5rem auto' }}>
@@ -145,20 +145,25 @@ export const ForgingCapabilitiesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Columns Per Row Sharp Industrial Square Cards Grid */}
+        {/* 5 Columns Per Row Sharp Industrial Square Cards Grid */}
         <style>{`
-          .forging-grid-3 {
+          .forging-grid-5 {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.25rem;
           }
-          @media (max-width: 992px) {
-            .forging-grid-3 {
+          @media (max-width: 1200px) {
+            .forging-grid-5 {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+          @media (max-width: 768px) {
+            .forging-grid-5 {
               grid-template-columns: repeat(2, 1fr);
             }
           }
-          @media (max-width: 576px) {
-            .forging-grid-3 {
+          @media (max-width: 480px) {
+            .forging-grid-5 {
               grid-template-columns: 1fr;
             }
           }
@@ -166,7 +171,7 @@ export const ForgingCapabilitiesSection: React.FC = () => {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1.35rem 1.6rem;
+            padding: 1.2rem 1.2rem;
             background: rgba(15, 51, 20, 0.75);
             border: 1.5px solid rgba(129, 199, 132, 0.3);
             border-radius: 0px !important; /* Sharp Square Corners */
@@ -182,13 +187,13 @@ export const ForgingCapabilitiesSection: React.FC = () => {
             box-shadow: 0 12px 35px rgba(105, 240, 174, 0.3);
           }
           .forging-card-sharp:hover .card-arrow {
-            transform: translateX(5px);
+            transform: translateX(4px);
             color: #69F0AE !important;
             border-color: #69F0AE !important;
           }
         `}</style>
 
-        <div className="forging-grid-3">
+        <div className="forging-grid-5">
           {forgingCapabilities.map((item) => {
             const IconComponent = item.icon;
             return (
