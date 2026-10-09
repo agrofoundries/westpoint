@@ -8,42 +8,7 @@ interface HeaderProps {
   onOpenPortalModal?: (type?: any) => void;
 }
 
-const TypewriterTagline: React.FC<{ text: string }> = ({ text }) => {
-  const [displayText, setDisplayText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
 
-  useEffect(() => {
-    let timer: number;
-    const speed = isDeleting ? 50 : 110;
-
-    if (!isDeleting && displayText.length < text.length) {
-      timer = window.setTimeout(() => {
-        setDisplayText(text.slice(0, displayText.length + 1));
-      }, speed);
-    } else if (!isDeleting && displayText.length === text.length) {
-      timer = window.setTimeout(() => {
-        setIsDeleting(true);
-      }, 2200);
-    } else if (isDeleting && displayText.length > 0) {
-      timer = window.setTimeout(() => {
-        setDisplayText(text.slice(0, displayText.length - 1));
-      }, speed);
-    } else if (isDeleting && displayText.length === 0) {
-      timer = window.setTimeout(() => {
-        setIsDeleting(false);
-      }, 400);
-    }
-
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, text]);
-
-  return (
-    <span style={{ fontStyle: 'italic', fontSize: '36px', color: '#9B0403', whiteSpace: 'nowrap', fontWeight: 900, minWidth: '420px', display: 'inline-block', lineHeight: 1 }}>
-      {displayText}
-      <span style={{ animation: 'blinkCursor 0.8s infinite', marginLeft: '2px', color: '#9B0403', fontWeight: 900 }}>|</span>
-    </span>
-  );
-};
 
 export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplorer, onOpenPortalModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -280,57 +245,41 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
         onMouseLeave={() => setActiveMegaMenu(null)}
       >
 
-        {/* Tier 1: Middle Corporate Branding Bar */}
-        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '12px 2.5vw', width: '100%' }}>
+        {/* Tier 1: Middle Corporate Branding Bar (Compact Sleek Design) */}
+        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '8px 2.5vw', width: '100%' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '14px', width: '100%' }}>
 
-            {/* Corporate Group Emblems (First / Left) */}
+            {/* Corporate Group Emblems */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <Logo division="group" height="65px" />
+              <Logo division="group" height="44px" />
             </div>
 
-            {/* Right Division Emblems (Desktop) with Tagline & Infinite Slider */}
-            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '16px', maxWidth: '750px', flex: 1, marginLeft: '12px' }}>
-              <TypewriterTagline text="Our Total lineup......." />
-              
-              <style>{`
-                @keyframes blinkCursor {
-                  0%, 100% { opacity: 1; }
-                  50% { opacity: 0; }
-                }
-                @keyframes slideLogosHeader {
-                  0% { transform: translateX(0); }
-                  100% { transform: translateX(calc(-50% - 12px)); } /* 12px is half the gap */
-                }
-                .header-logo-track {
-                  display: flex;
-                  gap: 24px;
-                  animation: slideLogosHeader 20s linear infinite;
-                  width: max-content;
-                  align-items: center;
-                }
-                .header-logo-track:hover {
-                  animation-play-state: paused;
-                }
-              `}</style>
-              
-              <div style={{ overflow: 'hidden', flex: 1, position: 'relative' }}>
-                <div className="header-logo-track">
-                  {/* --- SET 1 --- */}
-                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Waterworks-Corporate-Logo.png" alt="Westpoint Waterworks" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
-                  
-                  {/* --- SET 2 (Exact duplicate for infinite scroll) --- */}
-                  <img src="/logos/Westpoint-Foundries-Industrial-Logo.png" alt="Westpoint Foundries" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Castings-Industrial-Logo.png" alt="Westpoint Castings" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Forgings-Industrial-Logo.png" alt="Westpoint Forgings" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/logos/Westpoint-Waterworks-Corporate-Logo.png" alt="Westpoint Waterworks" style={{ height: '65px', objectFit: 'contain' }} />
-                  <img src="/associations/AFlogo.png" alt="Agro Foundries" style={{ height: '65px', objectFit: 'contain' }} />
-                </div>
-              </div>
+            {/* Right Desktop Quick Actions & Info */}
+            <div className="desktop-nav-only" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginLeft: 'auto' }}>
+              <button
+                onClick={onRequestQuoteClick}
+                style={{
+                  background: '#1B5E20',
+                  color: '#FFFFFF',
+                  border: 'none',
+                  fontSize: '12px',
+                  fontWeight: 800,
+                  letterSpacing: '0.04em',
+                  padding: '7px 16px',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  transition: 'all 0.2s ease',
+                  fontFamily: "'Manrope', sans-serif"
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = '#2E7D32'}
+                onMouseLeave={e => e.currentTarget.style.background = '#1B5E20'}
+              >
+                <span>REQUEST QUOTE</span>
+                <ArrowRight size={13} color="#4CAF50" />
+              </button>
             </div>
 
             {/* Mobile Header Right Controls: Fast Explorer Trigger + Hamburger Menu Toggle */}
@@ -345,7 +294,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   }
                 }}
                 style={{
-                  padding: '8px 12px',
+                  padding: '6px 10px',
                   fontSize: '11px',
                   fontWeight: 800,
                   background: '#E8F5E9',
@@ -358,7 +307,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   gap: '4px'
                 }}
               >
-                <Compass size={14} />
+                <Compass size={13} />
                 <span>PRODUCTS</span>
               </button>
 
@@ -366,7 +315,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label="Toggle Navigation Menu"
                 style={{
-                  padding: '8px 10px',
+                  padding: '6px 8px',
                   background: '#1B5E20',
                   color: '#FFFFFF',
                   border: 'none',
@@ -377,7 +326,7 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   justifyContent: 'center'
                 }}
               >
-                {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
               </button>
             </div>
 
@@ -385,8 +334,8 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
         </div>
 
 
-        {/* Tier 2: Fortune 500 Corporate Industrial Navigation Bar */}
-        <div style={{ background: '#4CAF50', borderBottom: '3px solid #388E3C', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)', padding: '0 2.5vw', width: '100%', position: 'relative' }}>
+        {/* Tier 2: Sleek Industrial Navigation Bar */}
+        <div style={{ background: '#4CAF50', borderBottom: '2px solid #388E3C', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2)', padding: '0 2.5vw', width: '100%', position: 'relative' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', position: 'relative' }}>
 
             <nav style={{ display: 'flex', alignItems: 'center', flexWrap: 'nowrap', overflowX: 'auto', scrollbarWidth: 'none', flex: 1 }}>
@@ -403,14 +352,14 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                         background: isActive ? '#FAF6EE' : 'transparent',
                         border: 'none',
                         color: isActive ? '#1B5E20' : '#FFFFFF',
-                        fontSize: '13px',
-                        fontWeight: 900,
-                        letterSpacing: '0.06em',
-                        padding: '16px 20px',
+                        fontSize: '12px',
+                        fontWeight: 800,
+                        letterSpacing: '0.05em',
+                        padding: '10px 15px',
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '7px',
+                        gap: '6px',
                         textTransform: 'uppercase',
                         whiteSpace: 'nowrap',
                         transition: 'all 0.2s ease',
@@ -432,14 +381,14 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                       onClick={() => setActiveMegaMenu(isActive ? null : cat.id)}
                     >
                       <span>{cat.label}</span>
-                      <ChevronDown size={13} style={{ transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s', color: isActive ? '#1B5E20' : '#FFFFFF' }} />
+                      <ChevronDown size={12} style={{ transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s', color: isActive ? '#1B5E20' : '#FFFFFF' }} />
                     </button>
                   </div>
                 );
               })}
             </nav>
 
-            <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '12px', flexShrink: 0, position: 'relative' }}>
+            <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0, position: 'relative' }}>
               <button
                 onClick={() => {
                   if (onOpenExplorer) {
@@ -453,10 +402,10 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   color: '#FFFFFF',
                   background: 'transparent',
                   border: 'none',
-                  fontSize: '13px',
-                  fontWeight: 900,
-                  letterSpacing: '0.06em',
-                  padding: '16px 20px',
+                  fontSize: '12px',
+                  fontWeight: 800,
+                  letterSpacing: '0.05em',
+                  padding: '10px 14px',
                   textTransform: 'uppercase',
                   whiteSpace: 'nowrap',
                   cursor: 'pointer',
@@ -464,14 +413,14 @@ export const Header: React.FC<HeaderProps> = ({ onRequestQuoteClick, onOpenExplo
                   flexShrink: 0,
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '6px',
+                  gap: '5px',
                   fontFamily: "'Manrope', sans-serif",
                   borderRadius: '2px'
                 }}
                 onMouseEnter={e => { e.currentTarget.style.color = '#1B5E20'; e.currentTarget.style.background = '#FAF6EE'; }}
                 onMouseLeave={e => { e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.background = 'transparent'; }}
               >
-                <Compass size={14} />
+                <Compass size={13} />
                 <span>PRODUCT CATALOG</span>
               </button>
 
