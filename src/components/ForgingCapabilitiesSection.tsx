@@ -81,7 +81,7 @@ export const ForgingCapabilitiesSection: React.FC = () => {
         }}
       />
 
-      <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 3.5rem auto' }}>
@@ -145,33 +145,18 @@ export const ForgingCapabilitiesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 5 Columns Per Row Sharp Industrial Square Cards Grid */}
+        {/* 4-Column Grid with Last 2 Items Stretched Across Full Width */}
         <style>{`
-          .forging-grid-5 {
+          .forging-grid-4 {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1.25rem;
-          }
-          @media (max-width: 1200px) {
-            .forging-grid-5 {
-              grid-template-columns: repeat(3, 1fr);
-            }
-          }
-          @media (max-width: 768px) {
-            .forging-grid-5 {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
-          @media (max-width: 480px) {
-            .forging-grid-5 {
-              grid-template-columns: 1fr;
-            }
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.35rem;
           }
           .forging-card-sharp {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 1.2rem 1.2rem;
+            padding: 1.3rem 1.4rem;
             background: rgba(15, 51, 20, 0.75);
             border: 1.5px solid rgba(129, 199, 132, 0.3);
             border-radius: 0px !important; /* Sharp Square Corners */
@@ -179,6 +164,26 @@ export const ForgingCapabilitiesSection: React.FC = () => {
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             position: relative;
+            grid-column: span 1;
+          }
+          .forging-card-stretched {
+            grid-column: span 2 !important;
+          }
+          @media (max-width: 992px) {
+            .forging-grid-4 {
+              grid-template-columns: repeat(2, 1fr);
+            }
+            .forging-card-stretched {
+              grid-column: span 1 !important;
+            }
+          }
+          @media (max-width: 576px) {
+            .forging-grid-4 {
+              grid-template-columns: 1fr;
+            }
+            .forging-card-stretched {
+              grid-column: span 1 !important;
+            }
           }
           .forging-card-sharp:hover {
             transform: translateY(-4px);
@@ -193,11 +198,15 @@ export const ForgingCapabilitiesSection: React.FC = () => {
           }
         `}</style>
 
-        <div className="forging-grid-5">
-          {forgingCapabilities.map((item) => {
+        <div className="forging-grid-4">
+          {forgingCapabilities.map((item, idx) => {
             const IconComponent = item.icon;
+            const isStretched = idx >= 8; // Items 09 & 10 stretched (span 2)
             return (
-              <div key={item.id} className="forging-card-sharp">
+              <div
+                key={item.id}
+                className={`forging-card-sharp ${isStretched ? 'forging-card-stretched' : ''}`}
+              >
                 
                 {/* Number Badge Top Left Accent */}
                 <span
