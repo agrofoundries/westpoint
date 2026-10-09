@@ -1,134 +1,17 @@
 import React, { useState } from 'react';
 import {
-  Building2, Layers, Award, ShieldCheck, CheckCircle2,
-  Cpu, ArrowRight, MapPin, Calendar, Wrench, Code2, Users, FileSignature
+  Building2, MapPin, Calendar, Wrench, Cpu, Code2, Users
 } from 'lucide-react';
 
 export const CorporateAdditionsSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'brands' | 'ventures' | 'checklist' | 'directory'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'brands' | 'directory'>('all');
 
-  const additionsPillars = [
-    {
-      id: 'brands',
-      category: 'BRANDS',
-      icon: Layers,
-      color: '#69F0AE',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
-      title: 'Westpoint Group Brand Portfolio',
-      subtitle: 'Specialized Industrial Divisions',
-      items: [
-        'Westpoint Foundries (Heavy Rail & Transit)',
-        'Westpoint Castings (Infrastructure & Municipal)',
-        'Westpoint Forgings (Aerospace, Solar & Energy)',
-        'Westpoint Waterworks (Valves, Hydrants & Pumps)',
-        'Agro Foundries (Agricultural & Mining Castings)'
-      ]
-    },
-    {
-      id: 'companies',
-      category: 'GROUP COMPANIES',
-      icon: Building2,
-      color: '#81C784',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
-      title: 'Corporate Entities & Subsidiaries',
-      subtitle: 'Global Operations Network',
-      items: [
-        'Westpoint Heavy Rail Engineering Pvt Ltd',
-        'Westpoint Metallurgical Alliances Corp',
-        'Westpoint Precision Forgings & Fabrication',
-        'Agro Industrial Castings & Utilities LLC'
-      ]
-    },
-    {
-      id: 'products',
-      category: 'NEW PRODUCT LINES',
-      icon: Cpu,
-      color: '#69F0AE',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
-      title: 'Next-Gen Manufacturing Capabilities',
-      subtitle: 'Expanded Industrial Lines',
-      items: [
-        'Small Ring Rolling (Upto 200mm Outer Diameter)',
-        'Hydraulic Axles & Steering Knuckles (8T - 10T)',
-        'Solar & Wind Turbine Castings / Forgings',
-        'Cold/Warm Extrusions & Fulcrum Pins'
-      ]
-    },
-    {
-      id: 'ventures',
-      category: 'ACQUISITIONS & VENTURES',
-      icon: Users,
-      color: '#A5D6A7',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
-      title: 'Strategic Alliances & Joint Ventures',
-      subtitle: 'Global Metallurgy Partnerships',
-      items: [
-        'Strategic European Metallurgical Alliances',
-        'North American Rail Supply Partnerships',
-        'Joint Foundry Infrastructure Investments',
-        'Technology Transfer & Co-Engineering Deals'
-      ]
-    },
-    {
-      id: 'locations',
-      category: 'LOCATIONS & FOOTPRINT',
-      icon: MapPin,
-      color: '#81C784',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
-      title: 'Global Manufacturing & Logistics',
-      subtitle: 'Worldwide Footprint',
-      items: [
-        'Corporate HQ & US Supply Chain Desk',
-        'India Manufacturing Foundries & Machining Hubs',
-        'EU Technical & Engineering Liaison Office',
-        'Global Warehousing & Consignment Hubs'
-      ]
-    },
-    {
-      id: 'standards',
-      category: 'BEYOND STANDARDS',
-      icon: Award,
-      color: '#69F0AE',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
-      title: 'Quality Accreditations & Compliance',
-      subtitle: 'Exceeding Global Specs',
-      items: [
-        'AAR M-1003 Certified Railway Foundries',
-        'RDSO Class-A Approved Manufacturer (Indian Railways)',
-        'ISO 9001:2015 & IATF 16949 Automotive QA',
-        'FRA & Amtrak Specification Compliance'
-      ]
-    },
-    {
-      id: 'backed',
-      category: 'BACKED BY THE BEST',
-      icon: ShieldCheck,
-      color: '#A5D6A7',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
-      title: 'Guarantees & Advanced Testing',
-      subtitle: '100% Quality Assurance',
-      items: [
-        '100% Volumetric Ultrasonic NDT Testing',
-        'CMM 3D Coordinate Measuring Machine Inspection',
-        'Personal Guarantees & Full Traceability',
-        'Zero-Defect Metallurgical Sign-Off'
-      ]
-    },
-    {
-      id: 'checklist',
-      category: 'VENDOR & FOUNDRY CHECKLIST',
-      icon: FileSignature,
-      color: '#69F0AE',
-      bgGradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
-      title: 'Confidential Vendor Sign-Offs',
-      subtitle: 'Governance & IP Compliance',
-      items: [
-        'NDA (Non-Disclosure Agreement) Sign-Off',
-        'Individual Render / 3D CAD Drawing Sign-Off',
-        'MCA / SOS / ZUBA Governance Sign-Off',
-        'Confidential Vendor Portal Registration'
-      ]
-    }
+  const brandDivisions = [
+    { name: 'Westpoint Foundries', desc: 'Heavy Rail & Transit Castings', logo: '/logos/Westpoint-Foundries-Industrial-Logo.png' },
+    { name: 'Westpoint Castings', desc: 'Infrastructure & Municipal Castings', logo: '/logos/Westpoint-Castings-Industrial-Logo.png' },
+    { name: 'Westpoint Forgings', desc: 'Aerospace, Solar & Precision Forgings', logo: '/logos/Westpoint-Forgings-Industrial-Logo.png' },
+    { name: 'Westpoint Waterworks', desc: 'Valves, Hydrants & Industrial Waterworks', logo: '/logos/Westpoint-Waterworks-Corporate-Logo.png' },
+    { name: 'Agro Foundries', desc: 'Agricultural & Mining Castings', logo: '/associations/AFlogo.png' }
   ];
 
   const globalDirectory = [
@@ -180,7 +63,24 @@ export const CorporateAdditionsSection: React.FC = () => {
         fontFamily: "'Manrope', sans-serif !important"
       }}
     >
-      {/* Decorative Grid Pattern matching theme */}
+      <style>{`
+        @keyframes slideLogosSection {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 16px)); }
+        }
+        .section-logo-track {
+          display: flex;
+          gap: 32px;
+          animation: slideLogosSection 22s linear infinite;
+          width: max-content;
+          align-items: center;
+        }
+        .section-logo-track:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      {/* Decorative Grid Pattern */}
       <div
         style={{
           position: 'absolute',
@@ -220,7 +120,7 @@ export const CorporateAdditionsSection: React.FC = () => {
                 fontFamily: "'Manrope', sans-serif !important"
               }}
             >
-              WESTPOINT GROUP CORPORATE ADDITIONS
+              WESTPOINT GROUP CORPORATE DIVISIONS &amp; FOOTPRINT
             </span>
           </div>
 
@@ -237,7 +137,7 @@ export const CorporateAdditionsSection: React.FC = () => {
               textShadow: '0 4px 16px rgba(0,0,0,0.5)'
             }}
           >
-            BRANDS, VENTURES &amp; BEYOND STANDARDS
+            GLOBAL DIVISIONS, BRANDS &amp; DIRECTORY
           </h2>
 
           <p
@@ -249,8 +149,7 @@ export const CorporateAdditionsSection: React.FC = () => {
               fontFamily: "'Manrope', sans-serif !important"
             }}
           >
-            Explore our expanding portfolio of corporate brands, new forging lines, global footprint,
-            and confidential vendor governance sign-off frameworks.
+            Explore our group divisions, manufacturing footprint, metallurgical CAD toolsets, and international trade show schedule.
           </p>
 
           {/* Filter Pills */}
@@ -264,10 +163,8 @@ export const CorporateAdditionsSection: React.FC = () => {
             }}
           >
             {[
-              { id: 'all', label: 'All Additions' },
-              { id: 'brands', label: 'Brands & Companies' },
-              { id: 'ventures', label: 'Ventures & Tech' },
-              { id: 'checklist', label: 'Vendor Sign-Offs' },
+              { id: 'all', label: 'All Showcase' },
+              { id: 'brands', label: 'Global Brand Divisions' },
               { id: 'directory', label: 'Global Directory' }
             ].map((btn) => {
               const isActive = activeTab === btn.id;
@@ -297,178 +194,100 @@ export const CorporateAdditionsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Grid 1: Additions Pillars */}
-        {activeTab !== 'directory' && (
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '1.75rem',
-              marginBottom: '4rem'
-            }}
-          >
-            {additionsPillars
-              .filter((p) => {
-                if (activeTab === 'all') return true;
-                if (activeTab === 'brands') return p.id === 'brands' || p.id === 'companies';
-                if (activeTab === 'ventures') return p.id === 'products' || p.id === 'ventures' || p.id === 'locations';
-                if (activeTab === 'checklist') return p.id === 'checklist' || p.id === 'standards' || p.id === 'backed';
-                return true;
-              })
-              .map((pillar) => {
-                const IconComponent = pillar.icon;
-                return (
+        {/* Global Brand Divisions Infinite Logo Slider */}
+        {(activeTab === 'all' || activeTab === 'brands') && (
+          <div style={{ marginBottom: '3.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ width: '4px', height: '24px', background: '#69F0AE', borderRadius: '2px' }} />
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FFFFFF', margin: 0, fontFamily: "'Manrope', sans-serif !important" }}>
+                  OUR GLOBAL DIVISIONS &amp; BRANDS
+                </h3>
+              </div>
+              <span style={{ fontSize: '12px', fontWeight: 800, color: '#69F0AE', background: 'rgba(76, 175, 80, 0.15)', padding: '4px 14px', borderRadius: '16px', border: '1px solid rgba(105, 240, 174, 0.3)', fontFamily: "'Manrope', sans-serif !important" }}>
+                Hover to pause slider
+              </span>
+            </div>
+
+            <div style={{ overflow: 'hidden', width: '100%', position: 'relative', padding: '0.5rem 0' }}>
+              <div className="section-logo-track">
+                {/* Set 1 */}
+                {brandDivisions.map((brand, idx) => (
                   <div
-                    key={pillar.id}
+                    key={`brand1-${idx}`}
                     style={{
-                      background: 'rgba(15, 51, 20, 0.75)',
-                      borderRadius: '16px',
-                      padding: '2rem',
-                      border: '1px solid rgba(129, 199, 132, 0.3)',
-                      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
-                      backdropFilter: 'blur(10px)',
+                      background: '#FFFFFF',
+                      border: '1.5px solid rgba(105, 240, 174, 0.4)',
+                      borderRadius: '12px',
+                      padding: '16px 24px',
+                      boxShadow: '0 8px 25px rgba(0,0,0,0.25)',
                       display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      transition: 'all 0.35s ease'
+                      alignItems: 'center',
+                      gap: '18px',
+                      minWidth: '310px',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer'
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.transform = 'translateY(-5px)';
-                      e.currentTarget.style.borderColor = '#69F0AE';
-                      e.currentTarget.style.boxShadow = '0 12px 30px rgba(105, 240, 174, 0.25)';
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.borderColor = '#4CAF50';
+                      e.currentTarget.style.boxShadow = '0 12px 30px rgba(105, 240, 174, 0.35)';
                     }}
                     onMouseLeave={e => {
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.borderColor = 'rgba(129, 199, 132, 0.3)';
-                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.3)';
+                      e.currentTarget.style.borderColor = 'rgba(105, 240, 174, 0.4)';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.25)';
                     }}
                   >
+                    <img src={brand.logo} alt={brand.name} style={{ height: '52px', objectFit: 'contain', maxWidth: '130px', flexShrink: 0 }} />
                     <div>
-                      {/* Top Header Row */}
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-                        <div
-                          style={{
-                            width: '46px',
-                            height: '46px',
-                            borderRadius: '12px',
-                            background: 'rgba(76, 175, 80, 0.2)',
-                            border: '1px solid rgba(105, 240, 174, 0.4)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            boxShadow: '0 0 14px rgba(105, 240, 174, 0.15)'
-                          }}
-                        >
-                          <IconComponent size={22} color="#69F0AE" />
-                        </div>
-
-                        <span
-                          style={{
-                            fontSize: '10px',
-                            fontWeight: 900,
-                            letterSpacing: '0.1em',
-                            textTransform: 'uppercase',
-                            color: '#69F0AE',
-                            background: 'rgba(76, 175, 80, 0.15)',
-                            padding: '4px 12px',
-                            borderRadius: '12px',
-                            border: '1px solid rgba(105, 240, 174, 0.3)',
-                            fontFamily: "'Manrope', sans-serif !important"
-                          }}
-                        >
-                          {pillar.category}
-                        </span>
-                      </div>
-
-                      <h3
-                        style={{
-                          fontSize: '1.25rem',
-                          fontWeight: 800,
-                          color: '#FFFFFF',
-                          margin: '0 0 0.25rem 0',
-                          fontFamily: "'Manrope', sans-serif !important"
-                        }}
-                      >
-                        {pillar.title}
-                      </h3>
-
-                      <p style={{ fontSize: '0.85rem', color: '#A5D6A7', fontWeight: 700, margin: '0 0 1.25rem 0', fontFamily: "'Manrope', sans-serif !important" }}>
-                        {pillar.subtitle}
-                      </p>
-
-                      {/* Item List or Brand Logos Grid */}
-                      {pillar.id === 'brands' ? (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          {[
-                            { name: 'Westpoint Foundries', desc: 'Heavy Rail & Transit Castings', logo: '/logos/Westpoint-Foundries-Industrial-Logo.png' },
-                            { name: 'Westpoint Castings', desc: 'Infrastructure & Municipal Castings', logo: '/logos/Westpoint-Castings-Industrial-Logo.png' },
-                            { name: 'Westpoint Forgings', desc: 'Aerospace, Solar & Precision Forgings', logo: '/logos/Westpoint-Forgings-Industrial-Logo.png' },
-                            { name: 'Westpoint Waterworks', desc: 'Valves, Hydrants & Industrial Waterworks', logo: '/logos/Westpoint-Waterworks-Corporate-Logo.png' },
-                            { name: 'Agro Foundries', desc: 'Agricultural & Mining Castings', logo: '/associations/AFlogo.png' }
-                          ].map((brand, bIdx) => (
-                            <div
-                              key={bIdx}
-                              style={{
-                                background: '#FFFFFF',
-                                borderRadius: '10px',
-                                padding: '10px 16px',
-                                border: '1px solid rgba(105, 240, 174, 0.4)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '14px',
-                                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                                transition: 'all 0.25s ease'
-                              }}
-                              onMouseEnter={e => {
-                                e.currentTarget.style.transform = 'translateX(4px)';
-                                e.currentTarget.style.borderColor = '#4CAF50';
-                                e.currentTarget.style.boxShadow = '0 6px 16px rgba(105, 240, 174, 0.3)';
-                              }}
-                              onMouseLeave={e => {
-                                e.currentTarget.style.transform = 'translateX(0)';
-                                e.currentTarget.style.borderColor = 'rgba(105, 240, 174, 0.4)';
-                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-                              }}
-                            >
-                              <img
-                                src={brand.logo}
-                                alt={brand.name}
-                                style={{ height: '42px', maxWidth: '120px', objectFit: 'contain', flexShrink: 0 }}
-                              />
-                              <div>
-                                <h4 style={{ fontSize: '0.92rem', fontWeight: 800, color: '#1B5E20', margin: 0, fontFamily: "'Manrope', sans-serif !important" }}>
-                                  {brand.name}
-                                </h4>
-                                <span style={{ fontSize: '0.78rem', color: '#4CAF50', fontWeight: 600, fontFamily: "'Manrope', sans-serif !important" }}>
-                                  {brand.desc}
-                                </span>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                          {pillar.items.map((item, idx) => (
-                            <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: '#E8F5E9', lineHeight: 1.4, fontFamily: "'Manrope', sans-serif !important" }}>
-                              <CheckCircle2 size={16} color="#69F0AE" style={{ flexShrink: 0, marginTop: '2px' }} />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-
-                    <div style={{ marginTop: '1.75rem', paddingTop: '1rem', borderTop: '1px solid rgba(129, 199, 132, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 800, color: '#A5D6A7', letterSpacing: '0.05em', fontFamily: "'Manrope', sans-serif !important" }}>VERIFIED ADDITION</span>
-                      <ArrowRight size={16} color="#69F0AE" />
+                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>{brand.name}</div>
+                      <div style={{ fontSize: '11px', fontWeight: 600, color: '#4CAF50', marginTop: '2px', fontFamily: "'Manrope', sans-serif !important" }}>{brand.desc}</div>
                     </div>
                   </div>
-                );
-              })}
+                ))}
+
+                {/* Set 2 (Exact Duplicate for Seamless Loop) */}
+                {brandDivisions.map((brand, idx) => (
+                  <div
+                    key={`brand2-${idx}`}
+                    style={{
+                      background: '#FFFFFF',
+                      border: '1.5px solid rgba(105, 240, 174, 0.4)',
+                      borderRadius: '12px',
+                      padding: '16px 24px',
+                      boxShadow: '0 8px 25px rgba(0,0,0,0.25)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '18px',
+                      minWidth: '310px',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.borderColor = '#4CAF50';
+                      e.currentTarget.style.boxShadow = '0 12px 30px rgba(105, 240, 174, 0.35)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.borderColor = 'rgba(105, 240, 174, 0.4)';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.25)';
+                    }}
+                  >
+                    <img src={brand.logo} alt={brand.name} style={{ height: '52px', objectFit: 'contain', maxWidth: '130px', flexShrink: 0 }} />
+                    <div>
+                      <div style={{ fontSize: '15px', fontWeight: 800, color: '#1B5E20', fontFamily: "'Manrope', sans-serif !important" }}>{brand.name}</div>
+                      <div style={{ fontSize: '11px', fontWeight: 600, color: '#4CAF50', marginTop: '2px', fontFamily: "'Manrope', sans-serif !important" }}>{brand.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
-        {/* Grid 2: Global Presence Directory */}
+        {/* Global Directory Grid */}
         {(activeTab === 'all' || activeTab === 'directory') && (
           <div
             style={{
@@ -477,7 +296,6 @@ export const CorporateAdditionsSection: React.FC = () => {
               padding: '2.5rem',
               border: '1px solid rgba(129, 199, 132, 0.4)',
               boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-              marginTop: '1rem',
               backdropFilter: 'blur(10px)'
             }}
           >
