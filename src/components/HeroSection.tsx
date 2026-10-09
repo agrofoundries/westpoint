@@ -19,14 +19,14 @@ const slidesData = [
     stepNum: '01',
     tag: '01 FOUNDRIES & TRANSIT',
     eyebrow: 'Heavy-Duty Rail Manufacturing',
-    headline: 'Our Foundries keeping the rails going......',
+    headline: 'Our Foundries Keeping the Rails Going...',
     phaseTitle: 'RAIL & TRANSIT MOBILITY',
     icon: TrainTrack,
     travelText: (
       <>
-        First we started with putting rails from
+        First, we started with putting rails from
         <br />
-        motion to <span style={{ color: '#69F0AE', fontWeight: 900 }}>high-speed mobility</span>....
+        motion to <span style={{ color: '#69F0AE', fontWeight: 900 }}>high-speed mobility</span>...
       </>
     )
   },
@@ -35,14 +35,14 @@ const slidesData = [
     stepNum: '02',
     tag: '02 INFRASTRUCTURE CASTINGS',
     eyebrow: 'Ground-Up Construction & Infrastructure',
-    headline: 'Building Infrastructure from Ground Up......',
+    headline: 'Building Infrastructure from the Ground Up...',
     phaseTitle: 'INFRASTRUCTURE CASTINGS',
     icon: Building2,
     travelText: (
       <>
-        Dipped into infrastructure building ground up:
+        Expanded into infrastructure building ground-up:
         <br />
-        <span style={{ color: '#69F0AE', fontWeight: 900 }}>Manholes, Valves, Pumps, Hydrants</span> &amp; works....
+        <span style={{ color: '#69F0AE', fontWeight: 900 }}>Manholes, Valves, Pumps &amp; Hydrants</span>...
       </>
     )
   },
@@ -51,14 +51,14 @@ const slidesData = [
     stepNum: '03',
     tag: '03 SOLAR, WIND & AEROSPACE',
     eyebrow: 'Next-Gen Energy & Aviation Forgings',
-    headline: 'Aspiring to cover the Universe with Solar, Wind & Aero',
+    headline: 'Aspiring to Cover the Universe with Solar, Wind & Aero',
     phaseTitle: 'SOLAR, WIND & AEROSPACE',
     icon: Rocket,
     travelText: (
       <>
-        Looking forward in the skies to contribute expertise:
+        Looking forward to the skies to contribute expertise:
         <br />
-        <span style={{ color: '#69F0AE', fontWeight: 900 }}>Solar, Wind &amp; Aero Forgings</span> / Fabrication....
+        <span style={{ color: '#69F0AE', fontWeight: 900 }}>Solar, Wind &amp; Aero Forgings</span> / Fabrication...
       </>
     )
   }
@@ -159,15 +159,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'stretch',
-          paddingTop: '1.25rem',
-          paddingBottom: '1rem'
+          paddingTop: '1.5rem',
+          paddingBottom: '1.5rem'
         }}
       >
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0, 1.1fr) auto minmax(0, 0.9fr)',
-            gap: '2rem',
+            gridTemplateColumns: 'minmax(0, 1.12fr) auto minmax(0, 0.88fr)',
+            gap: '2.5rem',
             alignItems: 'center'
           }}
         >
@@ -179,13 +179,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              padding: '5px 14px',
+              padding: '6px 16px',
               borderRadius: '9999px',
               background: 'rgba(27, 94, 32, 0.85)',
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(129, 199, 132, 0.5)',
               boxShadow: '0 4px 15px rgba(0,0,0,0.35)',
-              marginBottom: '0.75rem'
+              marginBottom: '1rem'
             }}>
               <span style={{
                 width: '6px',
@@ -208,23 +208,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             </div>
 
             {/* Eyebrow Label */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '8px', marginBottom: '0.75rem', letterSpacing: '0.12em' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '10px', marginBottom: '1.15rem', letterSpacing: '0.12em' }}>
               <span style={{ display: 'inline-block', width: '28px', height: '2px', background: '#4CAF50' }} />
-              <span style={{ color: '#A5D6A7', fontWeight: 800, fontSize: '0.76rem', wordSpacing: '0.03em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
+              <span style={{ color: '#A5D6A7', fontWeight: 800, fontSize: '0.78rem', wordSpacing: '0.04em', textTransform: 'uppercase', fontFamily: "'Manrope', sans-serif !important" }}>
                 {slide.tag} &bull; {slide.eyebrow}
               </span>
             </div>
 
-            {/* Main Headline - PROPORTIONAL & BOLD HEADLINE (Matches Reference Image) */}
+            {/* Main Headline - AIRY, BOLD & GENEROUSLY SPACED (Matches Reference Image) */}
             <h1
               style={{
-                fontSize: 'clamp(1.85rem, 2.8vw, 2.65rem)',
+                fontSize: 'clamp(1.95rem, 3vw, 2.85rem)',
                 fontWeight: 900,
-                lineHeight: 1.15,
+                lineHeight: 1.16,
                 color: '#FFFFFF',
                 letterSpacing: '-0.01em',
                 wordSpacing: '0.04em',
-                margin: '0 0 1rem 0',
+                margin: '0 0 1.4rem 0',
                 textTransform: 'uppercase',
                 fontFamily: "'Manrope', sans-serif !important",
                 textShadow: '0 4px 16px rgba(0,0,0,0.5)'
@@ -236,8 +236,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             {/* Signature Official Corporate Tagline Callout */}
             <div
               style={{
-                margin: '0 0 1.15rem 0',
-                padding: '9px 16px',
+                margin: '0 0 1.4rem 0',
+                padding: '10px 18px',
                 background: 'linear-gradient(135deg, rgba(27, 94, 32, 0.85) 0%, rgba(15, 51, 20, 0.95) 100%)',
                 borderLeft: '4px solid #FFD54F',
                 borderTop: '1px solid rgba(255, 255, 255, 0.15)',
@@ -254,7 +254,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             >
               <span style={{
                 color: '#FFD54F',
-                fontSize: '1rem',
+                fontSize: '1.05rem',
                 lineHeight: 1,
                 fontFamily: 'serif',
                 fontWeight: 900,
@@ -265,7 +265,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
               <span
                 style={{
                   fontFamily: "'Manrope', sans-serif !important",
-                  fontSize: 'clamp(0.82rem, 1.2vw, 0.92rem)',
+                  fontSize: 'clamp(0.85rem, 1.2vw, 0.95rem)',
                   fontWeight: 800,
                   fontStyle: 'italic',
                   color: '#FFF9C4',
@@ -275,11 +275,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
                   textShadow: '0 2px 8px rgba(0,0,0,0.5)'
                 }}
               >
-                Making you on the move non stop......courtesy Westpoint
+                Making You on the Move Non-Stop... Courtesy Westpoint
               </span>
               <span style={{
                 color: '#FFD54F',
-                fontSize: '1rem',
+                fontSize: '1.05rem',
                 lineHeight: 1,
                 fontFamily: 'serif',
                 fontWeight: 900,
@@ -290,7 +290,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             </div>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '0.85rem', flexWrap: 'wrap', marginBottom: '1.15rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '0.85rem', flexWrap: 'wrap', marginBottom: '1.4rem' }}>
               <button
                 onClick={onExploreClick}
                 style={{
@@ -446,7 +446,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             className="hero-divider-line"
             style={{
               width: '2px',
-              height: '300px',
+              height: '320px',
               background: 'linear-gradient(180deg, rgba(76, 175, 80, 0) 0%, rgba(76, 175, 80, 0.75) 25%, rgba(129, 199, 132, 0.85) 50%, rgba(76, 175, 80, 0.75) 75%, rgba(76, 175, 80, 0) 100%)',
               boxShadow: '0 0 10px rgba(76, 175, 80, 0.5)',
               borderRadius: '2px'
@@ -469,7 +469,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             }}
           >
             {/* Header: OUR TRAVELS SINCE 1991 with double green underline bar */}
-            <div style={{ width: '100%', marginBottom: '1.15rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
+            <div style={{ width: '100%', marginBottom: '1.25rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px' }}>
               <h3
                 style={{
                   color: '#FFFFFF',
@@ -493,7 +493,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
             </div>
 
             {/* Timeline Stepper with 3 Circular Nodes */}
-            <div style={{ width: '100%', maxWidth: '390px', position: 'relative', marginBottom: '1.15rem', padding: '0 0.5rem' }}>
+            <div style={{ width: '100%', maxWidth: '390px', position: 'relative', marginBottom: '1.25rem', padding: '0 0.5rem' }}>
               {/* Connecting Lines behind nodes */}
               <div
                 style={{
@@ -580,7 +580,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onRequ
               style={{
                 width: '100%',
                 maxWidth: '440px',
-                margin: '0 0 1.15rem 0',
+                margin: '0 0 1.25rem 0',
                 padding: '12px 18px',
                 background: 'rgba(0, 0, 0, 0.45)',
                 backdropFilter: 'blur(10px)',
