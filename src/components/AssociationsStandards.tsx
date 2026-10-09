@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Settings, Tractor, Fuel, Blocks } from 'lucide-react';
+import { Building2, Settings, Tractor, Fuel, Blocks, Anchor } from 'lucide-react';
 
 export const AssociationsStandards: React.FC = () => {
   const divisions = [
@@ -33,6 +33,12 @@ export const AssociationsStandards: React.FC = () => {
       desc: 'Precision-machined molds for large-scale concrete precasting operations.',
       icon: <Blocks size={24} color="#4CAF50" />
     },
+    { 
+      name: 'MARINE CASTINGS', 
+      img: '/IMG-20261009-WA0017.jpg',
+      desc: 'Corrosion-resistant marine grade castings and hull components for naval & offshore.',
+      icon: <Anchor size={24} color="#4CAF50" />
+    }
   ];
 
   return (
